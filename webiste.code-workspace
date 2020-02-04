@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"editor.insertSpaces": false,
+		"editor.wrappingColumn": 0,
+		"editor.quickSuggestions": false,
+		"pandoc.htmlOptString": "-s -f gfm -t html5 --css=css/style.css --template=template/page.html --defaults=defaults/parameters.yaml"
+	}
+}
