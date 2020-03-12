@@ -14,6 +14,7 @@ Ad oggi, dopo diversi anni di stesura di codice in diversi ambiti(Project Manage
 - \[External\] - [How I contacted the Mayor of Bari using its game](https://medium.com/@antonioblescia/how-i-contacted-the-mayor-of-bari-using-its-game-9ae4ad25532d)
 - \[External\] - [Google account takeover challenge](https://medium.com/@antonioblescia/google-account-takeover-challenge-3f8af5873fc9)
 - \[External\] - [CVE-2020–0601 — Microsoft Security Trust Mechanism Bypass](https://medium.com/@antonioblescia/cve-2020-0601-microsoft-security-trust-mechanism-bypass-6dfaf5c9d393)
+- \[External\] - [CoronaVirusMalware Analysis](https://medium.com/@antonioblescia/coronavirussafetymeasures-pdf-exe-d14e977bf415)
 
 ## Dicono di me 📰
 
