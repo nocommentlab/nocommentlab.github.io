@@ -14,7 +14,7 @@ metadata:
     contents:
       contacts:
         name: NoCommentLab
-        city: Bari
+        shortdescription: Cyber Security & Software Development
         twitter: '#'
         email: a.blescia@nocommentlab.it
       articles:
@@ -56,4 +56,19 @@ metadata:
           title: BurpItemViewer
         - link: https://github.com/0xkillerbyte/cryptochef
           title: Cryptochef
-
+        - link: https://github.com/nocommentlab/ARPExfiltrator
+          title: ARPExfiltrator
+        - link: https://github.com/nocommentlab/CDWS
+          title: CDWS
+        - link: https://github.com/nocommentlab/robotica-bioispirata
+          title: Robotica Bioispirata
+        - link: https://github.com/nocommentlab/WDissectorGen
+          title: WDissectorGen
+        - link: https://github.com/nocommentlab/algoritmi_e_programmazione_avanzata
+          title: Algoritmi e Programmazione Avanzata
+        - link: https://github.com/0xkillerbyte/nordvpn_cli
+          title: NordVPN_CLI
+        - link: https://github.com/0xkillerbyte/burp_item_viewer
+          title: BurpItemViewer
+        - link: https://github.com/0xkillerbyte/cryptochef
+          title: Cryptochef
