@@ -1,71 +1,90 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="$lang$" xml:lang="$lang$"$if(dir)$ dir="$dir$"$endif$>
+<html>
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta charset="utf-8" />
-  <meta name="generator" content="pandoc" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-$for(author-meta)$
-  <meta name="author" content="$author-meta$" />
-$endfor$
-$if(date-meta)$
-  <meta name="dcterms.date" content="$date-meta$" />
-$endif$
-$if(keywords)$
-  <meta name="keywords" content="$for(keywords)$$keywords$$sep$, $endfor$" />
-$endif$
+  <link rel="icon" type="image/png" href="/images/favicon.png">
+  $for(page.resources.css)$
+    <link rel="stylesheet" href="$page.resources.css$" />
+  $endfor$
   <title>$if(title-prefix)$$title-prefix$ – $endif$$pagetitle$</title>
-$for(css)$
-  <link rel="stylesheet" href="$css$" />
-$endfor$
-$if(math)$
-  $math$
-$endif$
-  <!--[if lt IE 9]>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
-  <![endif]-->
-$for(header-includes)$
-  $header-includes$
-$endfor$
 </head>
 <body>
-  <!-- particles.js container -->
-<div id="particles-js">
-    <div class="content">
-      <div class="article">
-$for(include-before)$
-$include-before$
-$endfor$
-$if(title)$
-<header id="title-block-header">
-<h1 class="title">$title$</h1>
-$if(subtitle)$
-<p class="subtitle">$subtitle$</p>
-$endif$
-$for(author)$
-<p class="author">$author$</p>
-$endfor$
-$if(date)$
-<p class="date">$date$</p>
-$endif$
-</header>
-$endif$
-$if(toc)$
-<nav id="$idprefix$TOC" role="doc-toc">
-$if(toc-title)$
-<h2 id="$idprefix$toc-title">$toc-title$</h2>
-$endif$
-$table-of-contents$
-</nav>
-$endif$
-$body$
-$for(include-after)$
-$include-after$
-$endfor$
-</div>
-</div>
-</div>
-<!-- scripts -->
-<script src="particles.js"></script>
-<script src="js/app.js"></script>
+  <svg id="clip-paths" width="0" height="0" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g></g></svg>
+  <div id="page">
+    <header>
+      <div id="header-content">
+        <div id="header-logo">
+          <svg id="logo" width="80" height="80" viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+            <g>
+             <title>background</title>
+             <rect fill="#ffffff" id="canvas_background" height="162" width="162" y="-1" x="-1"/>
+            </g>
+            <g>
+             <title>Layer 1</title>
+             <g id="svg_1" transform="translate(0.000000,160.000000) scale(0.100000,-0.100000)">
+              <path id="svg_2" d="m0,800l0,-800l800,0l800,0l0,800l0,800l-800,0l-800,0l0,-800zm1410,470l0,-60l-670,0l-670,0l0,60l0,60l670,0l670,0l0,-60zm0,-182c-1,-7 -54,-146 -119,-308l-118,-295l-66,-3c-64,-3 -77,3 -59,24c5,5 60,138 122,296l114,287l55,4c31,2 59,4 64,5c4,1 7,-4 7,-10zm-980,-183l0,-185l-120,0l-120,0l0,185l0,185l120,0l120,0l0,-185zm500,180c0,-3 -6,-16 -14,-28c-7,-12 -62,-147 -122,-299l-109,-278l-67,0c-60,0 -84,9 -60,24c4,2 59,135 122,295l115,291l68,0c37,0 67,-2 67,-5zm-500,-545l0,-60l-120,0l-120,0l0,60l0,60l120,0l120,0l0,-60zm1100,-250l0,-60l-670,0l-670,0l0,60l0,60l670,0l670,0l0,-60z"/>
+             </g>
+            </g>
+           </svg>
+        </div>
+        <h1>$if(page.contents.contacts.name)$$page.contents.contacts.name$$endif$</h1>
+        <p>$if(page.contents.contacts.city)$$page.contents.contacts.city$$endif$</p>
+        <div id="contact">
+          <a href="$if(page.contents.contacts.twitter)$$page.contents.contacts.twitter$$endif$" id="twitter"><svg viewBox="0 0 42 36" xmlns="http://www.w3.org/2000/svg"><path d="M40.885 5.917a16.098 16.098 0 0 1-4.7 1.315 8.35 8.35 0 0 0 3.598-4.62 16.18 16.18 0 0 1-5.196 2.026A8.094 8.094 0 0 0 28.614 2c-4.52 0-8.183 3.74-8.183 8.353 0 .655.073 1.293.213 1.904-6.8-.348-12.83-3.674-16.866-8.728a8.447 8.447 0 0 0-1.108 4.2 8.397 8.397 0 0 0 3.64 6.952 8.024 8.024 0 0 1-3.707-1.045v.105c0 4.047 2.82 7.423 6.563 8.19a8.035 8.035 0 0 1-3.695.144c1.042 3.32 4.064 5.734 7.645 5.8A16.206 16.206 0 0 1 1 31.337a22.818 22.818 0 0 0 12.544 3.754c15.05 0 23.282-12.73 23.282-23.768 0-.362-.008-.723-.024-1.08a16.82 16.82 0 0 0 4.083-4.325z"/></svg></a>
+          <a href="mailto:$if(page.contents.contacts.email)$$page.contents.contacts.email$$endif$" id="email"><svg viewBox="0 0 42 36" xmlns="http://www.w3.org/2000/svg"><path d="M3.025 5.255A1.99 1.99 0 0 1 4.003 5h33.994c.354 0 .688.093.977.256L21 18.5 3.025 5.255zm-1.002 1.45c-.015.098-.023.2-.023.302V18.28v-5.636 17.35C2 31.1 2.902 32 4.003 32h33.994A2.005 2.005 0 0 0 40 29.993v-17.35 5.638V7.008c0-.103-.008-.204-.023-.303L21 20.687 2.023 6.704z"/></svg></a>
+        </div>
+      </div>
+    </header>
+    <div id="content">
+      <section id="articles">
+        <h2>Articles</h2>
+        <ul>
+          $for(page.contents.articles)$
+          <li><a href="$page.contents.articles.link$">$page.contents.articles.title$</a></li>
+          $endfor$
+        </ul>
+      </section>
+      <section id="aboutme">
+        <h2>About Me</h2>
+        <ul>
+          $for(page.contents.aboutme)$
+          <li><a href="$page.contents.aboutme.link$">$page.contents.aboutme.title$</a></li>
+          $endfor$
+        </ul>
+        <a href="https://github.com/michaelvillar" class="more">More on GitHub<svg viewBox="0 0 10 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path class="arrow" d="M1.01362083,12.9421826 L1,15.6012598 L9.21426767,8.3533766 L1.07301897,1.34639246 L1.05985086,3.91708947 L6.21426767,8.3533766 L1.01362083,12.9421826 Z"></path></svg></a>
+      </section>
+      <section id="repositories">
+        <h2>Repos</h2>
+        <ul>
+          $for(page.contents.repos)$
+          <li><a href="$page.contents.repos.link$">$page.contents.repos.title$</a></li>
+          $endfor$
+        </ul>
+      </section>
+    </div>
+  </div>
+  <svg id="page-stripes" class="full-size" width="100%" height="100%" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"></svg>
+  </svg>
+  <div id="intro" class="full-size">
+    <div id="logo-container" class="full-size">
+      <svg id="logo" width="512" height="512" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+        <g>
+         <title>background</title>
+         <rect fill="#ffffff" id="canvas_background" height="514" width="514" y="-1" x="-1"/>
+        </g>
+        <g>
+         <title>Layer 1</title>
+         <g id="svg_1" fill="#000000" transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)">
+          <path id="svg_2" d="m0,2560l0,-2560l2560,0l2560,0l0,2560l0,2560l-2560,0l-2560,0l0,-2560zm4510,1505l0,-195l-2145,0l-2145,0l0,195l0,195l2145,0l2145,0l0,-195zm-1563,-597c-4,-12 -178,-455 -389,-985l-383,-963l-182,0c-100,0 -189,-3 -199,-7c-14,-5 -16,-2 -11,18c4,13 179,457 389,986l383,962l190,3c105,2 194,4 199,6c4,1 6,-8 3,-20zm1560,0c-4,-12 -178,-455 -389,-985l-383,-963l-182,0c-100,0 -189,-3 -199,-7c-14,-5 -16,-2 -11,18c4,13 179,457 389,986l383,962l190,3c105,2 194,4 199,6c4,1 6,-8 3,-20zm-3117,-573l0,-585l-390,0l-390,0l0,585l0,585l390,0l390,0l0,-585zm0,-1180l0,-195l-390,0l-390,0l0,195l0,195l390,0l390,0l0,-195zm3510,-780l0,-195l-2145,0l-2145,0l0,195l0,195l2145,0l2145,0l0,-195z"/>
+         </g>
+        </g>
+       </svg>
+    </div>
+    <svg id="stripes" class="full-size" width="100%" height="100%" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"></svg>
+  </div>
+  $for(page.resources.js)$
+  <script src="$page.resources.js$"></script>
+  $endfor$
 </body>
 </html>
