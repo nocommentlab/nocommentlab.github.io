@@ -220,8 +220,8 @@ function cloneAndStripeElement(element, clipPathName, parent) {
   parent.appendChild(el);
   //el.style['-webkit-clip-path'] = 'url(/#' + clipPathName + ')';
   //el.style['clip-path'] = 'url(/#' + clipPathName + ')';
-  el.style['-webkit-clip-path'] = 'url(' + window.location.pathname + clipPathName + ')';
-  el.style['clip-path'] = 'url('+ window.location.pathname + clipPathName + ')';
+  el.style['-webkit-clip-path'] = 'url(' + window.location.pathname + "#" + clipPathName + ')';
+  el.style['clip-path'] = 'url('+ window.location.pathname + "#" + clipPathName + ')';
   return el;
 }
 
