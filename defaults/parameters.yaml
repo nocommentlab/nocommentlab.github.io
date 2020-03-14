@@ -17,10 +17,10 @@ metadata:
         shortdescription: Cyber Security & Software Development
         twitter: '#'
         email: a.blescia@nocommentlab.it
-      introduction: 
-        - Hi, my name is Antonio a 31 years old geek from South of Italy(Apulia), on the internet I'm also known as K.i.l.l.e.r.B.y.t.e(without dots). This is my diary website where is possible to read all of my technical studies and you can find my best works on cyber security and software development fields.
-        - Do you love this fields? Read my articles, they are wrote with ❤️.
-        - Do you have some question? Write me!
+      introduction:
+        - Hi everybody! My name is Antonio, I'm a 31-year old geek from Southern Italy (Apulia), aka K.i.l.l.e.r.B.y.t.e (without dots) for the Web. 
+        - This is my diary website and here you can read all my technical studies as well as my best works on cyber security and software development. 
+        - Do you love these topics too? So give a glance at my articles, they are written with ❤️. And if you have any questions...just contact me!
       articles:
         - link: https://medium.com/@antonioblescia/how-to-pass-the-english-exam-with-hacking-e3cdf9a09641
           title: How to pass the English exam with hacking
