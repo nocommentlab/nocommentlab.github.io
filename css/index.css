@@ -24,10 +24,16 @@ body {
   min-height: 100%;
 }
 
-h1, h2 {
+h1 {
   font-weight: normal;
   font-size: 25px;
   color: white;
+}
+
+h2 {
+  font-weight: normal;
+  font-size: 21px;
+  color: rgb(219, 219, 219);
 }
 
 .full-size {
@@ -210,7 +216,7 @@ a.more:hover .arrow {
 }
 
 #intro {
-  background: #101214;
+  background: #000;
   pointer-events: none;
 }
 

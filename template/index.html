@@ -38,13 +38,13 @@
     </header>
     <div id="content">
       <section id="introduction">
-        <h2>Intro</h2>
+        <h1>Intro</h1>
         $for(page.contents.introduction)$
         $page.contents.introduction$<br>
         $endfor$
       </section>
       <section id="articles">
-        <h2>Articles</h2>
+        <h1>Articles</h1>
         <ul>
           $for(page.contents.articles)$
           <li><a href="$page.contents.articles.link$">$page.contents.articles.title$</a></li>
@@ -52,7 +52,7 @@
         </ul>
       </section>
       <section id="aboutme">
-        <h2>About Me</h2>
+        <h1>About Me</h1>
         <ul>
           $for(page.contents.aboutme)$
           <li><a href="$page.contents.aboutme.link$">$page.contents.aboutme.title$</a></li>
@@ -60,7 +60,7 @@
         </ul>
       </section>
       <section id="repositories">
-        <h2>Repos</h2>
+        <h1>Repos</h1>
         <ul>
           $for(page.contents.repos)$
           <li><a href="$page.contents.repos.link$">$page.contents.repos.title$</a></li>
