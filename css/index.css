@@ -14,11 +14,10 @@
 
 html {
   height: 100%;
-  overflow-y: hidden;
 }
 
 body {
-  background: #101214;
+  background: #000;
   font-size: 18px;
   -webkit-text-size-adjust: 100%;
   color: #7A7C80;
