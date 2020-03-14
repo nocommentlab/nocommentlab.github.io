@@ -2,4 +2,58 @@
 metadata:
   author:
   - Antonio Blescia
-title-prefix: "!(/**/)Lab: "
+  title-prefix: "!// Lab: "
+  page:
+    resources:
+      css:
+        - "./css/index.css"
+      js:
+        - "./js/dynamics.js"
+        - "./js/tinycolor.js"
+        - "./js/mv.es5.js"
+    contents:
+      contacts:
+        name: NoCommentLab
+        city: Bari
+        twitter: '#'
+        email: a.blescia@nocommentlab.it
+      articles:
+        - link: https://medium.com/@antonioblescia/how-to-pass-the-english-exam-with-hacking-e3cdf9a09641
+          title: How to pass the English exam with hacking
+        - link: https://medium.com/@antonioblescia/how-i-contacted-the-mayor-of-bari-using-its-game-9ae4ad25532d
+          title: How I contacted the Mayor of Bari using its game
+        - link: https://medium.com/@antonioblescia/google-account-takeover-challenge-3f8af5873fc9
+          title: Google account takeover challenge
+        - link: https://medium.com/@antonioblescia/cve-2020-0601-microsoft-security-trust-mechanism-bypass-6dfaf5c9d393
+          title: CVE-2020–0601 — Microsoft Security Trust Mechanism Bypass
+        - link: https://medium.com/@antonioblescia/coronavirussafetymeasures-pdf-exe-d14e977bf415
+          title: CoronaVirusMalware.exe Analysis
+      aboutme:
+        - link: http://puglia-startapp-bari.blogautore.repubblica.it/2014/08/26/niente-secchiate-ma-aiuto-tecnologico-contro-la-sla-la-app-e-al-bacio/
+          title: 'Niente secchiate, ma aiuto tecnologico contro la Sla: la app è "al bacio"'
+        - link: http://puglia-startapp-bari.blogautore.repubblica.it/2014/03/04/la-sedia-a-rotelle-si-muove-col-pensiero-e-si-produce-a-bari-2/
+          title: SmartChair, così nasce la sedia a rotelle che si muove col pensiero
+        - link: https://www.barilive.it/news/attualita/58772/un-the-alla-laterza-con-antonio-blescia
+          title: Un the alla Laterza con Antonio Blescia
+        - link: https://books.google.it/books?id=U1tQCgAAQBAJ&pg=PT163&lpg=PT163&dq=antonio+blescia&source=bl&ots=Wpm-ZhJhhn&sig=ACfU3U0sp0sGSiFV_16uwD-5CtSeoML1tQ&hl=it&sa=X&ved=2ahUKEwiZyqrG8rfnAhWIMBQKHaWXDt44ChDoATAJegQIChAB#v=onepage&q=antonio%20blescia&f=false
+          title: Il meglio Sud
+        - link: https://www.panettipitagora.gov.it/qs/index.php/blog/148-quando-la-scuola-funziona-davvero
+          title: Quando la scuola funziona davvero
+      repos:
+        - link: https://github.com/nocommentlab/ARPExfiltrator
+          title: ARPExfiltrator
+        - link: https://github.com/nocommentlab/CDWS
+          title: CDWS
+        - link: https://github.com/nocommentlab/robotica-bioispirata
+          title: Robotica Bioispirata
+        - link: https://github.com/nocommentlab/WDissectorGen
+          title: WDissectorGen
+        - link: https://github.com/nocommentlab/algoritmi_e_programmazione_avanzata
+          title: Algoritmi e Programmazione Avanzata
+        - link: https://github.com/0xkillerbyte/nordvpn_cli
+          title: NordVPN_CLI
+        - link: https://github.com/0xkillerbyte/burp_item_viewer
+          title: BurpItemViewer
+        - link: https://github.com/0xkillerbyte/cryptochef
+          title: Cryptochef
+
