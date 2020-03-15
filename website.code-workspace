@@ -8,6 +8,6 @@
 		"editor.insertSpaces": false,
 		"editor.wrappingColumn": 0,
 		"editor.quickSuggestions": false,
-		"pandoc.htmlOptString": "-s -f gfm -t html5 --template=template/page.html --defaults=defaults/parameters.yaml"
+		"pandoc.htmlOptString": "-s -f gfm -t html5 --template=template/article.html --defaults=defaults/parameters.yaml"
 	}
 }
