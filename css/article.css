@@ -1,12 +1,20 @@
+table
+{
+	width: 95%;
+	display: block;
+	margin: 10px 0 10px 0;
+}
+
 img
 {
 	width: 95%;
 	display: block;
 	margin: 10px 0 10px 0;
 	border-radius: 10px;
+	object-fit: cover;
 }
 
 figcaption
 {
-	visibility: hidden;
+	text-align: center;
 }
