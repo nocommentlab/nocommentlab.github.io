@@ -21,7 +21,7 @@ function New-Article {
     [string]$ArticleName
   )
   $article_params_template = @"
-  ---
+---
   metadata:
     title: $ArticleName
     author:
@@ -47,9 +47,9 @@ function New-Article {
   # Generates the new article UUID
   $uuid_article = [guid]::NewGuid().Guid
   # Creates the params article file
-  $article_params_template | Out-File ..\defaults\params_$uuid_article.yaml
+  $article_params_template | Out-File -Encoding "UTF8" ..\defaults\params_$uuid_article.yaml
   # Creates the article and append the title
-  "# $($ArticleName)" | Out-File ..\articles\$uuid_article.md
+  "# $($ArticleName)" | Out-File -Encoding "UTF8" ..\articles\$uuid_article.md
 }
 
 New-Article -ArticleName $args[0]
