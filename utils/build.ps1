@@ -24,3 +24,5 @@ function New-RebuildBlog{
 		pandoc ..\articles\$_ -s -f gfm -t html5 --template=..\template\article.html --defaults=..\defaults\params_$($_.BaseName).yaml --output ..\articles\$($_.BaseName).html
 	}
 }
+
+New-RebuildBlog
