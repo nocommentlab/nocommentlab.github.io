@@ -21,7 +21,7 @@ function New-RebuildBlog{
 	# Iterates over the *.md file list
 	$md_files | ForEach-Object{
 		# Using pandoc, generates the html files
-		pandoc ..\articles\$_ -s -f gfm -t html5 --template=..\template\article.html --defaults=..\defaults\params_$($_.BaseName).yaml --output ..\articles\$($_.BaseName).html
+		pandoc ..\articles\$_ -f markdown -t html --template=..\template\article.html --defaults=..\defaults\params_$($_.BaseName).yaml --output ..\articles\$($_.BaseName).html
 	}
 }
 
