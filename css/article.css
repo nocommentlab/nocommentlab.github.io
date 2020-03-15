@@ -2,16 +2,17 @@ table
 {
 	width: 95%;
 	display: block;
-	margin: 10px 0 10px 0;
+	margin: auto;
 }
 
 img
 {
-	width: 95%;
+
 	display: block;
-	margin: 10px 0 10px 0;
+	margin: 10px auto 0 auto;
 	border-radius: 10px;
 	object-fit: cover;
+	max-width: 95%;
 }
 
 figcaption
