@@ -19,3 +19,25 @@ figcaption
 {
 	text-align: center;
 }
+
+p
+{
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+code
+{
+	background-color: rgba(194, 0, 0, .5);
+	padding: .05em .05em;
+	border-radius: 2px;
+	border: 1px solid red;
+	color: white;
+	border-left: 3px solid red;
+	font-size: 16px;
+}
+
+a
+{
+	color: lime;
+}
