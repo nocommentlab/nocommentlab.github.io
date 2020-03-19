@@ -79,9 +79,12 @@
       <p>The script has the most common anti-analysis tricks: obfuscation, anonymous functions, dynamic sleeps, and so on..</p>
       <p>When I saw the session on any.run I didn’t see any communication with external servers. This is a common sandbox evasion implementation to make impossible a dynamic analysis on free malware hunting platforms.</p>
       <p>For this reason I decided to debug the code on my physical machine with Visual Studio 2019. To debug a <strong>js Windows Host Script</strong> it is necessary to configure the VS with the external debug tool(I will write a little article to achieve this goal).</p>
-      <p>After the Visual Studio configuration step, I renamed the extension file from <code>*.jse</code> to <code>*.js</code> and I lunched the <code>cscript.exe //X keypress.js</code></p>
-      <p>With the debug attached to cscript istance, I declared different global variables to follow step by step the code execution. The attacker delay the infection step by using a while condition with a dynamic threshold value. <img src="../assets/images/f88ca7c8-ac13-4b92-9bfe-053406b63e18.png" alt="Dynamic Delay implemented with while loop costruct" /></p>
-      <p>To accellerate the infection process, I modified the variable <code>sbhKVhome66</code> value to make true the if condition and I saw that the script make a different environment checks, likes the installed Hard Drives</p>
+      <p>After the Visual Studio configuration step, I renamed the extension file from <code>*.jse</code> to <code>*.js</code> and I lunched the <code>cscript.exe //X keypress.js</code> command.</p>
+      <p>With the debug attached to cscript istance, I declared different global variables to follow step by step the code execution. The attacker delay the infection step by using a while condition with a dynamic threshold value.</p>
+      <figure>
+      <img src="../assets/images/f88ca7c8-ac13-4b92-9bfe-053406b63e18.png" alt="" /><figcaption>Dynamic Delay implemented with while loop costruct</figcaption>
+      </figure>
+      <p>To accelerate the infection process, I modified the variable <code>sbhKVhome66</code> value to make true the if condition and I saw that the script made a different environment checks, likes the installed Hard Drives</p>
       <figure>
       <img src="../assets/images/9dec2ef2-87b5-40e7-9995-a506d7c4feff.png" alt="" /><figcaption>Hard Drives Enumeration</figcaption>
       </figure>
