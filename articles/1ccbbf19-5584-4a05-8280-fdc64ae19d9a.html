@@ -40,22 +40,22 @@
 						<h1 id="covid19-malware-reverse">Covid19 Malware Reverse</h1>
       <h2 id="another-way-to-spread-trickbot-by-taking-advantage-of-the-italian-situation">Another way to spread Trickbot by taking advantage of the italian situation</h2>
       <p><img src="https://picsum.photos/800/300" /></p>
-      <p><strong>As a very Italian(🇮🇹) responsible person, I’m in isolation</strong>; my country is really struggling with the Covid-19 and our President tell us to stay in our homes.</p>
+      <p><strong>As a very Italian(🇮🇹) responsible person, I’m in self quarantine at the moment</strong>; my country is really struggling with Covid-19 and our President told us to stay at home.</p>
       <p>After my last <a href="https://medium.com/@antonioblescia/coronavirussafetymeasures-pdf-exe-d14e977bf415">article</a> about the reverse engineering of the other Covid19 fake pdf, I decided to reverse another attack that uses a doc to spread a famous malware called <strong>Trickbot</strong></p>
       <p>By Googling I found a lot of articles that talk about an email received from a fake <code>Dott.sa Penelope Marchetti</code> that writes from OMS:</p>
       <figure>
       <img src="../assets/images/35fbe4f7-40a7-49ea-a26e-5cca66eaf691.png" alt="" /><figcaption><em>The fake email</em></figcaption>
       </figure>
-      <p>Honestly, the email is written with a wonderful italian language, this means that the attacker are very interested to target the Italy by abusing its emergency situation.</p>
+      <p>Honestly, the email is written with a wonderful Italian language, this means that the attackers are very interested in targeting Italy by abusing its emergency.</p>
       <p>As next step I need to retrieve the doc sample that is attached to the email; after some search I found it on any.run by using a Google Dork: <code>"f16744643424.doc" site:any.run</code>.</p>
       <figure>
       <img src="../assets/images/38006753-4778-4bf6-82b8-a8cf798d28eb.png" alt="" /><figcaption>Sample hashes</figcaption>
       </figure>
-      <p>Downloaded the sample I analyzed it with <a href="https://reaqta.com/">Reaqta</a></p>
+      <p>Once downloaded the sample I analyzed it with <a href="https://reaqta.com/">Reaqta</a></p>
       <figure>
       <img src="../assets/images/88e09662-a392-423b-b6e6-a4945bca4500.png" alt="" /><figcaption>ReaQta infection chain view</figcaption>
       </figure>
-      <p>As it’s possible to see, the document, first creates the folder <code>C:\MyImages</code> and puts in it two files, <code>presskey.cmd</code> and <code>presskey.jse</code>, after runs a cmd.exe session that runs a cscript process as its child. To spawn the process the VBA code doesn’t drop any code from internet, then, the payloads are stored inside the Macros.</p>
+      <p>As it is possible to see, the document, first creates the folder <code>C:\MyImages</code> and puts in it two files, <code>presskey.cmd</code> and <code>presskey.jse</code>, after runs a cmd.exe session that runs a cscript process as its child. To spawn the process the VBA code doesn’t drop any code from the Internet, then, the payloads are stored inside the Macros.</p>
       <p>To show the macro’s source code, I reopened the doc file, then I clicked on <code>View-&gt;View Macro</code></p>
       <figure>
       <img src="../assets/images/7027ae50-8201-47a8-bcbe-0bca5c8ad808.png" alt="" /><figcaption>Macro Document List</figcaption>
@@ -68,23 +68,23 @@
       <figure>
       <img src="../assets/images/6b067614-ffc4-4053-87c0-6fd3585dcba2.png" alt="" /><figcaption>Macro Locking Protection</figcaption>
       </figure>
-      <p>After I sad before, the source code of the two files inside the <code>MyImages</code> folder was declared inside the Macro, in fact, I saw it inside the <code>maximepixsc</code> macro function</p>
+      <p>As I said before, the source code of the two files inside the <code>MyImages</code> folder was declared inside the Macro, in fact, I saw it inside the <code>maximepixsc</code> macro function</p>
       <figure>
       <img src="../assets/images/c2685b78-8dd4-4eef-b21f-38bd78d9fdc1.png" alt="" /><figcaption>Macro Binary Stream to files</figcaption>
       </figure>
-      <p>Once obtained the macro source code I passed to analyze the two files inside the <code>MyImages</code> folder. The first file, <code>presskey.cmd</code> is used only to run <code>cscript.exe</code> by passing the <code>presskey.jse</code> file as argument. This file is very obfuscated and its structure rembember me a classic Trickbot dropper.</p>
+      <p>Once obtained the macro source code I passed to analyze the two files inside the <code>MyImages</code> folder. The first file, <code>presskey.cmd</code> is used only to run <code>cscript.exe</code> by passing the <code>presskey.jse</code> file as argument. This file is very obfuscated and its structure rembembers me a classic Trickbot dropper.</p>
       <figure>
       <img src="../assets/images/4a1f0bb2-f4ef-42d6-b09c-f7cdd63fb601.png" alt="" /><figcaption>Classic Trickbot Dropper Obfuscation Indicator</figcaption>
       </figure>
-      <p>The script has the most common anti-analysis tricks: obfuscation, anonymous functions, dynamic sleeps, and so on..</p>
+      <p>The script has the most common anti-analysis tricks: obfuscation, anonymous functions, dynamic sleeps, and so on.</p>
       <p>When I saw the session on any.run I didn’t see any communication with external servers. This is a common sandbox evasion implementation to make impossible a dynamic analysis on free malware hunting platforms.</p>
-      <p>For this reason I decided to debug the code on my physical machine with Visual Studio 2019. To debug a <strong>js Windows Host Script</strong> it is necessary to configure the VS with the external debug tool(I will write a little article to achieve this goal).</p>
+      <p>For this reason I decided to debug the code on my physical machine with Visual Studio 2019. To debug a <strong>js Windows Host Script</strong> it is necessary to configure the VS with the external debug tool(I will write a brief article to achieve this goal).</p>
       <p>After the Visual Studio configuration step, I renamed the extension file from <code>*.jse</code> to <code>*.js</code> and I lunched the <code>cscript.exe //X keypress.js</code> command.</p>
-      <p>With the debug attached to cscript istance, I declared different global variables to follow step by step the code execution. The attacker delay the infection step by using a while condition with a dynamic threshold value.</p>
+      <p>With the debug attached to cscript instance, I declared different global variables to follow the code execution step by step. The attacker delays the infection step by using a while condition with a dynamic threshold value.</p>
       <figure>
       <img src="../assets/images/f88ca7c8-ac13-4b92-9bfe-053406b63e18.png" alt="" /><figcaption>Dynamic Delay implemented with while loop costruct</figcaption>
       </figure>
-      <p>To accelerate the infection process, I modified the variable <code>sbhKVhome66</code> value to make true the if condition and I saw that the script made a different environment checks, likes the installed Hard Drives</p>
+      <p>To accelerate the infection process, I modified the variable <code>sbhKVhome66</code> value to make true the if condition and I saw that the script made a different environment check, like the installed Hard Drives</p>
       <figure>
       <img src="../assets/images/9dec2ef2-87b5-40e7-9995-a506d7c4feff.png" alt="" /><figcaption>Hard Drives Enumeration</figcaption>
       </figure>
