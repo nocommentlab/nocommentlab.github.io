@@ -10,7 +10,7 @@ img
 
 	display: block;
 	margin: 10px auto 0 auto;
-	border-radius: 10px;
+	border-radius: 10px 10px 0px 0px;
 	object-fit: cover;
 	max-width: 100%;
 }
@@ -37,6 +37,17 @@ code
 	font-size: 16px;
 }
 
+figcaption
+{
+	background-color: rgba(207, 77, 174, .5);
+	padding: .05em .05em;
+	border-radius: 2px;
+	border: 1px solid rgb(255, 0, 255);
+	color: white;
+	border-left: 3px solid rgb(255, 0, 255);
+	border-right: 3px solid rgb(255, 0, 255);
+	font-size: 16px;
+}
 a
 {
 	color: lime;

@@ -127,14 +127,12 @@ header {
   display: none;
 }
 
+
 section {
   margin-bottom: 30px;
-
+  margin-right: 5em;
 }
 
-/*section h2 {
-  height: 30px;
-}*/
 
 section ul {
   line-height: 22px;
