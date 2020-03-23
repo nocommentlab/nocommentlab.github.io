@@ -41,7 +41,7 @@
 						<h1 id="covid19-malware-reverse">Covid19 Malware Reverse</h1>
       <h2 id="another-way-to-spread-trickbot-emotet-by-taking-advantage-of-the-italian-situation">Another way to spread <del>Trickbot</del> Emotet by taking advantage of the italian situation</h2>
       <p><img src="https://picsum.photos/800/300" /></p>
-      <hr text-description="Intruduction">
+      <h6 id="introduction"><code>Introduction</code></h6>
       <p><strong>As a very Italian(🇮🇹) responsible person, I’m in self quarantine at the moment</strong>; my country is really struggling with Covid-19 and our President told us to stay at home.</p>
       <p>After my last <a href="https://medium.com/@antonioblescia/coronavirussafetymeasures-pdf-exe-d14e977bf415">article</a> about the reverse engineering of the other Covid19 fake pdf, I decided to reverse another attack that uses a doc to spread a famous malware called <strong>Trickbot</strong></p>
       <p>By Googling I found a lot of articles that talk about an email received from a fake <code>Dott.sa Penelope Marchetti</code> that writes from OMS:</p>
@@ -49,7 +49,7 @@
       <img src="../assets/images/35fbe4f7-40a7-49ea-a26e-5cca66eaf691.png" alt="" /><figcaption><em>The fake email</em></figcaption>
       </figure>
       <p>Honestly, the email is written with a wonderful Italian language, this means that the attackers are very interested in targeting Italy by abusing its emergency.</p>
-      <hr text-description="Technical Description">
+      <h6 id="technical-description"><code>Technical Description</code></h6>
       <p>As next step I need to retrieve the doc sample that is attached to the email; after some search I found it on any.run by using a Google Dork: <code>"f16744643424.doc" site:any.run</code>.</p>
       <figure>
       <img src="../assets/images/38006753-4778-4bf6-82b8-a8cf798d28eb.png" alt="" /><figcaption>Sample hashes</figcaption>
@@ -101,7 +101,7 @@
       <figure>
       <img src="../assets/images/fc464042-36f4-46af-9aab-42ced43add70.png" alt="" /><figcaption>Whois IP</figcaption>
       </figure>
-      <hr text-description="IoCS">
+      <h6 id="ioc"><code>IoC</code></h6>
       <p>You can find <a href="https://gist.github.com/nocommentlab/d9d815ecfd88fb1e487948c318d5b435">here</a> the extracted IoC.</p>
 		       
       </section>

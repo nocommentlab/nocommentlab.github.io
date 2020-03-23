@@ -1,38 +1,21 @@
 @import url(https://fonts.googleapis.com/css?family=Megrim);
 
-hr {
-  height: 1px;
-  background: white;
-  border: none;
-  outline: none;
-  margin: 2em 0 2em;
-  position: relative;
-  max-width: 95%;
-  /* Chrome fixing */
-  overflow: visible; 
-}
-
-hr:before {
-  content: attr(text-description);
-  position: absolute;
-  top: 0;
-  left: 50%;
-  background: black;
-  color: white;
-  padding: 0.5em 3em;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-}
-
-hr::before {
-
-  color: #10d7af;
-  font-family: Megrim, cursive;
-
-}
-
-hr {
+h6 {
+  width: 100%; 
+  text-align: center; 
   background-size: 100%;
   background-image: -webkit-gradient(linear, left top, right top, from(#3498db), color-stop(#10d7af), to(#3498db));
   background-image: linear-gradient(to right, #3498db, #10d7af, #3498db);
+  line-height: 0.1em;
+  margin-top: 2em;
+	margin-bottom: 2em;
+} 
+
+h6 code { 
+   background:#000; 
+   color: #10d7af;
+   font-family: Megrim, cursive;
+   border: 0px;
+   padding: 0.5em 3em;
+   
 }
