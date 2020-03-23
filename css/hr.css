@@ -8,6 +8,8 @@ hr {
   margin: 2em 0 2em;
   position: relative;
   max-width: 95%;
+  /* Chrome fixing */
+  overflow: visible; 
 }
 
 hr:before {
