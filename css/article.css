@@ -42,3 +42,9 @@ a
 {
 	color: lime;
 }
+
+del
+{
+	text-decoration:line-through;
+	color: red;
+}

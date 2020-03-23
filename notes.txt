@@ -5,6 +5,9 @@
 	|:--:|
 	| *[I'm an inline-style link](https://www.google.com)* |
 
+- Add class to element
+	https://github.com/jgm/pandoc/issues/168
+
 [POWERSHELL]
 - Generate random UUID
 

@@ -9,6 +9,7 @@
         css:
           - "../css/index.css"
           - "../css/article.css"
+          - "../css/hr.scss"
         js:
           - "../js/dynamics.js"
           - "../js/tinycolor.js"
