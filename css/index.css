@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Ubuntu&display=swap');
 
 * {
-  margin: 0;
+
   padding: 0;
   font-family: "Ubuntu", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial;
   -webkit-user-select: none;
@@ -129,8 +129,9 @@ header {
 
 
 section {
-  margin-bottom: 30px;
+
   margin-right: 5em;
+	margin-bottom: 50px;
 }
 
 

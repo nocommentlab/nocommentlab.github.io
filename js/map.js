@@ -587,8 +587,8 @@ let map = new Datamap({
   projection: 'winkel3',
   setProjection: function (element) {
     projection = d3.geo.mercator()
-      .center([14, 40])
-      .scale(80)
+      .center([0, 40])
+      .scale(50)
       .translate([width / 2, height / 2]);
     path = d3.geo.path()
       .pointRadius(2)

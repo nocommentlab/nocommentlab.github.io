@@ -20,11 +20,12 @@ figcaption
 	text-align: center;
 }
 
-p
+p, div
 {
 	margin-top: 10px;
 	margin-bottom: 10px;
 }
+
 
 code
 {
