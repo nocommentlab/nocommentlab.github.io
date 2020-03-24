@@ -10,10 +10,16 @@
           - "../css/index.css"
           - "../css/article.css"
           - "../css/hr.css"
+          - "../css/map.css"
+          - "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"
         js:
           - "../js/dynamics.js"
           - "../js/tinycolor.js"
           - "../js/mv.es5.js"
+          - "https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"
+          - "https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.0/topojson.min.js"
+          - "https://cdnjs.cloudflare.com/ajax/libs/datamaps/0.5.8/datamaps.all.min.js"
+          - "../js/map.js"
       contents:
         contacts:
           name: NoCommentLab
