@@ -426,10 +426,10 @@ const createMarkerLabel = (map, data) => {
     .append('text')
     .attr('class', 'marker-label')
     .attr('x', function (d) {
-      return projection(d.coordinates)[0];
+      return projection(d.coordinates)[0]+2;
     })
     .attr('y', function (d) {
-      return projection(d.coordinates)[1] + 15;
+      return projection(d.coordinates)[1]+2;
     })
     .attr('fill', 'rgba(255,255,255, 0.75)')
     .style('font-size', 12 / limitBound.scale + 'px')
