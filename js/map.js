@@ -71,30 +71,7 @@ let element = document.getElementById('container'),
       }
     }
   },
-  arcData = [
-    {
-      origin: {
-        name: "Bari",
-        radius: 2,
-        fillKey: 'markers',
-        coordinates: [
-           16.871778,
-           41.121702
-        ]
-      },
-      destination: {
-        name: "Moscow",
-        radius: 2,
-        fillKey: 'markers',
-        coordinates: [
-          37.6068, 55.7386
-
-        ]
-        
-      },
-      options: arcSetup.outbound.level_6
-    }
-  ];
+  arcData=[];
 
 const getBound = (translate, scale) => {
   translate[0] = Math.min(

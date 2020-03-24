@@ -26,3 +26,18 @@
           shortdescription: Cyber Security & Software Development
           twitter: '#'
           email: a.blescia@nocommentlab.it
+        threat_map:
+          - origin_name: "Bari"
+            origin_longitude: 16.871778
+            origin_latitude: 41.121702
+            destination_name: "Moscow"
+            destination_longitude: 37.6068
+            destination_latitude: 55.7386
+            options: arcSetup.outbound.level_6
+          - origin_name: "Milano"
+            origin_longitude: 9.191383
+            origin_latitude: 45.464211
+            destination_name: "Bari"
+            destination_longitude: 16.871778
+            destination_latitude: 41.121702
+            options: arcSetup.inbound.level_6
