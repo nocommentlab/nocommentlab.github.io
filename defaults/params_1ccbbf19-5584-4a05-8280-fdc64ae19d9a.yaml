@@ -35,12 +35,18 @@
             destination_longitude: 37.6068
             destination_latitude: 55.7386
             options: arcSetup.outbound.level_6
+            type: Socket
+            remote_ip: 95.181.152.55
+            remote_port: 443
           - origin_name: "Moscow"
             origin_longitude: 37.6068
             origin_latitude: 55.7386
             destination_name: "Bari"
             destination_longitude: 16.871778
             destination_latitude: 41.121702
+            type: Socket
+            remote_ip: 91.253.237.44
+            remote_port: 50324
             options: arcSetup.inbound.level_6
           - destination_latitude: -34.6033
             destination_longitude: -58.3816

@@ -96,11 +96,14 @@
     <script>
     arcData=[
     $for(page.contents.threat_map)$
-    {origin: {name: "$page.contents.threat_map.origin_name$",coordinates: [$page.contents.threat_map.origin_longitude$,
-    $page.contents.threat_map.origin_latitude$]},
-    destination: {name: "$page.contents.threat_map.destination_name$",coordinates:
-    [$page.contents.threat_map.destination_longitude$, $page.contents.threat_map.destination_latitude$]},
-    options: $page.contents.threat_map.options$},
+    {origin: {name: "$page.contents.threat_map.origin_name$",coordinates: [$page.contents.threat_map.origin_longitude$, $page.contents.threat_map.origin_latitude$]},
+    destination: {name: "$page.contents.threat_map.destination_name$",coordinates: [$page.contents.threat_map.destination_longitude$, $page.contents.threat_map.destination_latitude$]},
+    options: $page.contents.threat_map.options$,
+    remote_ip: "$page.contents.threat_map.remote_ip$",
+    remote_port: $if(page.contents.threat_map.remote_port)$$page.contents.threat_map.remote_port$$else$null$endif$,
+    remote_request: "$page.contents.threat_map.remote_request$",
+    type: "$page.contents.threat_map.type$"
+    },
     $endfor$
     ]
   </script>

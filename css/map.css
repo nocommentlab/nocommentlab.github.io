@@ -62,7 +62,7 @@ body {
 	position: absolute;
 	bottom: 0;
 	left: 0;
-	width: 50%;
+	width: 100%;
 	background: rgba(0,0,0, .35);
 	color: #fefefe;
 	font-family: sans-serif;
@@ -70,7 +70,7 @@ body {
 	overflow-y: auto;
 	scrollbar-width: none;
 	-ms-overflow-style: none; /* IE 11 */
-	height: 100px;
+	height: 30px;
 
   }
   .map-visualize--details-container h3,

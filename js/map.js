@@ -378,6 +378,25 @@ const clearLinesMarkersArrows = (map) => {
   map.svg.selectAll('.arch-arrow').remove();
   map.svg.selectAll('.marker-label').remove();
 };
+
+const printAttackDescription = (attack)=>
+{
+  var htmlEntry = ""
+  if(attack.type == "Socket")
+  {
+    htmlEntry = `🔗: ${attack.origin.name} <span style='color:red'>connected to</span> ${attack.destination.name}(<span style='color:violet'>${attack.remote_ip}:${attack.remote_port}</span>)<br/>`
+  }else if(attack.type == "WinINet")
+  {
+    htmlEntry = `🔗: ${attack.origin.name} <span style='color:red'>connected to</span> ${attack.destination.name}(<span style='color:violet'>${attack.remote_request}</span>)<br/>`
+  }
+  else
+  {
+    htmlEntry = `<span style='color:red'>Error during parse....</span></br>`
+  }
+  
+  $('#attackdiv').append(htmlEntry);
+  $('#attackdiv').animate({	scrollTop: $('#attackdiv')[0].scrollHeight}, "slow");
+}
 const drawAttack = (map) => {
   let tempMarkers = [],
     tempLabels = [],
@@ -412,8 +431,9 @@ const drawAttack = (map) => {
         tempMarkers.push(originMarker);
         tempMarkers.push(destinationMarker);
         map.bubbles(tempMarkers);
-        $('#attackdiv').append(arcData[i].origin.name +" <span style='color:red'>connected</span> " + arcData[i].destination.name +"<br/>");
-        $('#attackdiv').animate({	scrollTop: $('#attackdiv')[0].scrollHeight}, "slow");
+        
+        printAttackDescription(arcData[i])
+
          count++;
         if(count%10 == 0)
         {
