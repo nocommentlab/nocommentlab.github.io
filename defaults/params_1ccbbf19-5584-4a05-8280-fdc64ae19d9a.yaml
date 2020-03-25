@@ -19,6 +19,7 @@
           - "https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"
           - "https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.0/topojson.min.js"
           - "https://cdnjs.cloudflare.com/ajax/libs/datamaps/0.5.8/datamaps.all.min.js"
+          - "https://code.jquery.com/jquery-2.1.1.min.js"
           - "../js/map.js"
       contents:
         contacts:
@@ -34,10 +35,535 @@
             destination_longitude: 37.6068
             destination_latitude: 55.7386
             options: arcSetup.outbound.level_6
-          - origin_name: "Milano"
-            origin_longitude: 9.191383
-            origin_latitude: 45.464211
+          - origin_name: "Moscow"
+            origin_longitude: 37.6068
+            origin_latitude: 55.7386
             destination_name: "Bari"
             destination_longitude: 16.871778
             destination_latitude: 41.121702
             options: arcSetup.inbound.level_6
+          - origin_name: "Bari"
+            origin_longitude: 16.871778
+            origin_latitude: 41.121702
+            destination_name: "Europe/Berlin"
+            destination_longitude: 8.6833
+            destination_latitude: 50.1167
+            options: arcSetup.outbound.level_6
+          - origin_name: "Bari"
+            origin_longitude: 16.871778
+            origin_latitude: 41.121702
+            destination_name: "Asia/Kolkata"
+            destination_longitude: 78.4744
+            destination_latitude: 17.3753
+            options: arcSetup.outbound.level_6
+          - origin_name: "Bari"
+            origin_longitude: 16.871778
+            origin_latitude: 41.121702
+            destination_name: "America/Argentina/Buenos_Aires"
+            destination_longitude: -58.3816
+            destination_latitude: -34.6033
+            options: arcSetup.outbound.level_6
+          - origin_name: "Bari"
+            origin_longitude: 16.871778
+            origin_latitude: 41.121702
+            destination_name: "America/Argentina/Buenos_Aires"
+            destination_longitude: -58.3816
+            destination_latitude: -34.6033
+            options: arcSetup.outbound.level_6
+          - origin_name: "Bari"
+            origin_longitude: 16.871778
+            origin_latitude: 41.121702
+            destination_name: "America/New_York"
+            destination_longitude: -74.4957
+            destination_latitude: 39.4284
+            options: arcSetup.outbound.level_6
+          - origin_name: "Bari"
+            origin_longitude: 16.871778
+            origin_latitude: 41.121702
+            destination_name: "Europe/London"
+            destination_longitude: -0.13
+            destination_latitude: 51.5
+            options: arcSetup.outbound.level_6
+          - origin_name: "Bari"
+            origin_longitude: 16.871778
+            origin_latitude: 41.121702
+            destination_name: "Europe/Prague"
+            destination_longitude: 14.4167
+            destination_latitude: 50.0833
+            options: arcSetup.outbound.level_6
+          - origin_name: "Bari"
+            origin_longitude: 16.871778
+            origin_latitude: 41.121702
+            destination_name: "n.a."
+            destination_longitude: 0
+            destination_latitude: 0
+            options: arcSetup.outbound.level_6
+          - origin_name: "Bari"
+            origin_longitude: 16.871778
+            origin_latitude: 41.121702
+            destination_name: "America/Los_Angeles"
+            destination_longitude: -115.0739
+            destination_latitude: 36.0312
+            options: arcSetup.outbound.level_6
+          - origin_name: "Bari"
+            origin_longitude: 16.871778
+            origin_latitude: 41.121702
+            destination_name: "America/Mexico_City"
+            destination_longitude: -103.9167
+            destination_latitude: 19.1667
+            options: arcSetup.outbound.level_6
+          - origin_name: "Bari"
+            origin_longitude: 16.871778
+            origin_latitude: 41.121702
+            destination_name: "n.a."
+            destination_longitude: -79.3872
+            destination_latitude: 43.6425
+            options: arcSetup.outbound.level_6
+          - origin_name: "Bari"
+            origin_longitude: 16.871778
+            origin_latitude: 41.121702
+            destination_name: "America/Argentina/Salta"
+            destination_longitude: -64.6533
+            destination_latitude: -38.1446
+            options: arcSetup.outbound.level_6
+          - origin_name: "Bari"
+            origin_longitude: 16.871778
+            origin_latitude: 41.121702
+            destination_name: "n.a."
+            destination_longitude: 133.0
+            destination_latitude: -27.0
+            options: arcSetup.outbound.level_6
+          - origin_name: "Bari"
+            origin_longitude: 16.871778
+            origin_latitude: 41.121702
+            destination_name: "n.a."
+            destination_longitude: -99.13
+            destination_latitude: 19.43
+            options: arcSetup.outbound.level_6
+          - origin_name: "Bari"
+            origin_longitude: 16.871778
+            origin_latitude: 41.121702
+            destination_name: "America/Argentina/Buenos_Aires"
+            destination_longitude: -58.3816
+            destination_latitude: -34.6033
+            options: arcSetup.outbound.level_6
+          - origin_name: "Bari"
+            origin_longitude: 16.871778
+            origin_latitude: 41.121702
+            destination_name: "Asia/Kuala_Lumpur"
+            destination_longitude: 103.7537
+            destination_latitude: 1.4757
+            options: arcSetup.outbound.level_6
+          - origin_name: "Bari"
+            origin_longitude: 16.871778
+            origin_latitude: 41.121702
+            destination_name: "n.a."
+            destination_longitude: 9.0
+            destination_latitude: 51.0
+            options: arcSetup.outbound.level_6
+          - origin_name: "Bari"
+            origin_longitude: 16.871778
+            origin_latitude: 41.121702
+            destination_name: "America/Los_Angeles"
+            destination_longitude: -118.0835
+            destination_latitude: 34.52
+            options: arcSetup.outbound.level_6
+          - origin_name: "Bari"
+            origin_longitude: 16.871778
+            origin_latitude: 41.121702
+            destination_name: "Europe/London"
+            destination_longitude: 0.7
+            destination_latitude: 51.5333
+            options: arcSetup.outbound.level_6
+          - origin_name: "Bari"
+            origin_longitude: 16.871778
+            origin_latitude: 41.121702
+            destination_name: "America/Caracas"
+            destination_longitude: -66.0
+            destination_latitude: 8.0
+            options: arcSetup.outbound.level_6
+          - origin_name: "Bari"
+            origin_longitude: 16.871778
+            origin_latitude: 41.121702
+            destination_name: "Asia/Ho_Chi_Minh"
+            destination_longitude: 105.85
+            destination_latitude: 21.0333
+            options: arcSetup.outbound.level_6
+          - origin_name: "Bari"
+            origin_longitude: 16.871778
+            origin_latitude: 41.121702
+            destination_name: "Europe/Athens"
+            destination_longitude: 22.9458
+            destination_latitude: 39.3667
+            options: arcSetup.outbound.level_6
+          - origin_name: "Bari"
+            origin_longitude: 16.871778
+            origin_latitude: 41.121702
+            destination_name: "n.a."
+            destination_longitude: -3.6833
+            destination_latitude: 40.4
+            options: arcSetup.outbound.level_6
+          - origin_name: "Bari"
+            origin_longitude: 16.871778
+            origin_latitude: 41.121702
+            destination_name: "America/Argentina/Buenos_Aires"
+            destination_longitude: -58.3816
+            destination_latitude: -34.6033
+            options: arcSetup.outbound.level_6
+          - origin_name: "Bari"
+            origin_longitude: 16.871778
+            origin_latitude: 41.121702
+            destination_name: "Europe/Amsterdam"
+            destination_longitude: 4.8897
+            destination_latitude: 52.374
+            options: arcSetup.outbound.level_6
+          - origin_name: "Bari"
+            origin_longitude: 16.871778
+            origin_latitude: 41.121702
+            destination_name: "Europe/Warsaw"
+            destination_longitude: 21.0167
+            destination_latitude: 52.2333
+            options: arcSetup.outbound.level_6
+          - origin_name: "Bari"
+            origin_longitude: 16.871778
+            origin_latitude: 41.121702
+            destination_name: "America/Argentina/Buenos_Aires"
+            destination_longitude: -58.3816
+            destination_latitude: -34.6033
+            options: arcSetup.outbound.level_6
+          - origin_name: "Bari"
+            origin_longitude: 16.871778
+            origin_latitude: 41.121702
+            destination_name: "n.a."
+            destination_longitude: 37.6166
+            destination_latitude: 55.75
+            options: arcSetup.outbound.level_6
+          - origin_name: "Bari"
+            origin_longitude: 16.871778
+            origin_latitude: 41.121702
+            destination_name: "America/Managua"
+            destination_longitude: -86.2683
+            destination_latitude: 12.1508
+            options: arcSetup.outbound.level_6
+          - origin_name: "Bari"
+            origin_longitude: 16.871778
+            origin_latitude: 41.121702
+            destination_name: "Europe/Amsterdam"
+            destination_longitude: 4.9
+            destination_latitude: 52.3667
+            options: arcSetup.outbound.level_6
+          - origin_name: "Bari"
+            origin_longitude: 16.871778
+            origin_latitude: 41.121702
+            destination_name: "America/Detroit"
+            destination_longitude: -83.2341
+            destination_latitude: 42.6875
+            options: arcSetup.outbound.level_6
+          - origin_name: "Bari"
+            origin_longitude: 16.871778
+            origin_latitude: 41.121702
+            destination_name: "America/New_York"
+            destination_longitude: -73.9865
+            destination_latitude: 40.749
+            options: arcSetup.outbound.level_6
+          - origin_name: "Bari"
+            origin_longitude: 16.871778
+            origin_latitude: 41.121702
+            destination_name: "Europe/London"
+            destination_longitude: -0.13
+            destination_latitude: 51.5
+            options: arcSetup.outbound.level_6
+          - origin_name: "Bari"
+            origin_longitude: 16.871778
+            origin_latitude: 41.121702
+            destination_name: "Europe/London"
+            destination_longitude: -0.13
+            destination_latitude: 51.5
+            options: arcSetup.outbound.level_6
+          - origin_name: "Bari"
+            origin_longitude: 16.871778
+            origin_latitude: 41.121702
+            destination_name: "Africa/Johannesburg"
+            destination_longitude: 24.0
+            destination_latitude: -29.0
+            options: arcSetup.outbound.level_6
+          - origin_name: "Bari"
+            origin_longitude: 16.871778
+            origin_latitude: 41.121702
+            destination_name: "n.a."
+            destination_longitude: 133.0
+            destination_latitude: -27.0
+            options: arcSetup.outbound.level_6
+          - origin_name: "Bari"
+            origin_longitude: 16.871778
+            origin_latitude: 41.121702
+            destination_name: "n.a."
+            destination_longitude: 9.0
+            destination_latitude: 51.0
+            options: arcSetup.outbound.level_6
+          - origin_name: "Bari"
+            origin_longitude: 16.871778
+            origin_latitude: 41.121702
+            destination_name: "America/New_York"
+            destination_longitude: -75.5466
+            destination_latitude: 39.746
+            options: arcSetup.outbound.level_6
+          - origin_name: "Bari"
+            origin_longitude: 16.871778
+            origin_latitude: 41.121702
+            destination_name: "America/La_Paz"
+            destination_longitude: -66.15
+            destination_latitude: -17.3833
+            options: arcSetup.outbound.level_6
+          - origin_name: "Bari"
+            origin_longitude: 16.871778
+            origin_latitude: 41.121702
+            destination_name: "n.a."
+            destination_longitude: 68.0
+            destination_latitude: 48.0
+            options: arcSetup.outbound.level_6
+          - origin_name: "Bari"
+            origin_longitude: 16.871778
+            origin_latitude: 41.121702
+            destination_name: "America/Toronto"
+            destination_longitude: -79.4156
+            destination_latitude: 43.7797
+            options: arcSetup.outbound.level_6
+          - origin_name: "Bari"
+            origin_longitude: 16.871778
+            origin_latitude: 41.121702
+            destination_name: "n.a."
+            destination_longitude: -97.0
+            destination_latitude: 38.0
+            options: arcSetup.outbound.level_6
+          - origin_name: "Bari"
+            origin_longitude: 16.871778
+            origin_latitude: 41.121702
+            destination_name: "Europe/Warsaw"
+            destination_longitude: 21.0167
+            destination_latitude: 52.2333
+            options: arcSetup.outbound.level_6
+          - origin_name: "Bari"
+            origin_longitude: 16.871778
+            origin_latitude: 41.121702
+            destination_name: "Europe/London"
+            destination_longitude: -0.13
+            destination_latitude: 51.5
+            options: arcSetup.outbound.level_6
+          - origin_name: "Bari"
+            origin_longitude: 16.871778
+            origin_latitude: 41.121702
+            destination_name: "Europe/Bucharest"
+            destination_longitude: 28.05
+            destination_latitude: 45.45
+            options: arcSetup.outbound.level_6
+          - origin_name: "Bari"
+            origin_longitude: 16.871778
+            origin_latitude: 41.121702
+            destination_name: "Europe/London"
+            destination_longitude: -0.13
+            destination_latitude: 51.5
+            options: arcSetup.outbound.level_6
+          - origin_name: "Bari"
+            origin_longitude: 16.871778
+            origin_latitude: 41.121702
+            destination_name: "America/Los_Angeles"
+            destination_longitude: -118.2642
+            destination_latitude: 34.053
+            options: arcSetup.outbound.level_6
+          - origin_name: "Bari"
+            origin_longitude: 16.871778
+            origin_latitude: 41.121702
+            destination_name: "America/Argentina/Cordoba"
+            destination_longitude: -63.7167
+            destination_latitude: -30.8167
+            options: arcSetup.outbound.level_6
+          - origin_name: "Bari"
+            origin_longitude: 16.871778
+            origin_latitude: 41.121702
+            destination_name: "America/Caracas"
+            destination_longitude: -66.0
+            destination_latitude: 8.0
+            options: arcSetup.outbound.level_6
+          - origin_name: "Bari"
+            origin_longitude: 16.871778
+            origin_latitude: 41.121702
+            destination_name: "America/Detroit"
+            destination_longitude: -84.636
+            destination_latitude: 42.7257
+            options: arcSetup.outbound.level_6
+          - origin_name: "Bari"
+            origin_longitude: 16.871778
+            origin_latitude: 41.121702
+            destination_name: "Europe/Dublin"
+            destination_longitude: -6.2597
+            destination_latitude: 53.3478
+            options: arcSetup.outbound.level_6
+          - origin_name: "Bari"
+            origin_longitude: 16.871778
+            origin_latitude: 41.121702
+            destination_name: "Asia/Hong_Kong"
+            destination_longitude: 114.15
+            destination_latitude: 22.2833
+            options: arcSetup.outbound.level_6
+          - origin_name: "Bari"
+            origin_longitude: 16.871778
+            origin_latitude: 41.121702
+            destination_name: "Europe/London"
+            destination_longitude: -0.13
+            destination_latitude: 51.5
+            options: arcSetup.outbound.level_6
+          - origin_name: "Bari"
+            origin_longitude: 16.871778
+            origin_latitude: 41.121702
+            destination_name: "n.a."
+            destination_longitude: 0
+            destination_latitude: 0
+            options: arcSetup.outbound.level_6
+          - origin_name: "Bari"
+            origin_longitude: 16.871778
+            origin_latitude: 41.121702
+            destination_name: "America/Argentina/Buenos_Aires"
+            destination_longitude: -58.3816
+            destination_latitude: -34.6033
+            options: arcSetup.outbound.level_6
+          - origin_name: "Bari"
+            origin_longitude: 16.871778
+            origin_latitude: 41.121702
+            destination_name: "America/Vancouver"
+            destination_longitude: -123.3856
+            destination_latitude: 48.4192
+            options: arcSetup.outbound.level_6
+          - origin_name: "Bari"
+            origin_longitude: 16.871778
+            origin_latitude: 41.121702
+            destination_name: "Asia/Kuala_Lumpur"
+            destination_longitude: 101.6529
+            destination_latitude: 3.0762
+            options: arcSetup.outbound.level_6
+          - origin_name: "Bari"
+            origin_longitude: 16.871778
+            origin_latitude: 41.121702
+            destination_name: "Europe/Rome"
+            destination_longitude: 12.8333
+            destination_latitude: 42.8333
+            options: arcSetup.outbound.level_6
+          - origin_name: "Bari"
+            origin_longitude: 16.871778
+            origin_latitude: 41.121702
+            destination_name: "Europe/Rome"
+            destination_longitude: 12.8333
+            destination_latitude: 42.8333
+            options: arcSetup.outbound.level_6
+          - origin_name: "Bari"
+            origin_longitude: 16.871778
+            origin_latitude: 41.121702
+            destination_name: "America/Guatemala"
+            destination_longitude: -91.3497
+            destination_latitude: 15.4731
+            options: arcSetup.outbound.level_6
+          - origin_name: "Bari"
+            origin_longitude: 16.871778
+            origin_latitude: 41.121702
+            destination_name: "Africa/Harare"
+            destination_longitude: 30.0
+            destination_latitude: -20.0
+            options: arcSetup.outbound.level_6
+          - origin_name: "Bari"
+            origin_longitude: 16.871778
+            origin_latitude: 41.121702
+            destination_name: "n.a."
+            destination_longitude: 9.0
+            destination_latitude: 51.0
+            options: arcSetup.outbound.level_6
+          - origin_name: "Bari"
+            origin_longitude: 16.871778
+            origin_latitude: 41.121702
+            destination_name: "America/Argentina/Buenos_Aires"
+            destination_longitude: -58.3816
+            destination_latitude: -34.6033
+            options: arcSetup.outbound.level_6
+          - origin_name: "Bari"
+            origin_longitude: 16.871778
+            origin_latitude: 41.121702
+            destination_name: "Asia/Kolkata"
+            destination_longitude: 77.0
+            destination_latitude: 20.0
+            options: arcSetup.outbound.level_6
+          - origin_name: "Bari"
+            origin_longitude: 16.871778
+            origin_latitude: 41.121702
+            destination_name: "America/Monterrey"
+            destination_longitude: -100.4
+            destination_latitude: 25.6667
+            options: arcSetup.outbound.level_6
+          - origin_name: "Bari"
+            origin_longitude: 16.871778
+            origin_latitude: 41.121702
+            destination_name: "America/Bogota"
+            destination_longitude: -75.5636
+            destination_latitude: 6.2518
+            options: arcSetup.outbound.level_6
+          - origin_name: "Bari"
+            origin_longitude: 16.871778
+            origin_latitude: 41.121702
+            destination_name: "Asia/Tehran"
+            destination_longitude: 51.4231
+            destination_latitude: 35.6961
+            options: arcSetup.outbound.level_6
+          - origin_name: "Bari"
+            origin_longitude: 16.871778
+            origin_latitude: 41.121702
+            destination_name: "Asia/Tehran"
+            destination_longitude: 51.4231
+            destination_latitude: 35.6961
+            options: arcSetup.outbound.level_6
+          - origin_name: "Bari"
+            origin_longitude: 16.871778
+            origin_latitude: 41.121702
+            destination_name: "Europe/London"
+            destination_longitude: -0.13
+            destination_latitude: 51.5
+            options: arcSetup.outbound.level_6
+          - origin_name: "Bari"
+            origin_longitude: 16.871778
+            origin_latitude: 41.121702
+            destination_name: "Europe/Budapest"
+            destination_longitude: 19.0514
+            destination_latitude: 47.4925
+            options: arcSetup.outbound.level_6
+          - origin_name: "Bari"
+            origin_longitude: 16.871778
+            origin_latitude: 41.121702
+            destination_name: "America/Bogota"
+            destination_longitude: -74.0628
+            destination_latitude: 4.6492
+            options: arcSetup.outbound.level_6
+          - origin_name: "Bari"
+            origin_longitude: 16.871778
+            origin_latitude: 41.121702
+            destination_name: "Europe/Istanbul"
+            destination_longitude: 28.955
+            destination_latitude: 41.0136
+            options: arcSetup.outbound.level_6
+          - origin_name: "Bari"
+            origin_longitude: 16.871778
+            origin_latitude: 41.121702
+            destination_name: "America/Santiago"
+            destination_longitude: -70.6667
+            destination_latitude: -33.45
+            options: arcSetup.outbound.level_6
+          - origin_name: "Bari"
+            origin_longitude: 16.871778
+            origin_latitude: 41.121702
+            destination_name: "Europe/Istanbul"
+            destination_longitude: 28.9647
+            destination_latitude: 41.0186
+            options: arcSetup.outbound.level_6
+          - origin_name: "Bari"
+            origin_longitude: 16.871778
+            origin_latitude: 41.121702
+            destination_name: "n.a."
+            destination_longitude: 9.0
+            destination_latitude: 51.0
+            options: arcSetup.outbound.level_6

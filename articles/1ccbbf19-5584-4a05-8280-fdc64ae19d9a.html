@@ -52,10 +52,12 @@
       <div id="content">
         <section id="article">
                               <h1 id="covid19-malware-reverse">Covid19 Malware Reverse</h1>
-                              <h2 id="another-way-to-spread-trickbot-emotet-by-taking-advantage-of-the-italian-situation">Another way to spread <del>Trickbot</del> Emotet by taking advantage of the italian situation</h2>
+                              <h2 id="another-way-to-spread-trickbot-by-taking-advantage-of-the-italian-situation">Another way to spread Trickbot by taking advantage of the italian situation</h2>
                               <h6 id="threat-attack-map"><code>Threat Attack Map</code></h6>
                               <div id="container" class="map-container">
+                              <div id="attackdiv" class="map-visualize--details-container">
 
+                              </div>
                               </div>
                               <h6 id="introduction"><code>Introduction</code></h6>
                               <p><strong>As a very Italian(🇮🇹) responsible person, I’m in self quarantine at the moment</strong>; my country is really struggling with Covid-19 and our President told us to stay at home.</p>
@@ -117,6 +119,13 @@
                               <figure>
                               <img src="../assets/images/fc464042-36f4-46af-9aab-42ced43add70.png" alt="" /><figcaption>Whois IP</figcaption>
                               </figure>
+                              <h6 id="update"><code>Update</code></h6>
+                              <p>After some days of observation I saw an unusual chain infection. Typically an infected document drops <code>Emotet</code> to creates the persistence and, after, <code>Emotet</code> drops <code>Trickbot</code> to steal sensitive data.</p>
+                              <p>In this infection, the situation is inverted, <code>Trickbot</code> drops <code>Emotet</code>. The attackers, probably, have as first goal steal sensitive information and after sell the access on the dark web.</p>
+                              <p>Tipically, this type of infection chain leads to a ransomware infection like <code>Ryuk</code></p>
+                              <figure>
+                              <img src="../assets/images/fffe39cf-b830-4282-bd14-4cb908fa93a1.jpg" alt="" /><figcaption>Ryuk, the protagonist of Death Note</figcaption>
+                              </figure>
                               <h6 id="ioc"><code>IoC</code></h6>
                               <p>You can find <a href="https://gist.github.com/nocommentlab/d9d815ecfd88fb1e487948c318d5b435">here</a> the extracted IoC.</p>
                   </section>
@@ -150,6 +159,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.0/topojson.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/datamaps/0.5.8/datamaps.all.min.js"></script>
+        <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
         <script src="../js/map.js"></script>
             <script>
     arcData=[
@@ -158,13 +168,387 @@
     destination: {name: "Moscow",coordinates:
     [37.6068, 55.7386]},
     options: arcSetup.outbound.level_6},
-        {origin: {name: "Milano",coordinates: [9.191383,
-    45.464211]},
+        {origin: {name: "Moscow",coordinates: [37.6068,
+    55.7386]},
     destination: {name: "Bari",coordinates:
     [16.871778, 41.121702]},
     options: arcSetup.inbound.level_6},
+        {origin: {name: "Bari",coordinates: [16.871778,
+    41.121702]},
+    destination: {name: "Europe/Berlin",coordinates:
+    [8.6833, 50.1167]},
+    options: arcSetup.outbound.level_6},
+        {origin: {name: "Bari",coordinates: [16.871778,
+    41.121702]},
+    destination: {name: "Asia/Kolkata",coordinates:
+    [78.4744, 17.3753]},
+    options: arcSetup.outbound.level_6},
+        {origin: {name: "Bari",coordinates: [16.871778,
+    41.121702]},
+    destination: {name: "America/Argentina/Buenos_Aires",coordinates:
+    [-58.3816, -34.6033]},
+    options: arcSetup.outbound.level_6},
+        {origin: {name: "Bari",coordinates: [16.871778,
+    41.121702]},
+    destination: {name: "America/Argentina/Buenos_Aires",coordinates:
+    [-58.3816, -34.6033]},
+    options: arcSetup.outbound.level_6},
+        {origin: {name: "Bari",coordinates: [16.871778,
+    41.121702]},
+    destination: {name: "America/New_York",coordinates:
+    [-74.4957, 39.4284]},
+    options: arcSetup.outbound.level_6},
+        {origin: {name: "Bari",coordinates: [16.871778,
+    41.121702]},
+    destination: {name: "Europe/London",coordinates:
+    [-0.13, 51.5]},
+    options: arcSetup.outbound.level_6},
+        {origin: {name: "Bari",coordinates: [16.871778,
+    41.121702]},
+    destination: {name: "Europe/Prague",coordinates:
+    [14.4167, 50.0833]},
+    options: arcSetup.outbound.level_6},
+        {origin: {name: "Bari",coordinates: [16.871778,
+    41.121702]},
+    destination: {name: "n.a.",coordinates:
+    [0, 0]},
+    options: arcSetup.outbound.level_6},
+        {origin: {name: "Bari",coordinates: [16.871778,
+    41.121702]},
+    destination: {name: "America/Los_Angeles",coordinates:
+    [-115.0739, 36.0312]},
+    options: arcSetup.outbound.level_6},
+        {origin: {name: "Bari",coordinates: [16.871778,
+    41.121702]},
+    destination: {name: "America/Mexico_City",coordinates:
+    [-103.9167, 19.1667]},
+    options: arcSetup.outbound.level_6},
+        {origin: {name: "Bari",coordinates: [16.871778,
+    41.121702]},
+    destination: {name: "n.a.",coordinates:
+    [-79.3872, 43.6425]},
+    options: arcSetup.outbound.level_6},
+        {origin: {name: "Bari",coordinates: [16.871778,
+    41.121702]},
+    destination: {name: "America/Argentina/Salta",coordinates:
+    [-64.6533, -38.1446]},
+    options: arcSetup.outbound.level_6},
+        {origin: {name: "Bari",coordinates: [16.871778,
+    41.121702]},
+    destination: {name: "n.a.",coordinates:
+    [133.0, -27.0]},
+    options: arcSetup.outbound.level_6},
+        {origin: {name: "Bari",coordinates: [16.871778,
+    41.121702]},
+    destination: {name: "n.a.",coordinates:
+    [-99.13, 19.43]},
+    options: arcSetup.outbound.level_6},
+        {origin: {name: "Bari",coordinates: [16.871778,
+    41.121702]},
+    destination: {name: "America/Argentina/Buenos_Aires",coordinates:
+    [-58.3816, -34.6033]},
+    options: arcSetup.outbound.level_6},
+        {origin: {name: "Bari",coordinates: [16.871778,
+    41.121702]},
+    destination: {name: "Asia/Kuala_Lumpur",coordinates:
+    [103.7537, 1.4757]},
+    options: arcSetup.outbound.level_6},
+        {origin: {name: "Bari",coordinates: [16.871778,
+    41.121702]},
+    destination: {name: "n.a.",coordinates:
+    [9.0, 51.0]},
+    options: arcSetup.outbound.level_6},
+        {origin: {name: "Bari",coordinates: [16.871778,
+    41.121702]},
+    destination: {name: "America/Los_Angeles",coordinates:
+    [-118.0835, 34.52]},
+    options: arcSetup.outbound.level_6},
+        {origin: {name: "Bari",coordinates: [16.871778,
+    41.121702]},
+    destination: {name: "Europe/London",coordinates:
+    [0.7, 51.5333]},
+    options: arcSetup.outbound.level_6},
+        {origin: {name: "Bari",coordinates: [16.871778,
+    41.121702]},
+    destination: {name: "America/Caracas",coordinates:
+    [-66.0, 8.0]},
+    options: arcSetup.outbound.level_6},
+        {origin: {name: "Bari",coordinates: [16.871778,
+    41.121702]},
+    destination: {name: "Asia/Ho_Chi_Minh",coordinates:
+    [105.85, 21.0333]},
+    options: arcSetup.outbound.level_6},
+        {origin: {name: "Bari",coordinates: [16.871778,
+    41.121702]},
+    destination: {name: "Europe/Athens",coordinates:
+    [22.9458, 39.3667]},
+    options: arcSetup.outbound.level_6},
+        {origin: {name: "Bari",coordinates: [16.871778,
+    41.121702]},
+    destination: {name: "n.a.",coordinates:
+    [-3.6833, 40.4]},
+    options: arcSetup.outbound.level_6},
+        {origin: {name: "Bari",coordinates: [16.871778,
+    41.121702]},
+    destination: {name: "America/Argentina/Buenos_Aires",coordinates:
+    [-58.3816, -34.6033]},
+    options: arcSetup.outbound.level_6},
+        {origin: {name: "Bari",coordinates: [16.871778,
+    41.121702]},
+    destination: {name: "Europe/Amsterdam",coordinates:
+    [4.8897, 52.374]},
+    options: arcSetup.outbound.level_6},
+        {origin: {name: "Bari",coordinates: [16.871778,
+    41.121702]},
+    destination: {name: "Europe/Warsaw",coordinates:
+    [21.0167, 52.2333]},
+    options: arcSetup.outbound.level_6},
+        {origin: {name: "Bari",coordinates: [16.871778,
+    41.121702]},
+    destination: {name: "America/Argentina/Buenos_Aires",coordinates:
+    [-58.3816, -34.6033]},
+    options: arcSetup.outbound.level_6},
+        {origin: {name: "Bari",coordinates: [16.871778,
+    41.121702]},
+    destination: {name: "n.a.",coordinates:
+    [37.6166, 55.75]},
+    options: arcSetup.outbound.level_6},
+        {origin: {name: "Bari",coordinates: [16.871778,
+    41.121702]},
+    destination: {name: "America/Managua",coordinates:
+    [-86.2683, 12.1508]},
+    options: arcSetup.outbound.level_6},
+        {origin: {name: "Bari",coordinates: [16.871778,
+    41.121702]},
+    destination: {name: "Europe/Amsterdam",coordinates:
+    [4.9, 52.3667]},
+    options: arcSetup.outbound.level_6},
+        {origin: {name: "Bari",coordinates: [16.871778,
+    41.121702]},
+    destination: {name: "America/Detroit",coordinates:
+    [-83.2341, 42.6875]},
+    options: arcSetup.outbound.level_6},
+        {origin: {name: "Bari",coordinates: [16.871778,
+    41.121702]},
+    destination: {name: "America/New_York",coordinates:
+    [-73.9865, 40.749]},
+    options: arcSetup.outbound.level_6},
+        {origin: {name: "Bari",coordinates: [16.871778,
+    41.121702]},
+    destination: {name: "Europe/London",coordinates:
+    [-0.13, 51.5]},
+    options: arcSetup.outbound.level_6},
+        {origin: {name: "Bari",coordinates: [16.871778,
+    41.121702]},
+    destination: {name: "Europe/London",coordinates:
+    [-0.13, 51.5]},
+    options: arcSetup.outbound.level_6},
+        {origin: {name: "Bari",coordinates: [16.871778,
+    41.121702]},
+    destination: {name: "Africa/Johannesburg",coordinates:
+    [24.0, -29.0]},
+    options: arcSetup.outbound.level_6},
+        {origin: {name: "Bari",coordinates: [16.871778,
+    41.121702]},
+    destination: {name: "n.a.",coordinates:
+    [133.0, -27.0]},
+    options: arcSetup.outbound.level_6},
+        {origin: {name: "Bari",coordinates: [16.871778,
+    41.121702]},
+    destination: {name: "n.a.",coordinates:
+    [9.0, 51.0]},
+    options: arcSetup.outbound.level_6},
+        {origin: {name: "Bari",coordinates: [16.871778,
+    41.121702]},
+    destination: {name: "America/New_York",coordinates:
+    [-75.5466, 39.746]},
+    options: arcSetup.outbound.level_6},
+        {origin: {name: "Bari",coordinates: [16.871778,
+    41.121702]},
+    destination: {name: "America/La_Paz",coordinates:
+    [-66.15, -17.3833]},
+    options: arcSetup.outbound.level_6},
+        {origin: {name: "Bari",coordinates: [16.871778,
+    41.121702]},
+    destination: {name: "n.a.",coordinates:
+    [68.0, 48.0]},
+    options: arcSetup.outbound.level_6},
+        {origin: {name: "Bari",coordinates: [16.871778,
+    41.121702]},
+    destination: {name: "America/Toronto",coordinates:
+    [-79.4156, 43.7797]},
+    options: arcSetup.outbound.level_6},
+        {origin: {name: "Bari",coordinates: [16.871778,
+    41.121702]},
+    destination: {name: "n.a.",coordinates:
+    [-97.0, 38.0]},
+    options: arcSetup.outbound.level_6},
+        {origin: {name: "Bari",coordinates: [16.871778,
+    41.121702]},
+    destination: {name: "Europe/Warsaw",coordinates:
+    [21.0167, 52.2333]},
+    options: arcSetup.outbound.level_6},
+        {origin: {name: "Bari",coordinates: [16.871778,
+    41.121702]},
+    destination: {name: "Europe/London",coordinates:
+    [-0.13, 51.5]},
+    options: arcSetup.outbound.level_6},
+        {origin: {name: "Bari",coordinates: [16.871778,
+    41.121702]},
+    destination: {name: "Europe/Bucharest",coordinates:
+    [28.05, 45.45]},
+    options: arcSetup.outbound.level_6},
+        {origin: {name: "Bari",coordinates: [16.871778,
+    41.121702]},
+    destination: {name: "Europe/London",coordinates:
+    [-0.13, 51.5]},
+    options: arcSetup.outbound.level_6},
+        {origin: {name: "Bari",coordinates: [16.871778,
+    41.121702]},
+    destination: {name: "America/Los_Angeles",coordinates:
+    [-118.2642, 34.053]},
+    options: arcSetup.outbound.level_6},
+        {origin: {name: "Bari",coordinates: [16.871778,
+    41.121702]},
+    destination: {name: "America/Argentina/Cordoba",coordinates:
+    [-63.7167, -30.8167]},
+    options: arcSetup.outbound.level_6},
+        {origin: {name: "Bari",coordinates: [16.871778,
+    41.121702]},
+    destination: {name: "America/Caracas",coordinates:
+    [-66.0, 8.0]},
+    options: arcSetup.outbound.level_6},
+        {origin: {name: "Bari",coordinates: [16.871778,
+    41.121702]},
+    destination: {name: "America/Detroit",coordinates:
+    [-84.636, 42.7257]},
+    options: arcSetup.outbound.level_6},
+        {origin: {name: "Bari",coordinates: [16.871778,
+    41.121702]},
+    destination: {name: "Europe/Dublin",coordinates:
+    [-6.2597, 53.3478]},
+    options: arcSetup.outbound.level_6},
+        {origin: {name: "Bari",coordinates: [16.871778,
+    41.121702]},
+    destination: {name: "Asia/Hong_Kong",coordinates:
+    [114.15, 22.2833]},
+    options: arcSetup.outbound.level_6},
+        {origin: {name: "Bari",coordinates: [16.871778,
+    41.121702]},
+    destination: {name: "Europe/London",coordinates:
+    [-0.13, 51.5]},
+    options: arcSetup.outbound.level_6},
+        {origin: {name: "Bari",coordinates: [16.871778,
+    41.121702]},
+    destination: {name: "n.a.",coordinates:
+    [0, 0]},
+    options: arcSetup.outbound.level_6},
+        {origin: {name: "Bari",coordinates: [16.871778,
+    41.121702]},
+    destination: {name: "America/Argentina/Buenos_Aires",coordinates:
+    [-58.3816, -34.6033]},
+    options: arcSetup.outbound.level_6},
+        {origin: {name: "Bari",coordinates: [16.871778,
+    41.121702]},
+    destination: {name: "America/Vancouver",coordinates:
+    [-123.3856, 48.4192]},
+    options: arcSetup.outbound.level_6},
+        {origin: {name: "Bari",coordinates: [16.871778,
+    41.121702]},
+    destination: {name: "Asia/Kuala_Lumpur",coordinates:
+    [101.6529, 3.0762]},
+    options: arcSetup.outbound.level_6},
+        {origin: {name: "Bari",coordinates: [16.871778,
+    41.121702]},
+    destination: {name: "Europe/Rome",coordinates:
+    [12.8333, 42.8333]},
+    options: arcSetup.outbound.level_6},
+        {origin: {name: "Bari",coordinates: [16.871778,
+    41.121702]},
+    destination: {name: "Europe/Rome",coordinates:
+    [12.8333, 42.8333]},
+    options: arcSetup.outbound.level_6},
+        {origin: {name: "Bari",coordinates: [16.871778,
+    41.121702]},
+    destination: {name: "America/Guatemala",coordinates:
+    [-91.3497, 15.4731]},
+    options: arcSetup.outbound.level_6},
+        {origin: {name: "Bari",coordinates: [16.871778,
+    41.121702]},
+    destination: {name: "Africa/Harare",coordinates:
+    [30.0, -20.0]},
+    options: arcSetup.outbound.level_6},
+        {origin: {name: "Bari",coordinates: [16.871778,
+    41.121702]},
+    destination: {name: "n.a.",coordinates:
+    [9.0, 51.0]},
+    options: arcSetup.outbound.level_6},
+        {origin: {name: "Bari",coordinates: [16.871778,
+    41.121702]},
+    destination: {name: "America/Argentina/Buenos_Aires",coordinates:
+    [-58.3816, -34.6033]},
+    options: arcSetup.outbound.level_6},
+        {origin: {name: "Bari",coordinates: [16.871778,
+    41.121702]},
+    destination: {name: "Asia/Kolkata",coordinates:
+    [77.0, 20.0]},
+    options: arcSetup.outbound.level_6},
+        {origin: {name: "Bari",coordinates: [16.871778,
+    41.121702]},
+    destination: {name: "America/Monterrey",coordinates:
+    [-100.4, 25.6667]},
+    options: arcSetup.outbound.level_6},
+        {origin: {name: "Bari",coordinates: [16.871778,
+    41.121702]},
+    destination: {name: "America/Bogota",coordinates:
+    [-75.5636, 6.2518]},
+    options: arcSetup.outbound.level_6},
+        {origin: {name: "Bari",coordinates: [16.871778,
+    41.121702]},
+    destination: {name: "Asia/Tehran",coordinates:
+    [51.4231, 35.6961]},
+    options: arcSetup.outbound.level_6},
+        {origin: {name: "Bari",coordinates: [16.871778,
+    41.121702]},
+    destination: {name: "Asia/Tehran",coordinates:
+    [51.4231, 35.6961]},
+    options: arcSetup.outbound.level_6},
+        {origin: {name: "Bari",coordinates: [16.871778,
+    41.121702]},
+    destination: {name: "Europe/London",coordinates:
+    [-0.13, 51.5]},
+    options: arcSetup.outbound.level_6},
+        {origin: {name: "Bari",coordinates: [16.871778,
+    41.121702]},
+    destination: {name: "Europe/Budapest",coordinates:
+    [19.0514, 47.4925]},
+    options: arcSetup.outbound.level_6},
+        {origin: {name: "Bari",coordinates: [16.871778,
+    41.121702]},
+    destination: {name: "America/Bogota",coordinates:
+    [-74.0628, 4.6492]},
+    options: arcSetup.outbound.level_6},
+        {origin: {name: "Bari",coordinates: [16.871778,
+    41.121702]},
+    destination: {name: "Europe/Istanbul",coordinates:
+    [28.955, 41.0136]},
+    options: arcSetup.outbound.level_6},
+        {origin: {name: "Bari",coordinates: [16.871778,
+    41.121702]},
+    destination: {name: "America/Santiago",coordinates:
+    [-70.6667, -33.45]},
+    options: arcSetup.outbound.level_6},
+        {origin: {name: "Bari",coordinates: [16.871778,
+    41.121702]},
+    destination: {name: "Europe/Istanbul",coordinates:
+    [28.9647, 41.0186]},
+    options: arcSetup.outbound.level_6},
+        {origin: {name: "Bari",coordinates: [16.871778,
+    41.121702]},
+    destination: {name: "n.a.",coordinates:
+    [9.0, 51.0]},
+    options: arcSetup.outbound.level_6},
         ]
-    //drawAttack(map);
   </script>
     </body>
 
