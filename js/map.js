@@ -16,7 +16,7 @@ let element = document.getElementById('container'),
   path, projection, d3Zoom,
   selectedFill = 'rgba(255,255,255, 0.2)',
   arcSetup = {
-    inbound: {
+    green: {
       level_1: {
         strokeColor: 'rgb(78, 249, 81)',
         strokeWidth: .2
@@ -40,9 +40,9 @@ let element = document.getElementById('container'),
       level_6: {
         strokeColor: 'rgb(78, 249, 81)',
         strokeWidth: 1.2
-      }
+      },
     },
-    outbound: {
+    red: {
       level_1: {
         strokeColor: 'rgb(255, 82, 82)',
         strokeWidth: 0.2
@@ -65,6 +65,32 @@ let element = document.getElementById('container'),
       },
       level_6: {
         strokeColor: 'rgb(255, 82, 82)',
+        strokeWidth: 1.2
+      }
+    },
+    yellow: {
+      level_1: {
+        strokeColor: 'yellow',
+        strokeWidth: 0.2
+      },
+      level_2: {
+        strokeColor: 'yellow',
+        strokeWidth: 0.4
+      },
+      level_3: {
+        strokeColor: 'yellow',
+        strokeWidth: 0.6
+      },
+      level_4: {
+        strokeColor: 'yellow',
+        strokeWidth: 0.8
+      },
+      level_5: {
+        strokeColor: 'yellow',
+        strokeWidth: 1
+      },
+      level_6: {
+        strokeColor: 'yellow',
         strokeWidth: 1.2
       }
     }
@@ -384,10 +410,10 @@ const printAttackDescription = (attack)=>
   var htmlEntry = ""
   if(attack.type == "Socket")
   {
-    htmlEntry = `🔗: ${attack.origin.name} <span style='color:red'>connected to</span> ${attack.destination.name}(<span style='color:violet'>${attack.remote_ip}:${attack.remote_port}</span>)<br/>`
+    htmlEntry = `🔗: ${attack.origin.name} <span style='color:red'>connected to</span> ${attack.destination.name}(<span style='color:${attack.options.strokeColor}'>${attack.remote_ip}:${attack.remote_port}</span>)<br/>`
   }else if(attack.type == "WinINet")
   {
-    htmlEntry = `🔗: ${attack.origin.name} <span style='color:red'>connected to</span> ${attack.destination.name}(<span style='color:violet'>${attack.remote_request}</span>)<br/>`
+    htmlEntry = `🔗: ${attack.origin.name} <span style='color:red'>connected to</span> ${attack.destination.name}(<span style='color:${attack.options.strokeColor}'>${attack.remote_request}</span>)<br/>`
   }
   else
   {

@@ -34,7 +34,7 @@
             destination_name: "Moscow"
             destination_longitude: 37.6068
             destination_latitude: 55.7386
-            options: arcSetup.outbound.level_6
+            options: arcSetup.green.level_6
             type: Socket
             remote_ip: 95.181.152.55
             remote_port: 443
@@ -47,11 +47,11 @@
             type: Socket
             remote_ip: 91.253.237.44
             remote_port: 50324
-            options: arcSetup.inbound.level_6
+            options: arcSetup.green.level_6
           - destination_latitude: -34.6033
             destination_longitude: -58.3816
             destination_name: America/Argentina/Buenos_Aires
-            options: arcSetup.inbound.level_6
+            options: arcSetup.green.level_6
             origin_latitude: 41.121702
             origin_longitude: 16.871778
             origin_name: Bari
@@ -63,7 +63,7 @@
           - destination_latitude: -34.6033
             destination_longitude: -58.3816
             destination_name: America/Argentina/Buenos_Aires
-            options: arcSetup.inbound.level_6
+            options: arcSetup.green.level_6
             origin_latitude: 41.121702
             origin_longitude: 16.871778
             origin_name: Bari
@@ -75,7 +75,7 @@
           - destination_latitude: -34.6033
             destination_longitude: -58.3816
             destination_name: America/Argentina/Buenos_Aires
-            options: arcSetup.inbound.level_6
+            options: arcSetup.green.level_6
             origin_latitude: 41.121702
             origin_longitude: 16.871778
             origin_name: Bari
@@ -87,7 +87,7 @@
           - destination_latitude: -34.6033
             destination_longitude: -58.3816
             destination_name: America/Argentina/Buenos_Aires
-            options: arcSetup.inbound.level_6
+            options: arcSetup.green.level_6
             origin_latitude: 41.121702
             origin_longitude: 16.871778
             origin_name: Bari
@@ -99,7 +99,7 @@
           - destination_latitude: -34.6033
             destination_longitude: -58.3816
             destination_name: America/Argentina/Buenos_Aires
-            options: arcSetup.inbound.level_6
+            options: arcSetup.green.level_6
             origin_latitude: 41.121702
             origin_longitude: 16.871778
             origin_name: Bari
@@ -111,7 +111,7 @@
           - destination_latitude: -34.6033
             destination_longitude: -58.3816
             destination_name: America/Argentina/Buenos_Aires
-            options: arcSetup.inbound.level_6
+            options: arcSetup.green.level_6
             origin_latitude: 41.121702
             origin_longitude: 16.871778
             origin_name: Bari
@@ -123,7 +123,7 @@
           - destination_latitude: -34.6033
             destination_longitude: -58.3816
             destination_name: America/Argentina/Buenos_Aires
-            options: arcSetup.inbound.level_6
+            options: arcSetup.green.level_6
             origin_latitude: 41.121702
             origin_longitude: 16.871778
             origin_name: Bari
@@ -135,7 +135,7 @@
           - destination_latitude: -34.6033
             destination_longitude: -58.3816
             destination_name: America/Argentina/Buenos_Aires
-            options: arcSetup.inbound.level_6
+            options: arcSetup.green.level_6
             origin_latitude: 41.121702
             origin_longitude: 16.871778
             origin_name: Bari
@@ -147,7 +147,7 @@
           - destination_latitude: 51.5
             destination_longitude: -0.13
             destination_name: Europe/London
-            options: arcSetup.inbound.level_6
+            options: arcSetup.yellow.level_6
             origin_latitude: 41.121702
             origin_longitude: 16.871778
             origin_name: Bari
@@ -159,7 +159,7 @@
           - destination_latitude: 51.5
             destination_longitude: -0.13
             destination_name: Europe/London
-            options: arcSetup.inbound.level_6
+            options: arcSetup.yellow.level_6
             origin_latitude: 41.121702
             origin_longitude: 16.871778
             origin_name: Bari
@@ -171,7 +171,7 @@
           - destination_latitude: -34.6033
             destination_longitude: -58.3816
             destination_name: America/Argentina/Buenos_Aires
-            options: arcSetup.inbound.level_6
+            options: arcSetup.green.level_6
             origin_latitude: 41.121702
             origin_longitude: 16.871778
             origin_name: Bari
@@ -183,7 +183,7 @@
           - destination_latitude: 51.5
             destination_longitude: -0.13
             destination_name: Europe/London
-            options: arcSetup.inbound.level_6
+            options: arcSetup.yellow.level_6
             origin_latitude: 41.121702
             origin_longitude: 16.871778
             origin_name: Bari
@@ -195,7 +195,7 @@
           - destination_latitude: -34.6033
             destination_longitude: -58.3816
             destination_name: America/Argentina/Buenos_Aires
-            options: arcSetup.inbound.level_6
+            options: arcSetup.green.level_6
             origin_latitude: 41.121702
             origin_longitude: 16.871778
             origin_name: Bari
@@ -207,7 +207,7 @@
           - destination_latitude: 51.5
             destination_longitude: -0.13
             destination_name: Europe/London
-            options: arcSetup.inbound.level_6
+            options: arcSetup.yellow.level_6
             origin_latitude: 41.121702
             origin_longitude: 16.871778
             origin_name: Bari
@@ -219,7 +219,7 @@
           - destination_latitude: -34.6033
             destination_longitude: -58.3816
             destination_name: America/Argentina/Buenos_Aires
-            options: arcSetup.inbound.level_6
+            options: arcSetup.green.level_6
             origin_latitude: 41.121702
             origin_longitude: 16.871778
             origin_name: Bari
@@ -231,7 +231,7 @@
           - destination_latitude: -34.6033
             destination_longitude: -58.3816
             destination_name: America/Argentina/Buenos_Aires
-            options: arcSetup.inbound.level_6
+            options: arcSetup.green.level_6
             origin_latitude: 41.121702
             origin_longitude: 16.871778
             origin_name: Bari
@@ -243,7 +243,7 @@
           - destination_latitude: -34.6033
             destination_longitude: -58.3816
             destination_name: America/Argentina/Buenos_Aires
-            options: arcSetup.inbound.level_6
+            options: arcSetup.green.level_6
             origin_latitude: 41.121702
             origin_longitude: 16.871778
             origin_name: Bari
@@ -255,7 +255,7 @@
           - destination_latitude: -34.6033
             destination_longitude: -58.3816
             destination_name: America/Argentina/Buenos_Aires
-            options: arcSetup.inbound.level_6
+            options: arcSetup.green.level_6
             origin_latitude: 41.121702
             origin_longitude: 16.871778
             origin_name: Bari
@@ -267,7 +267,7 @@
           - destination_latitude: -34.6033
             destination_longitude: -58.3816
             destination_name: America/Argentina/Buenos_Aires
-            options: arcSetup.inbound.level_6
+            options: arcSetup.green.level_6
             origin_latitude: 41.121702
             origin_longitude: 16.871778
             origin_name: Bari
@@ -279,7 +279,7 @@
           - destination_latitude: 48.419200000000004
             destination_longitude: -123.3856
             destination_name: America/Vancouver
-            options: arcSetup.inbound.level_6
+            options: arcSetup.yellow.level_6
             origin_latitude: 41.121702
             origin_longitude: 16.871778
             origin_name: Bari
@@ -291,7 +291,7 @@
           - destination_latitude: -38.1446
             destination_longitude: -64.6533
             destination_name: America/Argentina/Salta
-            options: arcSetup.inbound.level_6
+            options: arcSetup.yellow.level_6
             origin_latitude: 41.121702
             origin_longitude: 16.871778
             origin_name: Bari
@@ -302,8 +302,8 @@
             type: WinINet
           - destination_latitude: -27.0
             destination_longitude: 133.0
-            destination_name: None
-            options: arcSetup.inbound.level_6
+            destination_name: n.a.
+            options: arcSetup.yellow.level_6
             origin_latitude: 41.121702
             origin_longitude: 16.871778
             origin_name: Bari
@@ -315,7 +315,7 @@
           - destination_latitude: 6.2518
             destination_longitude: -75.5636
             destination_name: America/Bogota
-            options: arcSetup.inbound.level_6
+            options: arcSetup.yellow.level_6
             origin_latitude: 41.121702
             origin_longitude: 16.871778
             origin_name: Bari
@@ -327,7 +327,7 @@
           - destination_latitude: 43.7797
             destination_longitude: -79.4156
             destination_name: America/Toronto
-            options: arcSetup.inbound.level_6
+            options: arcSetup.yellow.level_6
             origin_latitude: 41.121702
             origin_longitude: 16.871778
             origin_name: Bari
@@ -339,7 +339,7 @@
           - destination_latitude: 12.1508
             destination_longitude: -86.2683
             destination_name: America/Managua
-            options: arcSetup.inbound.level_6
+            options: arcSetup.yellow.level_6
             origin_latitude: 41.121702
             origin_longitude: 16.871778
             origin_name: Bari
@@ -350,8 +350,8 @@
             type: WinINet
           - destination_latitude: 51.0
             destination_longitude: 9.0
-            destination_name: None
-            options: arcSetup.inbound.level_6
+            destination_name: n.a.
+            options: arcSetup.yellow.level_6
             origin_latitude: 41.121702
             origin_longitude: 16.871778
             origin_name: Bari
@@ -363,7 +363,7 @@
           - destination_latitude: 45.45
             destination_longitude: 28.05
             destination_name: Europe/Bucharest
-            options: arcSetup.inbound.level_6
+            options: arcSetup.yellow.level_6
             origin_latitude: 41.121702
             origin_longitude: 16.871778
             origin_name: Bari
@@ -375,7 +375,7 @@
           - destination_latitude: -34.6033
             destination_longitude: -58.3816
             destination_name: America/Argentina/Buenos_Aires
-            options: arcSetup.inbound.level_6
+            options: arcSetup.yellow.level_6
             origin_latitude: 41.121702
             origin_longitude: 16.871778
             origin_name: Bari
@@ -387,7 +387,7 @@
           - destination_latitude: 19.1667
             destination_longitude: -103.9167
             destination_name: America/Mexico_City
-            options: arcSetup.inbound.level_6
+            options: arcSetup.yellow.level_6
             origin_latitude: 41.121702
             origin_longitude: 16.871778
             origin_name: Bari
@@ -399,7 +399,7 @@
           - destination_latitude: 15.4731
             destination_longitude: -91.3497
             destination_name: America/Guatemala
-            options: arcSetup.inbound.level_6
+            options: arcSetup.yellow.level_6
             origin_latitude: 41.121702
             origin_longitude: 16.871778
             origin_name: Bari
@@ -411,7 +411,7 @@
           - destination_latitude: -30.8167
             destination_longitude: -63.7167
             destination_name: America/Argentina/Cordoba
-            options: arcSetup.inbound.level_6
+            options: arcSetup.yellow.level_6
             origin_latitude: 41.121702
             origin_longitude: 16.871778
             origin_name: Bari
@@ -423,7 +423,7 @@
           - destination_latitude: 47.4925
             destination_longitude: 19.0514
             destination_name: Europe/Budapest
-            options: arcSetup.inbound.level_6
+            options: arcSetup.yellow.level_6
             origin_latitude: 41.121702
             origin_longitude: 16.871778
             origin_name: Bari
@@ -435,7 +435,7 @@
           - destination_latitude: 51.5
             destination_longitude: -0.13
             destination_name: Europe/London
-            options: arcSetup.inbound.level_6
+            options: arcSetup.yellow.level_6
             origin_latitude: 41.121702
             origin_longitude: 16.871778
             origin_name: Bari
@@ -446,8 +446,8 @@
             type: WinINet
           - destination_latitude: -27.0
             destination_longitude: 133.0
-            destination_name: None
-            options: arcSetup.inbound.level_6
+            destination_name: n.a.
+            options: arcSetup.yellow.level_6
             origin_latitude: 41.121702
             origin_longitude: 16.871778
             origin_name: Bari
@@ -459,7 +459,7 @@
           - destination_latitude: 42.7257
             destination_longitude: -84.636
             destination_name: America/Detroit
-            options: arcSetup.inbound.level_6
+            options: arcSetup.yellow.level_6
             origin_latitude: 41.121702
             origin_longitude: 16.871778
             origin_name: Bari
@@ -471,7 +471,7 @@
           - destination_latitude: null
             destination_longitude: null
             destination_name: n.a.
-            options: arcSetup.inbound.level_6
+            options: arcSetup.yellow.level_6
             origin_latitude: 41.121702
             origin_longitude: 16.871778
             origin_name: Bari
@@ -483,7 +483,7 @@
           - destination_latitude: 39.746
             destination_longitude: -75.5466
             destination_name: America/New_York
-            options: arcSetup.inbound.level_6
+            options: arcSetup.yellow.level_6
             origin_latitude: 41.121702
             origin_longitude: 16.871778
             origin_name: Bari
@@ -495,7 +495,7 @@
           - destination_latitude: 50.1167
             destination_longitude: 8.6833
             destination_name: Europe/Berlin
-            options: arcSetup.inbound.level_6
+            options: arcSetup.yellow.level_6
             origin_latitude: 41.121702
             origin_longitude: 16.871778
             origin_name: Bari
@@ -507,7 +507,7 @@
           - destination_latitude: -17.3833
             destination_longitude: -66.15
             destination_name: America/La_Paz
-            options: arcSetup.inbound.level_6
+            options: arcSetup.yellow.level_6
             origin_latitude: 41.121702
             origin_longitude: 16.871778
             origin_name: Bari
@@ -519,7 +519,7 @@
           - destination_latitude: -34.6033
             destination_longitude: -58.3816
             destination_name: America/Argentina/Buenos_Aires
-            options: arcSetup.inbound.level_6
+            options: arcSetup.yellow.level_6
             origin_latitude: 41.121702
             origin_longitude: 16.871778
             origin_name: Bari
@@ -531,7 +531,7 @@
           - destination_latitude: 51.5
             destination_longitude: -0.13
             destination_name: Europe/London
-            options: arcSetup.inbound.level_6
+            options: arcSetup.yellow.level_6
             origin_latitude: 41.121702
             origin_longitude: 16.871778
             origin_name: Bari
@@ -543,7 +543,7 @@
           - destination_latitude: 42.8333
             destination_longitude: 12.8333
             destination_name: Europe/Rome
-            options: arcSetup.inbound.level_6
+            options: arcSetup.yellow.level_6
             origin_latitude: 41.121702
             origin_longitude: 16.871778
             origin_name: Bari
@@ -555,7 +555,7 @@
           - destination_latitude: 22.2833
             destination_longitude: 114.15
             destination_name: Asia/Hong_Kong
-            options: arcSetup.inbound.level_6
+            options: arcSetup.yellow.level_6
             origin_latitude: 41.121702
             origin_longitude: 16.871778
             origin_name: Bari
@@ -567,7 +567,7 @@
           - destination_latitude: -34.6033
             destination_longitude: -58.3816
             destination_name: America/Argentina/Buenos_Aires
-            options: arcSetup.inbound.level_6
+            options: arcSetup.yellow.level_6
             origin_latitude: 41.121702
             origin_longitude: 16.871778
             origin_name: Bari
@@ -578,8 +578,8 @@
             type: WinINet
           - destination_latitude: 48.0
             destination_longitude: 68.0
-            destination_name: None
-            options: arcSetup.inbound.level_6
+            destination_name: n.a.
+            options: arcSetup.yellow.level_6
             origin_latitude: 41.121702
             origin_longitude: 16.871778
             origin_name: Bari
@@ -591,7 +591,7 @@
           - destination_latitude: 34.52
             destination_longitude: -118.0835
             destination_name: America/Los_Angeles
-            options: arcSetup.inbound.level_6
+            options: arcSetup.yellow.level_6
             origin_latitude: 41.121702
             origin_longitude: 16.871778
             origin_name: Bari
@@ -602,8 +602,8 @@
             type: WinINet
           - destination_latitude: 38.0
             destination_longitude: -97.0
-            destination_name: None
-            options: arcSetup.inbound.level_6
+            destination_name: n.a.
+            options: arcSetup.yellow.level_6
             origin_latitude: 41.121702
             origin_longitude: 16.871778
             origin_name: Bari
@@ -615,7 +615,7 @@
           - destination_latitude: 17.3753
             destination_longitude: 78.4744
             destination_name: Asia/Kolkata
-            options: arcSetup.inbound.level_6
+            options: arcSetup.yellow.level_6
             origin_latitude: 41.121702
             origin_longitude: 16.871778
             origin_name: Bari
@@ -627,7 +627,7 @@
           - destination_latitude: -34.6033
             destination_longitude: -58.3816
             destination_name: America/Argentina/Buenos_Aires
-            options: arcSetup.inbound.level_6
+            options: arcSetup.yellow.level_6
             origin_latitude: 41.121702
             origin_longitude: 16.871778
             origin_name: Bari
@@ -639,7 +639,7 @@
           - destination_latitude: 40.749
             destination_longitude: -73.9865
             destination_name: America/New_York
-            options: arcSetup.inbound.level_6
+            options: arcSetup.yellow.level_6
             origin_latitude: 41.121702
             origin_longitude: 16.871778
             origin_name: Bari
@@ -651,7 +651,7 @@
           - destination_latitude: -34.6033
             destination_longitude: -58.3816
             destination_name: America/Argentina/Buenos_Aires
-            options: arcSetup.inbound.level_6
+            options: arcSetup.yellow.level_6
             origin_latitude: 41.121702
             origin_longitude: 16.871778
             origin_name: Bari
@@ -663,7 +663,7 @@
           - destination_latitude: 52.374
             destination_longitude: 4.8897
             destination_name: Europe/Amsterdam
-            options: arcSetup.inbound.level_6
+            options: arcSetup.yellow.level_6
             origin_latitude: 41.121702
             origin_longitude: 16.871778
             origin_name: Bari
@@ -674,8 +674,8 @@
             type: WinINet
           - destination_latitude: 55.75
             destination_longitude: 37.6166
-            destination_name: None
-            options: arcSetup.inbound.level_6
+            destination_name: n.a.
+            options: arcSetup.yellow.level_6
             origin_latitude: 41.121702
             origin_longitude: 16.871778
             origin_name: Bari
@@ -686,8 +686,8 @@
             type: WinINet
           - destination_latitude: 19.43
             destination_longitude: -99.13
-            destination_name: None
-            options: arcSetup.inbound.level_6
+            destination_name: n.a.
+            options: arcSetup.yellow.level_6
             origin_latitude: 41.121702
             origin_longitude: 16.871778
             origin_name: Bari
@@ -699,7 +699,7 @@
           - destination_latitude: 51.5
             destination_longitude: -0.13
             destination_name: Europe/London
-            options: arcSetup.inbound.level_6
+            options: arcSetup.yellow.level_6
             origin_latitude: 41.121702
             origin_longitude: 16.871778
             origin_name: Bari
@@ -711,7 +711,7 @@
           - destination_latitude: 20.0
             destination_longitude: 77.0
             destination_name: Asia/Kolkata
-            options: arcSetup.inbound.level_6
+            options: arcSetup.yellow.level_6
             origin_latitude: 41.121702
             origin_longitude: 16.871778
             origin_name: Bari
@@ -723,7 +723,7 @@
           - destination_latitude: 34.053
             destination_longitude: -118.2642
             destination_name: America/Los_Angeles
-            options: arcSetup.inbound.level_6
+            options: arcSetup.yellow.level_6
             origin_latitude: 41.121702
             origin_longitude: 16.871778
             origin_name: Bari
@@ -735,7 +735,7 @@
           - destination_latitude: 42.8333
             destination_longitude: 12.8333
             destination_name: Europe/Rome
-            options: arcSetup.inbound.level_6
+            options: arcSetup.yellow.level_6
             origin_latitude: 41.121702
             origin_longitude: 16.871778
             origin_name: Bari
@@ -746,8 +746,8 @@
             type: WinINet
           - destination_latitude: 43.6425
             destination_longitude: -79.3872
-            destination_name: None
-            options: arcSetup.inbound.level_6
+            destination_name: n.a.
+            options: arcSetup.yellow.level_6
             origin_latitude: 41.121702
             origin_longitude: 16.871778
             origin_name: Bari
@@ -759,7 +759,7 @@
           - destination_latitude: 21.0333
             destination_longitude: 105.85
             destination_name: Asia/Ho_Chi_Minh
-            options: arcSetup.inbound.level_6
+            options: arcSetup.yellow.level_6
             origin_latitude: 41.121702
             origin_longitude: 16.871778
             origin_name: Bari
@@ -771,7 +771,7 @@
           - destination_latitude: -20.0
             destination_longitude: 30.0
             destination_name: Africa/Harare
-            options: arcSetup.inbound.level_6
+            options: arcSetup.yellow.level_6
             origin_latitude: 41.121702
             origin_longitude: 16.871778
             origin_name: Bari
@@ -783,7 +783,7 @@
           - destination_latitude: 8.0
             destination_longitude: -66.0
             destination_name: America/Caracas
-            options: arcSetup.inbound.level_6
+            options: arcSetup.yellow.level_6
             origin_latitude: 41.121702
             origin_longitude: 16.871778
             origin_name: Bari
@@ -795,7 +795,7 @@
           - destination_latitude: 53.3478
             destination_longitude: -6.2597
             destination_name: Europe/Dublin
-            options: arcSetup.inbound.level_6
+            options: arcSetup.yellow.level_6
             origin_latitude: 41.121702
             origin_longitude: 16.871778
             origin_name: Bari
@@ -807,7 +807,7 @@
           - destination_latitude: 51.5
             destination_longitude: -0.13
             destination_name: Europe/London
-            options: arcSetup.inbound.level_6
+            options: arcSetup.yellow.level_6
             origin_latitude: 41.121702
             origin_longitude: 16.871778
             origin_name: Bari
@@ -819,7 +819,7 @@
           - destination_latitude: 4.6492
             destination_longitude: -74.0628
             destination_name: America/Bogota
-            options: arcSetup.inbound.level_6
+            options: arcSetup.yellow.level_6
             origin_latitude: 41.121702
             origin_longitude: 16.871778
             origin_name: Bari
@@ -831,7 +831,7 @@
           - destination_latitude: 41.0186
             destination_longitude: 28.9647
             destination_name: Europe/Istanbul
-            options: arcSetup.inbound.level_6
+            options: arcSetup.yellow.level_6
             origin_latitude: 41.121702
             origin_longitude: 16.871778
             origin_name: Bari
@@ -843,7 +843,7 @@
           - destination_latitude: 52.2333
             destination_longitude: 21.0167
             destination_name: Europe/Warsaw
-            options: arcSetup.inbound.level_6
+            options: arcSetup.yellow.level_6
             origin_latitude: 41.121702
             origin_longitude: 16.871778
             origin_name: Bari
@@ -855,7 +855,7 @@
           - destination_latitude: 25.6667
             destination_longitude: -100.4
             destination_name: America/Monterrey
-            options: arcSetup.inbound.level_6
+            options: arcSetup.yellow.level_6
             origin_latitude: 41.121702
             origin_longitude: 16.871778
             origin_name: Bari
@@ -867,7 +867,7 @@
           - destination_latitude: 52.2333
             destination_longitude: 21.0167
             destination_name: Europe/Warsaw
-            options: arcSetup.inbound.level_6
+            options: arcSetup.yellow.level_6
             origin_latitude: 41.121702
             origin_longitude: 16.871778
             origin_name: Bari
@@ -879,7 +879,7 @@
           - destination_latitude: 51.5333
             destination_longitude: 0.7
             destination_name: Europe/London
-            options: arcSetup.inbound.level_6
+            options: arcSetup.yellow.level_6
             origin_latitude: 41.121702
             origin_longitude: 16.871778
             origin_name: Bari
@@ -891,7 +891,7 @@
           - destination_latitude: 41.0136
             destination_longitude: 28.955
             destination_name: Europe/Istanbul
-            options: arcSetup.inbound.level_6
+            options: arcSetup.yellow.level_6
             origin_latitude: 41.121702
             origin_longitude: 16.871778
             origin_name: Bari
@@ -903,7 +903,7 @@
           - destination_latitude: 8.0
             destination_longitude: -66.0
             destination_name: America/Caracas
-            options: arcSetup.inbound.level_6
+            options: arcSetup.yellow.level_6
             origin_latitude: 41.121702
             origin_longitude: 16.871778
             origin_name: Bari
@@ -915,7 +915,7 @@
           - destination_latitude: 50.0833
             destination_longitude: 14.4167
             destination_name: Europe/Prague
-            options: arcSetup.inbound.level_6
+            options: arcSetup.yellow.level_6
             origin_latitude: 41.121702
             origin_longitude: 16.871778
             origin_name: Bari
@@ -927,7 +927,7 @@
           - destination_latitude: 52.3667
             destination_longitude: 4.9
             destination_name: Europe/Amsterdam
-            options: arcSetup.inbound.level_6
+            options: arcSetup.yellow.level_6
             origin_latitude: 41.121702
             origin_longitude: 16.871778
             origin_name: Bari
@@ -939,7 +939,7 @@
           - destination_latitude: 35.6961
             destination_longitude: 51.4231
             destination_name: Asia/Tehran
-            options: arcSetup.inbound.level_6
+            options: arcSetup.yellow.level_6
             origin_latitude: 41.121702
             origin_longitude: 16.871778
             origin_name: Bari
@@ -950,8 +950,8 @@
             type: WinINet
           - destination_latitude: 40.4
             destination_longitude: -3.6833
-            destination_name: None
-            options: arcSetup.inbound.level_6
+            destination_name: n.a.
+            options: arcSetup.yellow.level_6
             origin_latitude: 41.121702
             origin_longitude: 16.871778
             origin_name: Bari
@@ -963,7 +963,7 @@
           - destination_latitude: 3.0762
             destination_longitude: 101.6529
             destination_name: Asia/Kuala_Lumpur
-            options: arcSetup.inbound.level_6
+            options: arcSetup.yellow.level_6
             origin_latitude: 41.121702
             origin_longitude: 16.871778
             origin_name: Bari
@@ -974,8 +974,8 @@
             type: WinINet
           - destination_latitude: 51.0
             destination_longitude: 9.0
-            destination_name: None
-            options: arcSetup.inbound.level_6
+            destination_name: n.a.
+            options: arcSetup.yellow.level_6
             origin_latitude: 41.121702
             origin_longitude: 16.871778
             origin_name: Bari
@@ -987,7 +987,7 @@
           - destination_latitude: -33.45
             destination_longitude: -70.6667
             destination_name: America/Santiago
-            options: arcSetup.inbound.level_6
+            options: arcSetup.yellow.level_6
             origin_latitude: 41.121702
             origin_longitude: 16.871778
             origin_name: Bari
@@ -999,7 +999,7 @@
           - destination_latitude: 42.6875
             destination_longitude: -83.2341
             destination_name: America/Detroit
-            options: arcSetup.inbound.level_6
+            options: arcSetup.yellow.level_6
             origin_latitude: 41.121702
             origin_longitude: 16.871778
             origin_name: Bari
@@ -1011,7 +1011,7 @@
           - destination_latitude: 35.6961
             destination_longitude: 51.4231
             destination_name: Asia/Tehran
-            options: arcSetup.inbound.level_6
+            options: arcSetup.yellow.level_6
             origin_latitude: 41.121702
             origin_longitude: 16.871778
             origin_name: Bari
@@ -1023,7 +1023,7 @@
           - destination_latitude: 51.5
             destination_longitude: -0.13
             destination_name: Europe/London
-            options: arcSetup.inbound.level_6
+            options: arcSetup.yellow.level_6
             origin_latitude: 41.121702
             origin_longitude: 16.871778
             origin_name: Bari
@@ -1035,7 +1035,7 @@
           - destination_latitude: null
             destination_longitude: null
             destination_name: n.a.
-            options: arcSetup.inbound.level_6
+            options: arcSetup.yellow.level_6
             origin_latitude: 41.121702
             origin_longitude: 16.871778
             origin_name: Bari
@@ -1047,7 +1047,7 @@
           - destination_latitude: 1.4757
             destination_longitude: 103.7537
             destination_name: Asia/Kuala_Lumpur
-            options: arcSetup.inbound.level_6
+            options: arcSetup.yellow.level_6
             origin_latitude: 41.121702
             origin_longitude: 16.871778
             origin_name: Bari
@@ -1058,8 +1058,8 @@
             type: WinINet
           - destination_latitude: 51.0
             destination_longitude: 9.0
-            destination_name: None
-            options: arcSetup.inbound.level_6
+            destination_name: n.a.
+            options: arcSetup.yellow.level_6
             origin_latitude: 41.121702
             origin_longitude: 16.871778
             origin_name: Bari
@@ -1070,8 +1070,8 @@
             type: WinINet
           - destination_latitude: 51.0
             destination_longitude: 9.0
-            destination_name: None
-            options: arcSetup.inbound.level_6
+            destination_name: n.a.
+            options: arcSetup.yellow.level_6
             origin_latitude: 41.121702
             origin_longitude: 16.871778
             origin_name: Bari
@@ -1083,7 +1083,7 @@
           - destination_latitude: -29.0
             destination_longitude: 24.0
             destination_name: Africa/Johannesburg
-            options: arcSetup.inbound.level_6
+            options: arcSetup.yellow.level_6
             origin_latitude: 41.121702
             origin_longitude: 16.871778
             origin_name: Bari
@@ -1095,7 +1095,7 @@
           - destination_latitude: -33.45
             destination_longitude: -70.6667
             destination_name: America/Santiago
-            options: arcSetup.inbound.level_6
+            options: arcSetup.yellow.level_6
             origin_latitude: 41.121702
             origin_longitude: 16.871778
             origin_name: Bari
@@ -1107,7 +1107,7 @@
           - destination_latitude: 39.4284
             destination_longitude: -74.4957
             destination_name: America/New_York
-            options: arcSetup.inbound.level_6
+            options: arcSetup.yellow.level_6
             origin_latitude: 41.121702
             origin_longitude: 16.871778
             origin_name: Bari
@@ -1119,7 +1119,7 @@
           - destination_latitude: 51.5
             destination_longitude: -0.13
             destination_name: Europe/London
-            options: arcSetup.inbound.level_6
+            options: arcSetup.yellow.level_6
             origin_latitude: 41.121702
             origin_longitude: 16.871778
             origin_name: Bari
@@ -1131,7 +1131,7 @@
           - destination_latitude: 36.0312
             destination_longitude: -115.0739
             destination_name: America/Los_Angeles
-            options: arcSetup.inbound.level_6
+            options: arcSetup.yellow.level_6
             origin_latitude: 41.121702
             origin_longitude: 16.871778
             origin_name: Bari
@@ -1143,7 +1143,7 @@
           - destination_latitude: -34.6033
             destination_longitude: -58.3816
             destination_name: America/Argentina/Buenos_Aires
-            options: arcSetup.inbound.level_6
+            options: arcSetup.yellow.level_6
             origin_latitude: 41.121702
             origin_longitude: 16.871778
             origin_name: Bari
@@ -1155,7 +1155,7 @@
           - destination_latitude: 39.3667
             destination_longitude: 22.9458
             destination_name: Europe/Athens
-            options: arcSetup.inbound.level_6
+            options: arcSetup.yellow.level_6
             origin_latitude: 41.121702
             origin_longitude: 16.871778
             origin_name: Bari
