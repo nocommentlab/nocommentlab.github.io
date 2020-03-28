@@ -126,6 +126,41 @@
                               <figure>
                               <img src="../assets/images/fffe39cf-b830-4282-bd14-4cb908fa93a1.jpg" alt="" /><figcaption>Ryuk, the protagonist of Death Note</figcaption>
                               </figure>
+                              <p>Once started the <code>Emotet</code> infection, I ran <code>Wireshark</code> to capture the http request sent to <code>Emotet</code> C2. Every request is sent using clear <code>HTTP</code> without the <code>TLS</code> support, but, the request body is encrypted.</p>
+                              <figure>
+                              <img src="../assets/images/1975608f-6bd0-4b43-83f7-2f928bfcfcac.png" alt="" /><figcaption>Wireshark capture</figcaption>
+                              </figure>
+                              <p>With the encrypted body, I decided to debug the obfuscated <code>Emotet</code> code by hooking the Win32 Api to see what type of data are sent to the C2.</p>
+                              <p>The hooking techniques consists of inject a custom <code>dll</code> inside a process. This dll contains a code that intercept all of user-space calls module and print the passed parameter by the process.</p>
+                              <p>Below what I found by hooking the <code>Emotet</code> process.</p>
+                              <figure>
+                              <img src="../assets/images/a384314d-49f7-4597-b99b-bdd82fca226b.png" alt="" /><figcaption>CryptExportKey Win32Api Call</figcaption>
+                              </figure>
+                              <p>Emotet, first, requests to the Windows <code>CSP</code> (Cryptography Service Provider) the key pair</p>
+                              <figure>
+                              <img src="../assets/images/2a399541-2a21-4693-9887-dbc8e3d69bf2.png" alt="" /><figcaption>CryptStringToBinaryA Win32 Api Call</figcaption>
+                              </figure>
+                              <p>Loads the symmetric key with <code>base64</code> encoding;</p>
+                              <figure>
+                              <img src="../assets/images/4bbbc800-4209-45ed-bc97-562e3067e0cf.png" alt="" /><figcaption>CryptStringToBinaryA Win32 Api Call</figcaption>
+                              </figure>
+                              <p>After, loads the asymmetric public key used to encrypt the communication with the C2.</p>
+                              <figure>
+                              <img src="../assets/images/d27fb789-5d8b-49a5-b538-998c03d5310a.png" alt="" /><figcaption>Processes enumertion</figcaption>
+                              </figure>
+                              <p>Enumerates the running processes, probably to detect if the running environment is a Virtual Machine.</p>
+                              <figure>
+                              <img src="../assets/images/e679de2-0b9c-4968-acc9-0b2b6a1f09af.png" alt="" /><figcaption>CryptEncrypt Win32 Api Call</figcaption>
+                              </figure>
+                              <p>Encrypts the processes list payload with CryptEncrypt Win32 Api</p>
+                              <figure>
+                              <img src="../assets/images/03de8bc8-05c2-4b3a-93ca-53249676d47f.png" alt="" /><figcaption>HTTP Request</figcaption>
+                              </figure>
+                              <p>Sends the encrypted payload to the C2 by encapsulating it inside an HTTP request</p>
+                              <figure>
+                              <img src="../assets/images/7b68baaa-57ba-4280-bdf8-a82fab5edf07.png" alt="" /><figcaption>HTTP Response</figcaption>
+                              </figure>
+                              <p>Finally, receives the response from the <code>Emotet</code> C2.</p>
                               <h6 id="ioc"><code>IoC</code></h6>
                               <p>You can find <a href="https://gist.github.com/nocommentlab/d9d815ecfd88fb1e487948c318d5b435">here</a> the extracted IoC.</p>
                   </section>
