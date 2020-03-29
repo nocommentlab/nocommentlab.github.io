@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta charset="utf-8" />
+  <link rel="icon" type="image/png" href="/images/favicon.png">
+    <link rel="stylesheet" href="../css/index.css" />
+    <link rel="stylesheet" href="../css/article.css" />
+    <link rel="stylesheet" href="../css/hr.css" />
+    <title>!// Lab:  – Ethical Hackers Contest</title>
+</head>
+
+<body>
+  <svg id="clip-paths" width="0" height="0" version="1.1" xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g></g>
+  </svg>
+  <div id="page">
+    <div>
+      <header>
+        <div id="header-content">
+          <div id="header-logo">
+            <svg id="logo" width="80" height="80" viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg"
+              preserveAspectRatio="xMidYMid meet">
+              <g>
+                <title>background</title>
+                <rect fill="#ffffff" id="canvas_background" height="162" width="162" y="-1" x="-1" />
+              </g>
+              <g>
+                <title>Layer 1</title>
+                <g id="svg_1" transform="translate(0.000000,160.000000) scale(0.100000,-0.100000)">
+                  <path id="svg_2"
+                    d="m0,800l0,-800l800,0l800,0l0,800l0,800l-800,0l-800,0l0,-800zm1410,470l0,-60l-670,0l-670,0l0,60l0,60l670,0l670,0l0,-60zm0,-182c-1,-7 -54,-146 -119,-308l-118,-295l-66,-3c-64,-3 -77,3 -59,24c5,5 60,138 122,296l114,287l55,4c31,2 59,4 64,5c4,1 7,-4 7,-10zm-980,-183l0,-185l-120,0l-120,0l0,185l0,185l120,0l120,0l0,-185zm500,180c0,-3 -6,-16 -14,-28c-7,-12 -62,-147 -122,-299l-109,-278l-67,0c-60,0 -84,9 -60,24c4,2 59,135 122,295l115,291l68,0c37,0 67,-2 67,-5zm-500,-545l0,-60l-120,0l-120,0l0,60l0,60l120,0l120,0l0,-60zm1100,-250l0,-60l-670,0l-670,0l0,60l0,60l670,0l670,0l0,-60z" />
+                </g>
+              </g>
+            </svg>
+          </div>
+          <h1>NoCommentLab</h1>
+          <p>Cyber Security &amp; Software Development</p>
+          <div id="contact">
+            <a href="mailto:a.blescia@nocommentlab.it" id="email"><svg
+                viewBox="0 0 42 36" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M3.025 5.255A1.99 1.99 0 0 1 4.003 5h33.994c.354 0 .688.093.977.256L21 18.5 3.025 5.255zm-1.002 1.45c-.015.098-.023.2-.023.302V18.28v-5.636 17.35C2 31.1 2.902 32 4.003 32h33.994A2.005 2.005 0 0 0 40 29.993v-17.35 5.638V7.008c0-.103-.008-.204-.023-.303L21 20.687 2.023 6.704z" />
+                </svg></a>
+          </div>
+        </div>
+      </header>
+      <div id="content">
+        <section id="article">
+                              <h1 id="ethical-hackers-italiani-contest-1">Ethical Hackers Italiani Contest #1</h1>
+                              <h2 id="the-complete-write-up">The complete Write-Up</h2>
+                              <p><img src="https://picsum.photos/800/300" /></p>
+                              <h6 id="introduction"><code>Introduction</code></h6>
+                              <p>Some days ago, my friend <a href="https://www.linkedin.com/in/pierpaolo-palmisano-27ab0b8b/">Pierpaolo Palmisano</a> tagged me on a Ethical Hacker Italiani group post. This post prometed the first group contest mades by <a href="https://www.linkedin.com/in/avannini/">Alessandro Vannini</a> and <a href="https://www.linkedin.com/in/eugeniofontana/">Eugenio Fontana</a>.</p>
+                              <h6 id="contest-disclaimer"><code>Contest  Disclaimer</code></h6>
+                              <p>No disclaimer was present. The only file given from the organiser was <code>Contest_27Marzo.zip</code>; was an open contest.</p>
+                              <h6 id="technical-write-up"><code>Technical Write-Up</code></h6>
+                              <p>First, I extracted the zip file and I found 9 files, 4 images, 2 pcap files, 2 text files and finally 1 file without extension. I started the contest by analyzing the image files.</p>
+                              <h6 id="image-analysis"><code>Image analysis</code></h6>
+                              <p>Tipically, the images can contains data using 3 techniques: , <code>exif</code>, <code>image manipulation</code>and <code>steganography</code>.</p>
+                              <p><code>Exif</code>, aka Exchangeable image file format, is a standard that specifies the formats for images, sound, and ancillary tags used by digital cameras (including smartphones), scanners and other systems handling image and sound files recorded by digital cameras. Sometimes, the contest organiser insert a custom tag to hide useful data to complete the challenge.</p>
+                              <p>To extract all exif tags I used <code>exiftool</code> from Kali and I found this:</p>
+                              <figure>
+                              <img src="../assets/images/b0807a69-0594-46a1-a72a-b0e818f78128.png" alt="" /><figcaption>data3.jpg EXIF Tags</figcaption>
+                              </figure>
+                              <p>that converted from octal base is: <code>L0n3Ha</code></p>
+                              <p>Completed the exif tag extraction, I analyzed the image manipulation. To complete this task I used the <code>ELA</code> techniques. <code>ELA</code>, aka Error Level Analysis, is the analysis of compression artifacts in digital data with lossy compression such as JPEG.</p>
+                              <p>ELA showed me a manipulated section on the <code>data3.jpg</code> image file.</p>
+                              <figure>
+                              <img src="../assets/images/41093010-8799-4c75-a4e4-d8e521e4781f.png" alt="" /><figcaption>data3.jpg ELA Analysis</figcaption>
+                              </figure>
+                              <figure>
+                              <img src="../assets/images/cecaa838-c06f-49e0-8d3e-98d7b767475e.png" alt="" /><figcaption>data3.jpg Modified Section</figcaption>
+                              </figure>
+                              <p>that converted from hexadecimal base is: <code>L0n3Hack3R1!</code></p>
+                              <p>Completed the ELA analysis, I analyzed the steganography information hiding. <code>Steganography</code> is the practice of concealing a file, message, image, or video within another file, message, image, or video.</p>
+                              <p>The only solution, to accomplish, is find the original image and compare it with the given from the challenge.</p>
+                              <p>I used the <code>Google Image Search Engine</code> and <code>TinEye</code> services to search the original images and I found this:</p>
+                              <figure>
+                              <img src="../assets/images/bc43236b-b873-40e2-bc01-7db54546e0f6.png" alt="" /><figcaption>data6.jpg on Google Search Engine</figcaption>
+                              </figure>
+                              <figure>
+                              <img src="../assets/images/676c8ad9-8643-4114-b394-eb12e1f2dc04.png" alt="" /><figcaption>data6.jpg detail comparing</figcaption>
+                              </figure>
+                              <p>As it possible to see, the image size is different with same resolution, color deph and compression. <code>The data6.jpg file contains another file</code></p>
+                              <p>I tried to extract this file using <code>steghide</code> with the <code>L0n3Hack3R1!</code> password but nothing. Steghide uses another algorithm to hide the information.</p>
+                              <h6 id="spg-file-analysis"><code>SPG file analysis</code></h6>
+                              <p>This is the file without extension. Before to open it, I saw the content with an Hex editor like <code>HxD</code></p>
+                              <figure>
+                              <img src="../assets/images/2ec4dca2-f73b-4c96-94af-c0e86725b042.png" alt="" /><figcaption>spg file content</figcaption>
+                              </figure>
+                              <p>The first two bytes <code>0x50,0x4B</code> indicates that it is a zipped files, than, I added the extension <code>.zip</code> and I extracted its content.</p>
+                              <p>This zip package contained the setup of an Steganography tool named <code>SteganPEG</code>.</p>
+                              <p>With the software installed, I tried to extracted the hiding information using the <code>L0n3Hack3R1!</code> password. The steganography software has extracted a xlsx file.</p>
+                              <figure>
+                              <img src="../assets/images/45aada90-b615-46c1-9138-493ef862ec74.png" alt="" /><figcaption>File Extracting from data6.jpg</figcaption>
+                              </figure>
+                              <figure>
+                              <img src="../assets/images/fc7c4b13-210d-4165-a466-d90d1e818434.png" alt="" /><figcaption>File Extracting from data6.jpg</figcaption>
+                              </figure>
+                              <h6 id="excel-file-analysis"><code>Excel file analysis</code></h6>
+                              <p>I tried to open the new file, but, it requested me a password. I tried to insert the passwords that I collected with before steps but nothing.</p>
+                              <figure>
+                              <img src="../assets/images/22ae52ac-f611-4730-b369-bd5ae9dc7955.png" alt="" /><figcaption>Excel Password Request</figcaption>
+                              </figure>
+                              <p>To unlock the SpreadSheet I used a web service called <code>lostmypass.com</code>. <code>REMEMBER! This is a contest! Never upload business document on this type of services</code></p>
+                              <figure>
+                              <img src="../assets/images/13046e08-6275-487b-8ca1-f89eed1f799e.png" alt="" /><figcaption>The SpreadSheet Password</figcaption>
+                              </figure>
+                              <p>The excel password was: <code>sushi</code></p>
+                              <figure>
+                              <img src="../assets/images/21339315-b9ca-41d8-9e5e-c6becc7e26e4.png" alt="" /><figcaption>The SpreadSheet Content</figcaption>
+                              </figure>
+                              <p>Inside the spreadsheet I found another password: <code>!p4ssn0tF0unD!</code></p>
+                              <h6 id="pcap-file-analysis"><code>PCAP file analysis</code></h6>
+                              <p>The <code>Contest_27Marzo.zip</code> file contained also two pcap files. The <code>pcap</code> contains network packet data created during a live network capture; used for “packet sniffing” and analyzing data network characteristics; can be analyzed using software that includes the libpcap or WinPcap libraries.</p>
+                              <p>Using Wireshark, I used the <code>Conversation</code> Statistics feature to order the remote host communication.</p>
+                              <figure>
+                              <img src="../assets/images/b9bae848-aa99-4094-8af4-17e7af2d5800.png" alt="" /><figcaption>data2.pcapng Statistics</figcaption>
+                              </figure>
+                              <figure>
+                              <img src="../assets/images/3751bf36-08c3-4f11-b23f-9bf60412401b.png" alt="" /><figcaption>data5.pcapng Statistics</figcaption>
+                              </figure>
+                              <p>As it possible to see, there is a remote IP(parially masked) that communicates over <code>3389</code> TCP port and after over the <code>46551</code> TCP port. The 3389 port number indicates, tipically, for RDP service.</p>
+                              <p>Using nmap, I enumerated the service that listen on the port 46551, and I found that the RDP service on the remote server was listen on this port and not on the 3389 port. Probably, the port was modify.</p>
+                              <figure>
+                              <img src="../assets/images/03a2e5b6-90e9-4fae-898b-27a3a87c7d04.png" alt="" /><figcaption>nmap service enumeration</figcaption>
+                              </figure>
+                              <h6 id="text-file-analysis"><code>Text file analysis</code></h6>
+                              <p>The <code>Contest_27Marzo.zip</code> file contained two text file, <code>data7.txt</code> that contained a MD5 hash and <code>data8.txt</code> that was a dictionary file.</p>
+                              <p>The <code>4f778f29f5fba0c17ac619ed37abf728</code> hash correponded to <code>hack1\HaCK!ngCont3st</code> string.</p>
+                              <h6 id="testing-the-rdp"><code>Testing the RDP</code></h6>
+                              <p>Obtained all of possible evidences, I tried the RDP connection to remote server using the <code>hack1\HaCK!ngCont3st</code> as username and <code>!p4ssn0tF0unD!</code> as password.</p>
+                              <figure>
+                              <img src="../assets/images/f3e06a9f-1373-464a-b755-83c5ffcd88c7.png" alt="" /><figcaption>RDP Connection</figcaption>
+                              </figure>
+                              <p>and… <code>I'm logged in!</code></p>
+                              <figure>
+                              <img src="../assets/images/6d09d08e-f49c-4751-92c8-bc05b8cb501f.png" alt="" /><figcaption>RDP Logon</figcaption>
+                              </figure>
+                              <p>On the desktop I found a text file named <code>dato4.txt</code> that contains a remote connection username to a FTP server.</p>
+                              <figure>
+                              <img src="../assets/images/41274362-2ae8-4b1c-a00f-980601507741.png" alt="" /><figcaption>dato4.txt File Content</figcaption>
+                              </figure>
+                              <h6 id="testing-the-ftp"><code>Testing the FTP</code></h6>
+                              <p>With the <code>data8.txt</code> dictionary, I bruteforced the login password using hydra.</p>
+                              <figure>
+                              <img src="../assets/images/c4d9ecda-1a0a-4766-89f2-4795f32fc274.png" alt="" /><figcaption>FTP bruteforcing</figcaption>
+                              </figure>
+                              <p>and I obtained the <code>rivalries</code> password.</p>
+                              <p>Obtained the password, I tried to connect to FTP using <code>hacking</code> as username and <code>rivalries</code> as password.</p>
+                              <figure>
+                              <img src="../assets/images/3ddfdab6-e336-42b2-af4e-dc35b5704fac.png" alt="" /><figcaption>FTP server content</figcaption>
+                              </figure>
+                              <h6 id="certificate"><code>Certificate</code></h6>
+                              <figure>
+                              <img src="../assets/images/e9c55a81-c1a8-474f-8230-08cd9c352d8d.jpg" alt="" /><figcaption>Certificate</figcaption>
+                              </figure>
+                  </section>
+      </div>
+    </div>
+    <svg id="page-stripes" class="full-size" width="100%" height="100%" version="1.1" xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"></svg>
+    <div id="intro" class="full-size">
+      <div id="logo-container" class="full-size">
+        <svg id="logo" width="80" height="80" viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg"
+          preserveAspectRatio="xMidYMid meet">
+          <g>
+            <title>background</title>
+            <rect fill="#ffffff" id="canvas_background" height="162" width="162" y="-1" x="-1" />
+          </g>
+          <g>
+            <title>Layer 1</title>
+            <g id="svg_1" transform="translate(0.000000,160.000000) scale(0.100000,-0.100000)">
+              <path id="svg_2"
+                d="m0,800l0,-800l800,0l800,0l0,800l0,800l-800,0l-800,0l0,-800zm1410,470l0,-60l-670,0l-670,0l0,60l0,60l670,0l670,0l0,-60zm0,-182c-1,-7 -54,-146 -119,-308l-118,-295l-66,-3c-64,-3 -77,3 -59,24c5,5 60,138 122,296l114,287l55,4c31,2 59,4 64,5c4,1 7,-4 7,-10zm-980,-183l0,-185l-120,0l-120,0l0,185l0,185l120,0l120,0l0,-185zm500,180c0,-3 -6,-16 -14,-28c-7,-12 -62,-147 -122,-299l-109,-278l-67,0c-60,0 -84,9 -60,24c4,2 59,135 122,295l115,291l68,0c37,0 67,-2 67,-5zm-500,-545l0,-60l-120,0l-120,0l0,60l0,60l120,0l120,0l0,-60zm1100,-250l0,-60l-670,0l-670,0l0,60l0,60l670,0l670,0l0,-60z" />
+            </g>
+          </g>
+        </svg>
+      </div>
+      <svg id="stripes" class="full-size" width="100%" height="100%" version="1.1" xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"></svg>
+    </div>
+        <script src="../js/dynamics.js"></script>
+        <script src="../js/tinycolor.js"></script>
+        <script src="../js/mv.es5.js"></script>
+        </body>
+
+</html>
