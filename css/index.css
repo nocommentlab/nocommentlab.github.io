@@ -6,6 +6,9 @@
   font-family: "Ubuntu", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial;
   -webkit-user-select: none;
   user-select: none;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none; /* IE 11 */
 }
 
 *:not(a):not(a *) {
@@ -131,7 +134,7 @@ header {
 section {
 
   margin-right: 5em;
-	margin-bottom: 50px;
+	/*margin-bottom: 50px;*/
 }
 
 
@@ -233,4 +236,15 @@ a.more:hover .arrow {
   height: 70vh;
   max-width: 640px;
   max-height: 536px;
+}
+
+.column {
+  float: left;
+  padding: 5px;
+  text-align: center;
+}
+
+.column > img
+{
+  border:1px solid white;
 }
