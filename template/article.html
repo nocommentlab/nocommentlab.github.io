@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta charset="utf-8" />
@@ -9,73 +10,104 @@
   $endfor$
   <title>$if(title-prefix)$$title-prefix$ – $endif$$pagetitle$</title>
 </head>
+
 <body>
-  <svg id="clip-paths" width="0" height="0" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g></g></svg>
+  <svg id="clip-paths" width="0" height="0" version="1.1" xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g></g>
+  </svg>
   <div id="page">
     <div>
-    <header>
-      <div id="header-content">
-        <div id="header-logo">
-          <svg id="logo" width="80" height="80" viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
-            <g>
-             <title>background</title>
-             <rect fill="#ffffff" id="canvas_background" height="162" width="162" y="-1" x="-1"/>
-            </g>
-            <g>
-             <title>Layer 1</title>
-             <g id="svg_1" transform="translate(0.000000,160.000000) scale(0.100000,-0.100000)">
-              <path id="svg_2" d="m0,800l0,-800l800,0l800,0l0,800l0,800l-800,0l-800,0l0,-800zm1410,470l0,-60l-670,0l-670,0l0,60l0,60l670,0l670,0l0,-60zm0,-182c-1,-7 -54,-146 -119,-308l-118,-295l-66,-3c-64,-3 -77,3 -59,24c5,5 60,138 122,296l114,287l55,4c31,2 59,4 64,5c4,1 7,-4 7,-10zm-980,-183l0,-185l-120,0l-120,0l0,185l0,185l120,0l120,0l0,-185zm500,180c0,-3 -6,-16 -14,-28c-7,-12 -62,-147 -122,-299l-109,-278l-67,0c-60,0 -84,9 -60,24c4,2 59,135 122,295l115,291l68,0c37,0 67,-2 67,-5zm-500,-545l0,-60l-120,0l-120,0l0,60l0,60l120,0l120,0l0,-60zm1100,-250l0,-60l-670,0l-670,0l0,60l0,60l670,0l670,0l0,-60z"/>
-             </g>
-            </g>
-           </svg>
+      <header>
+        <div id="header-content">
+          <div id="header-logo">
+            <svg id="logo" width="80" height="80" viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg"
+              preserveAspectRatio="xMidYMid meet">
+              <g>
+                <title>background</title>
+                <rect fill="#ffffff" id="canvas_background" height="162" width="162" y="-1" x="-1" />
+              </g>
+              <g>
+                <title>Layer 1</title>
+                <g id="svg_1" transform="translate(0.000000,160.000000) scale(0.100000,-0.100000)">
+                  <path id="svg_2"
+                    d="m0,800l0,-800l800,0l800,0l0,800l0,800l-800,0l-800,0l0,-800zm1410,470l0,-60l-670,0l-670,0l0,60l0,60l670,0l670,0l0,-60zm0,-182c-1,-7 -54,-146 -119,-308l-118,-295l-66,-3c-64,-3 -77,3 -59,24c5,5 60,138 122,296l114,287l55,4c31,2 59,4 64,5c4,1 7,-4 7,-10zm-980,-183l0,-185l-120,0l-120,0l0,185l0,185l120,0l120,0l0,-185zm500,180c0,-3 -6,-16 -14,-28c-7,-12 -62,-147 -122,-299l-109,-278l-67,0c-60,0 -84,9 -60,24c4,2 59,135 122,295l115,291l68,0c37,0 67,-2 67,-5zm-500,-545l0,-60l-120,0l-120,0l0,60l0,60l120,0l120,0l0,-60zm1100,-250l0,-60l-670,0l-670,0l0,60l0,60l670,0l670,0l0,-60z" />
+                </g>
+              </g>
+            </svg>
+          </div>
+          <h1>$if(page.contents.contacts.name)$$page.contents.contacts.name$$endif$</h1>
+          <p>$if(page.contents.contacts.shortdescription)$$page.contents.contacts.shortdescription$$endif$</p>
+          <div id="contact">
+            <a href="mailto:$if(page.contents.contacts.email)$$page.contents.contacts.email$$endif$" id="email"><svg
+                viewBox="0 0 42 36" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M3.025 5.255A1.99 1.99 0 0 1 4.003 5h33.994c.354 0 .688.093.977.256L21 18.5 3.025 5.255zm-1.002 1.45c-.015.098-.023.2-.023.302V18.28v-5.636 17.35C2 31.1 2.902 32 4.003 32h33.994A2.005 2.005 0 0 0 40 29.993v-17.35 5.638V7.008c0-.103-.008-.204-.023-.303L21 20.687 2.023 6.704z" />
+                </svg></a>
+          </div>
         </div>
-        <h1>$if(page.contents.contacts.name)$$page.contents.contacts.name$$endif$</h1>
-        <p>$if(page.contents.contacts.shortdescription)$$page.contents.contacts.shortdescription$$endif$</p>
-        <div id="contact">
-          <a href="mailto:$if(page.contents.contacts.email)$$page.contents.contacts.email$$endif$" id="email"><svg viewBox="0 0 42 36" xmlns="http://www.w3.org/2000/svg"><path d="M3.025 5.255A1.99 1.99 0 0 1 4.003 5h33.994c.354 0 .688.093.977.256L21 18.5 3.025 5.255zm-1.002 1.45c-.015.098-.023.2-.023.302V18.28v-5.636 17.35C2 31.1 2.902 32 4.003 32h33.994A2.005 2.005 0 0 0 40 29.993v-17.35 5.638V7.008c0-.103-.008-.204-.023-.303L21 20.687 2.023 6.704z"/></svg></a>
-        </div>
+      </header>
+      <div id="content">
+        <section id="article">
+          $for(include-before)$
+          $include-before$
+          $endfor$
+          $if(toc)$
+          <nav id="$idprefix$TOC" role="doc-toc">
+            $if(toc-title)$
+            <h2 id="$idprefix$toc-title">$toc-title$</h2>
+            $endif$
+            $table-of-contents$
+          </nav>
+          $endif$
+          $body$
+          $for(include-after)$
+          $include-after$
+          $endfor$
+        </section>
       </div>
-    </header>
-    <div id="content">
-      <section id="article">
-		$for(include-before)$
-		$include-before$
-		$endfor$
-		$if(toc)$
-		<nav id="$idprefix$TOC" role="doc-toc">
-		$if(toc-title)$
-		<h2 id="$idprefix$toc-title">$toc-title$</h2>
-		$endif$
-		$table-of-contents$
-		</nav>
-		$endif$
-		$body$
-		$for(include-after)$
-		$include-after$
-		$endfor$       
-      </section>
     </div>
-  </div>
-  <svg id="page-stripes" class="full-size" width="100%" height="100%" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"></svg>
-  <div id="intro" class="full-size">
-    <div id="logo-container" class="full-size">
-      <svg id="logo" width="512" height="512" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
-        <g>
-         <title>background</title>
-         <rect fill="#ffffff" id="canvas_background" height="514" width="514" y="-1" x="-1"/>
-        </g>
-        <g>
-         <title>Layer 1</title>
-         <g id="svg_1" fill="#000000" transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)">
-          <path id="svg_2" d="m0,2560l0,-2560l2560,0l2560,0l0,2560l0,2560l-2560,0l-2560,0l0,-2560zm4510,1505l0,-195l-2145,0l-2145,0l0,195l0,195l2145,0l2145,0l0,-195zm-1563,-597c-4,-12 -178,-455 -389,-985l-383,-963l-182,0c-100,0 -189,-3 -199,-7c-14,-5 -16,-2 -11,18c4,13 179,457 389,986l383,962l190,3c105,2 194,4 199,6c4,1 6,-8 3,-20zm1560,0c-4,-12 -178,-455 -389,-985l-383,-963l-182,0c-100,0 -189,-3 -199,-7c-14,-5 -16,-2 -11,18c4,13 179,457 389,986l383,962l190,3c105,2 194,4 199,6c4,1 6,-8 3,-20zm-3117,-573l0,-585l-390,0l-390,0l0,585l0,585l390,0l390,0l0,-585zm0,-1180l0,-195l-390,0l-390,0l0,195l0,195l390,0l390,0l0,-195zm3510,-780l0,-195l-2145,0l-2145,0l0,195l0,195l2145,0l2145,0l0,-195z"/>
-         </g>
-        </g>
-       </svg>
+    <svg id="page-stripes" class="full-size" width="100%" height="100%" version="1.1" xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"></svg>
+    <div id="intro" class="full-size">
+      <div id="logo-container" class="full-size">
+        <svg id="logo" width="80" height="80" viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg"
+          preserveAspectRatio="xMidYMid meet">
+          <g>
+            <title>background</title>
+            <rect fill="#ffffff" id="canvas_background" height="162" width="162" y="-1" x="-1" />
+          </g>
+          <g>
+            <title>Layer 1</title>
+            <g id="svg_1" transform="translate(0.000000,160.000000) scale(0.100000,-0.100000)">
+              <path id="svg_2"
+                d="m0,800l0,-800l800,0l800,0l0,800l0,800l-800,0l-800,0l0,-800zm1410,470l0,-60l-670,0l-670,0l0,60l0,60l670,0l670,0l0,-60zm0,-182c-1,-7 -54,-146 -119,-308l-118,-295l-66,-3c-64,-3 -77,3 -59,24c5,5 60,138 122,296l114,287l55,4c31,2 59,4 64,5c4,1 7,-4 7,-10zm-980,-183l0,-185l-120,0l-120,0l0,185l0,185l120,0l120,0l0,-185zm500,180c0,-3 -6,-16 -14,-28c-7,-12 -62,-147 -122,-299l-109,-278l-67,0c-60,0 -84,9 -60,24c4,2 59,135 122,295l115,291l68,0c37,0 67,-2 67,-5zm-500,-545l0,-60l-120,0l-120,0l0,60l0,60l120,0l120,0l0,-60zm1100,-250l0,-60l-670,0l-670,0l0,60l0,60l670,0l670,0l0,-60z" />
+            </g>
+          </g>
+        </svg>
+      </div>
+      <svg id="stripes" class="full-size" width="100%" height="100%" version="1.1" xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"></svg>
     </div>
-    <svg id="stripes" class="full-size" width="100%" height="100%" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"></svg>
-  </div>
-  $for(page.resources.js)$
-  <script src="$page.resources.js$"></script>
-  $endfor$
+    $for(page.resources.js)$
+    <script src="$page.resources.js$"></script>
+    $endfor$
+    $if(page.contents.threat_map)$
+    <script>
+    arcData=[
+    $for(page.contents.threat_map)$
+    {origin: {name: "$page.contents.threat_map.origin_name$",coordinates: [$page.contents.threat_map.origin_longitude$, $page.contents.threat_map.origin_latitude$]},
+    destination: {name: "$page.contents.threat_map.destination_name$",coordinates: [$page.contents.threat_map.destination_longitude$, $page.contents.threat_map.destination_latitude$]},
+    options: $page.contents.threat_map.options$,
+    remote_ip: "$page.contents.threat_map.remote_ip$",
+    remote_port: $if(page.contents.threat_map.remote_port)$$page.contents.threat_map.remote_port$$else$null$endif$,
+    remote_request: "$page.contents.threat_map.remote_request$",
+    type: "$page.contents.threat_map.type$"
+    },
+    $endfor$
+    ]
+  </script>
+    $endif$
 </body>
+
 </html>

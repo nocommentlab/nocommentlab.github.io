@@ -1,0 +1,21 @@
+@import url(https://fonts.googleapis.com/css?family=Megrim);
+
+h6 {
+  width: 100%; 
+  text-align: center; 
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, left top, right top, from(#3498db), color-stop(#10d7af), to(#3498db));
+  background-image: linear-gradient(to right, #3498db, #10d7af, #3498db);
+  line-height: 0.1em;
+  margin-top: 2em;
+	margin-bottom: 2em;
+} 
+
+h6 code { 
+   background:#000; 
+   color: #10d7af;
+   font-family: Megrim, cursive;
+   border: 0px;
+   padding: 0.5em 3em;
+   
+}

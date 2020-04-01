@@ -1,0 +1,22 @@
+﻿---
+  metadata:
+    title: Ethical Hackers Contest #1
+    author:
+    - Antonio Blescia
+    title-prefix: "!// Lab: "
+    page:
+      resources:
+        css:
+          - "../css/index.css"
+          - "../css/article.css"
+          - "../css/hr.css"
+        js:
+          - "../js/dynamics.js"
+          - "../js/tinycolor.js"
+          - "../js/mv.es5.js"
+      contents:
+        contacts:
+          name: NoCommentLab
+          shortdescription: Cyber Security & Software Development
+          twitter: '#'
+          email: a.blescia@nocommentlab.it
