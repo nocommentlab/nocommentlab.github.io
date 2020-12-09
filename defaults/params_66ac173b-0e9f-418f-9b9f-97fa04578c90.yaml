@@ -9,7 +9,9 @@
         css:
           - "../css/index.css"
           - "../css/article.css"
+          - "../css/images.css"
         js:
+          - "https://code.jquery.com/jquery-2.1.1.min.js"
           - "../js/dynamics.js"
           - "../js/tinycolor.js"
           - "../js/mv.es5.js"
@@ -19,3 +21,14 @@
           shortdescription: Cyber Security & Software Development
           twitter: '#'
           email: a.blescia@nocommentlab.it
+      support-images: true
+      images:
+        - id: img1
+          path: ../assets/images/4b32ccfd-93d5-4256-a247-c99e6503c481.png
+          description: The source code of this article
+          gallery: gallery1
+        - id: img2
+          path: ../assets/images/9d3913a9-ffa9-4e24-b310-0740f29786ea.png
+          description: The configuration file of this article
+          gallery: gallery1
+        

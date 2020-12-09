@@ -12,6 +12,7 @@
           - "../css/hr.css"
           - "../css/map.css"
           - "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"
+          - "../css/images.css"
         js:
           - "../js/dynamics.js"
           - "../js/tinycolor.js"
@@ -1164,3 +1165,93 @@
             remote_request: http://94.67.21.187:8080/raster/dma/sess/merge/
             timezone: null
             type: WinINet
+      support-images: true
+      images:
+        - id: img1
+          path: ../assets/images/35fbe4f7-40a7-49ea-a26e-5cca66eaf691.png
+          description: The fake email
+          gallery: gallery1
+        - id: img2
+          path: ../assets/images/38006753-4778-4bf6-82b8-a8cf798d28eb.png
+          description: Sample hashes
+          gallery: gallery2
+        - id: img3
+          path: ../assets/images/88e09662-a392-423b-b6e6-a4945bca4500.png
+          description: ReaQta infection chain view
+          gallery: gallery3
+        - id: img4
+          path: ../assets/images/7027ae50-8201-47a8-bcbe-0bca5c8ad808.png
+          description: Macro Document List
+          gallery: gallery4
+        - id: img5
+          path: ../assets/images/b70e1e7a-47e5-4a34-a9fa-46b4a086c981.png
+          description: Macro Password
+          gallery: gallery5
+        - id: img6
+          path: ../assets/images/6b067614-ffc4-4053-87c0-6fd3585dcba2.png
+          description: Macro Locking Protection
+          gallery: gallery6
+        - id: img7
+          path: ../assets/images/c2685b78-8dd4-4eef-b21f-38bd78d9fdc1.png
+          description: Macro Binary Stream to files
+          gallery: gallery7
+        - id: img8
+          path: ../assets/images/4a1f0bb2-f4ef-42d6-b09c-f7cdd63fb601.png
+          description: Classic Trickbot Dropper Obfuscation Indicator
+          gallery: gallery8
+        - id: img9
+          path: ../assets/images/f88ca7c8-ac13-4b92-9bfe-053406b63e18.png
+          description: Dynamic Delay implemented with while loop costruct
+          gallery: gallery9
+        - id: img10
+          path: ../assets/images/9dec2ef2-87b5-40e7-9995-a506d7c4feff.png
+          description: Hard Drives Enumeration
+          gallery: gallery10
+        - id: img11
+          path: ../assets/images/fe423858-43ef-4223-970b-a14d99f0079e.png
+          description: Trickbot downloading
+          gallery: gallery11
+        - id: img12
+          path: ../assets/images/91031ccc-1eab-4776-b015-6b2ed46dbe6c.png
+          description: ProcMon Network Analysis
+          gallery: gallery11
+        - id: img13
+          path: ../assets/images/fc464042-36f4-46af-9aab-42ced43add70.png
+          description: Whois IP
+          gallery: gallery11
+        - id: img14
+          path: ../assets/images/fffe39cf-b830-4282-bd14-4cb908fa93a1.jpg
+          description: Ryuk, the protagonist of Death Note
+          gallery: gallery12
+        - id: img15
+          path: ../assets/images/1975608f-6bd0-4b43-83f7-2f928bfcfcac.png
+          description: Wireshark capture
+          gallery: gallery13
+        - id: img16
+          path: ../assets/images/a384314d-49f7-4597-b99b-bdd82fca226b.png
+          description: CryptExportKey Win32Api Call
+          gallery: gallery14
+        - id: img17
+          path: ../assets/images/2a399541-2a21-4693-9887-dbc8e3d69bf2.png
+          description: CryptStringToBinaryA Win32 Api Call
+          gallery: gallery15
+        - id: img18
+          path: ../assets/images/4bbbc800-4209-45ed-bc97-562e3067e0cf.png
+          description: CryptStringToBinaryA Win32 Api Call
+          gallery: gallery16
+        - id: img19
+          path: ../assets/images/d27fb789-5d8b-49a5-b538-998c03d5310a.png
+          description: Processes enumertion
+          gallery: gallery17
+        - id: img20
+          path: ../assets/images/e679de2-0b9c-4968-acc9-0b2b6a1f09af.png
+          description: CryptEncrypt Win32 Api Call
+          gallery: gallery18
+        - id: img21
+          path: ../assets/images/03de8bc8-05c2-4b3a-93ca-53249676d47f.png
+          description: HTTP Request
+          gallery: gallery19
+        - id: img22
+          path: ../assets/images/7b68baaa-57ba-4280-bdf8-a82fab5edf07.png
+          description: HTTP Response
+          gallery: gallery20

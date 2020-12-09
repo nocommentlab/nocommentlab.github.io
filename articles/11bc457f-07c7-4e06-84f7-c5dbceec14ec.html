@@ -2,27 +2,21 @@
 <html>
 
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta charset="utf-8" />
-  <link rel="icon" type="image/png" href="/images/favicon.png">
-    <link rel="stylesheet" href="../css/index.css" />
-    <link rel="stylesheet" href="../css/article.css" />
-    <link rel="stylesheet" href="../css/hr.css" />
-    <title>!// Lab:  – Ethical Hackers Contest</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/png" href="/images/favicon.png">     <link rel="stylesheet" href="../css/index.css" />     <link rel="stylesheet" href="../css/article.css" />     <link rel="stylesheet" href="../css/hr.css" />     <link rel="stylesheet" href="../css/images.css" />     <title>!// Lab:  – Ethical Hackers Contest</title>
 </head>
 
 <body>
-  <svg id="clip-paths" width="0" height="0" version="1.1" xmlns="http://www.w3.org/2000/svg"
-    xmlns:xlink="http://www.w3.org/1999/xlink">
+    <svg id="clip-paths" width="0" height="0" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <g></g>
   </svg>
-  <div id="page">
-    <div>
-      <header>
-        <div id="header-content">
-          <div id="header-logo">
-            <svg id="logo" width="80" height="80" viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg"
-              preserveAspectRatio="xMidYMid meet">
+    <div id="page">
+        <div>
+            <header>
+                <div id="header-content">
+                    <div id="header-logo">
+                        <svg id="logo" width="80" height="80" viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
               <g>
                 <title>background</title>
                 <rect fill="#ffffff" id="canvas_background" height="162" width="162" y="-1" x="-1" />
@@ -35,138 +29,123 @@
                 </g>
               </g>
             </svg>
-          </div>
-          <h1>NoCommentLab</h1>
-          <p>Cyber Security &amp; Software Development</p>
-          <div id="contact">
-            <a href="mailto:a.blescia@nocommentlab.it" id="email"><svg
+                    </div>
+                    <h1>NoCommentLab</h1>
+                    <p class="shortdescription">Cyber Security &amp; Software Development</p>
+                    <div id="contact">
+                        <a href="mailto:a.blescia@nocommentlab.it" id="email"><svg
                 viewBox="0 0 42 36" xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M3.025 5.255A1.99 1.99 0 0 1 4.003 5h33.994c.354 0 .688.093.977.256L21 18.5 3.025 5.255zm-1.002 1.45c-.015.098-.023.2-.023.302V18.28v-5.636 17.35C2 31.1 2.902 32 4.003 32h33.994A2.005 2.005 0 0 0 40 29.993v-17.35 5.638V7.008c0-.103-.008-.204-.023-.303L21 20.687 2.023 6.704z" />
                 </svg></a>
-          </div>
+                    </div>
+                </div>
+            </header>
+            <div id="content">
+                <section id="article">
+                      <h1 id="ethical-hackers-italiani-contest-1">Ethical Hackers Italiani Contest #1</h1>
+<h2 id="the-complete-write-up">The complete Write-Up</h2>
+<h6 id="introduction"><code>Introduction</code></h6>
+<p>Some days ago, my friend <a href="https://www.linkedin.com/in/pierpaolo-palmisano-27ab0b8b/">Pierpaolo Palmisano</a> tagged me on a Ethical Hacker Italiani group post. This post prometed the first group contest mades by <a href="https://www.linkedin.com/in/avannini/">Alessandro Vannini</a> and <a href="https://www.linkedin.com/in/eugeniofontana/">Eugenio Fontana</a>.</p>
+<h6 id="contest-disclaimer"><code>Contest  Disclaimer</code></h6>
+<p>No disclaimer was present. The only file given from the organiser was <code>Contest_27Marzo.zip</code>; was an open contest.</p>
+<h6 id="technical-write-up"><code>Technical Write-Up</code></h6>
+<p>First, I extracted the zip file and I found 9 files, 4 images, 2 pcap files, 2 text files and finally 1 file without extension. I started the contest by analyzing the image files.</p>
+<h6 id="image-analysis"><code>Image analysis</code></h6>
+<p>Tipically, the images can contains data using 3 techniques: , <code>exif</code>, <code>image manipulation</code>and <code>steganography</code>.</p>
+<p><code>Exif</code>, aka Exchangeable image file format, is a standard that specifies the formats for images, sound, and ancillary tags used by digital cameras (including smartphones), scanners and other systems handling image and sound files recorded by digital cameras. Sometimes, the contest organiser insert a custom tag to hide useful data to complete the challenge.</p>
+<p>To extract all exif tags I used <code>exiftool</code> from Kali and I found this:</p>
+<div id="gallery1" class="l-about__features l-about__opacity">
+
+</div>
+<p>that converted from octal base is: <code>L0n3Ha</code></p>
+<p>Completed the exif tag extraction, I analyzed the image manipulation. To complete this task I used the <code>ELA</code> techniques. <code>ELA</code>, aka Error Level Analysis, is the analysis of compression artifacts in digital data with lossy compression such as JPEG.</p>
+<p>ELA showed me a manipulated section on the <code>data3.jpg</code> image file.</p>
+<div id="gallery2" class="l-about__features l-about__opacity">
+
+</div>
+<p>that converted from hexadecimal base is: <code>L0n3Hack3R1!</code></p>
+<p>Completed the ELA analysis, I analyzed the steganography information hiding. <code>Steganography</code> is the practice of concealing a file, message, image, or video within another file, message, image, or video.</p>
+<p>The only solution, to accomplish, is find the original image and compare it with the given from the challenge.</p>
+<p>I used the <code>Google Image Search Engine</code> and <code>TinEye</code> services to search the original images and I found this:</p>
+<div id="gallery3" class="l-about__features l-about__opacity">
+
+</div>
+<p>As it possible to see, the image size is different with same resolution, color deph and compression. <code>The data6.jpg file contains another file</code></p>
+<p>I tried to extract this file using <code>steghide</code> with the <code>L0n3Hack3R1!</code> password but nothing. Steghide uses another algorithm to hide the information.</p>
+<h6 id="spg-file-analysis"><code>SPG file analysis</code></h6>
+<p>This is the file without extension. Before to open it, I saw the content with an Hex editor like <code>HxD</code></p>
+<div id="gallery4" class="l-about__features l-about__opacity">
+
+</div>
+<p>The first two bytes <code>0x50,0x4B</code> indicates that it is a zipped files, than, I added the extension <code>.zip</code> and I extracted its content.</p>
+<p>This zip package contained the setup of an Steganography tool named <code>SteganPEG</code>.</p>
+<p>With the software installed, I tried to extracted the hiding information using the <code>L0n3Hack3R1!</code> password. The steganography software has extracted a xlsx file.</p>
+<div id="gallery5" class="l-about__features l-about__opacity">
+
+</div>
+<h6 id="excel-file-analysis"><code>Excel file analysis</code></h6>
+<p>I tried to open the new file, but, it requested me a password. I tried to insert the passwords that I collected with before steps but nothing.</p>
+<div id="gallery6" class="l-about__features l-about__opacity">
+
+</div>
+<p>To unlock the SpreadSheet I used a web service called <code>lostmypass.com</code>. <code>REMEMBER! This is a contest! Never upload business document on this type of services</code></p>
+<div id="gallery7" class="l-about__features l-about__opacity">
+
+</div>
+<p>The excel password was: <code>sushi</code></p>
+<div id="gallery8" class="l-about__features l-about__opacity">
+
+</div>
+<p>Inside the spreadsheet I found another password: <code>!p4ssn0tF0unD!</code></p>
+<h6 id="pcap-file-analysis"><code>PCAP file analysis</code></h6>
+<p>The <code>Contest_27Marzo.zip</code> file contained also two pcap files. The <code>pcap</code> contains network packet data created during a live network capture; used for “packet sniffing” and analyzing data network characteristics; can be analyzed using software that includes the libpcap or WinPcap libraries.</p>
+<p>Using Wireshark, I used the <code>Conversation</code> Statistics feature to order the remote host communication.</p>
+<div id="gallery9" class="l-about__features l-about__opacity">
+
+</div>
+<p>As it possible to see, there is a remote IP(parially masked) that communicates over <code>3389</code> TCP port and after over the <code>46551</code> TCP port. The 3389 port number indicates, tipically, for RDP service.</p>
+<p>Using nmap, I enumerated the service that listen on the port 46551, and I found that the RDP service on the remote server was listen on this port and not on the 3389 port. Probably, the port was modify.</p>
+<div id="gallery10" class="l-about__features l-about__opacity">
+
+</div>
+<h6 id="text-file-analysis"><code>Text file analysis</code></h6>
+<p>The <code>Contest_27Marzo.zip</code> file contained two text file, <code>data7.txt</code> that contained a MD5 hash and <code>data8.txt</code> that was a dictionary file.</p>
+<p>The <code>4f778f29f5fba0c17ac619ed37abf728</code> hash correponded to <code>hack1\HaCK!ngCont3st</code> string.</p>
+<h6 id="testing-the-rdp"><code>Testing the RDP</code></h6>
+<p>Obtained all of possible evidences, I tried the RDP connection to remote server using the <code>hack1\HaCK!ngCont3st</code> as username and <code>!p4ssn0tF0unD!</code> as password.</p>
+<div id="gallery11" class="l-about__features l-about__opacity">
+
+</div>
+<p>and… <code>I'm logged in!</code></p>
+<div id="gallery12" class="l-about__features l-about__opacity">
+
+</div>
+<p>On the desktop I found a text file named <code>dato4.txt</code> that contains a remote connection username to a FTP server.</p>
+<div id="gallery13" class="l-about__features l-about__opacity">
+
+</div>
+<h6 id="testing-the-ftp"><code>Testing the FTP</code></h6>
+<p>With the <code>data8.txt</code> dictionary, I bruteforced the login password using hydra.</p>
+<div id="gallery14" class="l-about__features l-about__opacity">
+
+</div>
+<p>and I obtained the <code>rivalries</code> password.</p>
+<p>Obtained the password, I tried to connect to FTP using <code>hacking</code> as username and <code>rivalries</code> as password.</p>
+<div id="gallery15" class="l-about__features l-about__opacity">
+
+</div>
+<h6 id="certificate"><code>Certificate</code></h6>
+<div id="gallery16" class="l-about__features l-about__opacity">
+
+</div> 
+                </section>
+            </div>
         </div>
-      </header>
-      <div id="content">
-        <section id="article">
-                              <h1 id="ethical-hackers-italiani-contest-1">Ethical Hackers Italiani Contest #1</h1>
-                              <h2 id="the-complete-write-up">The complete Write-Up</h2>
-                              <p><img src="https://picsum.photos/800/300" /></p>
-                              <h6 id="introduction"><code>Introduction</code></h6>
-                              <p>Some days ago, my friend <a href="https://www.linkedin.com/in/pierpaolo-palmisano-27ab0b8b/">Pierpaolo Palmisano</a> tagged me on a Ethical Hacker Italiani group post. This post prometed the first group contest mades by <a href="https://www.linkedin.com/in/avannini/">Alessandro Vannini</a> and <a href="https://www.linkedin.com/in/eugeniofontana/">Eugenio Fontana</a>.</p>
-                              <h6 id="contest-disclaimer"><code>Contest  Disclaimer</code></h6>
-                              <p>No disclaimer was present. The only file given from the organiser was <code>Contest_27Marzo.zip</code>; was an open contest.</p>
-                              <h6 id="technical-write-up"><code>Technical Write-Up</code></h6>
-                              <p>First, I extracted the zip file and I found 9 files, 4 images, 2 pcap files, 2 text files and finally 1 file without extension. I started the contest by analyzing the image files.</p>
-                              <h6 id="image-analysis"><code>Image analysis</code></h6>
-                              <p>Tipically, the images can contains data using 3 techniques: , <code>exif</code>, <code>image manipulation</code>and <code>steganography</code>.</p>
-                              <p><code>Exif</code>, aka Exchangeable image file format, is a standard that specifies the formats for images, sound, and ancillary tags used by digital cameras (including smartphones), scanners and other systems handling image and sound files recorded by digital cameras. Sometimes, the contest organiser insert a custom tag to hide useful data to complete the challenge.</p>
-                              <p>To extract all exif tags I used <code>exiftool</code> from Kali and I found this:</p>
-                              <figure>
-                              <img src="../assets/images/b0807a69-0594-46a1-a72a-b0e818f78128.png" alt="" /><figcaption>data3.jpg EXIF Tags</figcaption>
-                              </figure>
-                              <p>that converted from octal base is: <code>L0n3Ha</code></p>
-                              <p>Completed the exif tag extraction, I analyzed the image manipulation. To complete this task I used the <code>ELA</code> techniques. <code>ELA</code>, aka Error Level Analysis, is the analysis of compression artifacts in digital data with lossy compression such as JPEG.</p>
-                              <p>ELA showed me a manipulated section on the <code>data3.jpg</code> image file.</p>
-                              <figure>
-                              <img src="../assets/images/41093010-8799-4c75-a4e4-d8e521e4781f.png" alt="" /><figcaption>data3.jpg ELA Analysis</figcaption>
-                              </figure>
-                              <figure>
-                              <img src="../assets/images/cecaa838-c06f-49e0-8d3e-98d7b767475e.png" alt="" /><figcaption>data3.jpg Modified Section</figcaption>
-                              </figure>
-                              <p>that converted from hexadecimal base is: <code>L0n3Hack3R1!</code></p>
-                              <p>Completed the ELA analysis, I analyzed the steganography information hiding. <code>Steganography</code> is the practice of concealing a file, message, image, or video within another file, message, image, or video.</p>
-                              <p>The only solution, to accomplish, is find the original image and compare it with the given from the challenge.</p>
-                              <p>I used the <code>Google Image Search Engine</code> and <code>TinEye</code> services to search the original images and I found this:</p>
-                              <figure>
-                              <img src="../assets/images/bc43236b-b873-40e2-bc01-7db54546e0f6.png" alt="" /><figcaption>data6.jpg on Google Search Engine</figcaption>
-                              </figure>
-                              <figure>
-                              <img src="../assets/images/676c8ad9-8643-4114-b394-eb12e1f2dc04.png" alt="" /><figcaption>data6.jpg detail comparing</figcaption>
-                              </figure>
-                              <p>As it possible to see, the image size is different with same resolution, color deph and compression. <code>The data6.jpg file contains another file</code></p>
-                              <p>I tried to extract this file using <code>steghide</code> with the <code>L0n3Hack3R1!</code> password but nothing. Steghide uses another algorithm to hide the information.</p>
-                              <h6 id="spg-file-analysis"><code>SPG file analysis</code></h6>
-                              <p>This is the file without extension. Before to open it, I saw the content with an Hex editor like <code>HxD</code></p>
-                              <figure>
-                              <img src="../assets/images/2ec4dca2-f73b-4c96-94af-c0e86725b042.png" alt="" /><figcaption>spg file content</figcaption>
-                              </figure>
-                              <p>The first two bytes <code>0x50,0x4B</code> indicates that it is a zipped files, than, I added the extension <code>.zip</code> and I extracted its content.</p>
-                              <p>This zip package contained the setup of an Steganography tool named <code>SteganPEG</code>.</p>
-                              <p>With the software installed, I tried to extracted the hiding information using the <code>L0n3Hack3R1!</code> password. The steganography software has extracted a xlsx file.</p>
-                              <figure>
-                              <img src="../assets/images/45aada90-b615-46c1-9138-493ef862ec74.png" alt="" /><figcaption>File Extracting from data6.jpg</figcaption>
-                              </figure>
-                              <figure>
-                              <img src="../assets/images/fc7c4b13-210d-4165-a466-d90d1e818434.png" alt="" /><figcaption>File Extracting from data6.jpg</figcaption>
-                              </figure>
-                              <h6 id="excel-file-analysis"><code>Excel file analysis</code></h6>
-                              <p>I tried to open the new file, but, it requested me a password. I tried to insert the passwords that I collected with before steps but nothing.</p>
-                              <figure>
-                              <img src="../assets/images/22ae52ac-f611-4730-b369-bd5ae9dc7955.png" alt="" /><figcaption>Excel Password Request</figcaption>
-                              </figure>
-                              <p>To unlock the SpreadSheet I used a web service called <code>lostmypass.com</code>. <code>REMEMBER! This is a contest! Never upload business document on this type of services</code></p>
-                              <figure>
-                              <img src="../assets/images/13046e08-6275-487b-8ca1-f89eed1f799e.png" alt="" /><figcaption>The SpreadSheet Password</figcaption>
-                              </figure>
-                              <p>The excel password was: <code>sushi</code></p>
-                              <figure>
-                              <img src="../assets/images/21339315-b9ca-41d8-9e5e-c6becc7e26e4.png" alt="" /><figcaption>The SpreadSheet Content</figcaption>
-                              </figure>
-                              <p>Inside the spreadsheet I found another password: <code>!p4ssn0tF0unD!</code></p>
-                              <h6 id="pcap-file-analysis"><code>PCAP file analysis</code></h6>
-                              <p>The <code>Contest_27Marzo.zip</code> file contained also two pcap files. The <code>pcap</code> contains network packet data created during a live network capture; used for “packet sniffing” and analyzing data network characteristics; can be analyzed using software that includes the libpcap or WinPcap libraries.</p>
-                              <p>Using Wireshark, I used the <code>Conversation</code> Statistics feature to order the remote host communication.</p>
-                              <figure>
-                              <img src="../assets/images/b9bae848-aa99-4094-8af4-17e7af2d5800.png" alt="" /><figcaption>data2.pcapng Statistics</figcaption>
-                              </figure>
-                              <figure>
-                              <img src="../assets/images/3751bf36-08c3-4f11-b23f-9bf60412401b.png" alt="" /><figcaption>data5.pcapng Statistics</figcaption>
-                              </figure>
-                              <p>As it possible to see, there is a remote IP(parially masked) that communicates over <code>3389</code> TCP port and after over the <code>46551</code> TCP port. The 3389 port number indicates, tipically, for RDP service.</p>
-                              <p>Using nmap, I enumerated the service that listen on the port 46551, and I found that the RDP service on the remote server was listen on this port and not on the 3389 port. Probably, the port was modify.</p>
-                              <figure>
-                              <img src="../assets/images/03a2e5b6-90e9-4fae-898b-27a3a87c7d04.png" alt="" /><figcaption>nmap service enumeration</figcaption>
-                              </figure>
-                              <h6 id="text-file-analysis"><code>Text file analysis</code></h6>
-                              <p>The <code>Contest_27Marzo.zip</code> file contained two text file, <code>data7.txt</code> that contained a MD5 hash and <code>data8.txt</code> that was a dictionary file.</p>
-                              <p>The <code>4f778f29f5fba0c17ac619ed37abf728</code> hash correponded to <code>hack1\HaCK!ngCont3st</code> string.</p>
-                              <h6 id="testing-the-rdp"><code>Testing the RDP</code></h6>
-                              <p>Obtained all of possible evidences, I tried the RDP connection to remote server using the <code>hack1\HaCK!ngCont3st</code> as username and <code>!p4ssn0tF0unD!</code> as password.</p>
-                              <figure>
-                              <img src="../assets/images/f3e06a9f-1373-464a-b755-83c5ffcd88c7.png" alt="" /><figcaption>RDP Connection</figcaption>
-                              </figure>
-                              <p>and… <code>I'm logged in!</code></p>
-                              <figure>
-                              <img src="../assets/images/6d09d08e-f49c-4751-92c8-bc05b8cb501f.png" alt="" /><figcaption>RDP Logon</figcaption>
-                              </figure>
-                              <p>On the desktop I found a text file named <code>dato4.txt</code> that contains a remote connection username to a FTP server.</p>
-                              <figure>
-                              <img src="../assets/images/41274362-2ae8-4b1c-a00f-980601507741.png" alt="" /><figcaption>dato4.txt File Content</figcaption>
-                              </figure>
-                              <h6 id="testing-the-ftp"><code>Testing the FTP</code></h6>
-                              <p>With the <code>data8.txt</code> dictionary, I bruteforced the login password using hydra.</p>
-                              <figure>
-                              <img src="../assets/images/c4d9ecda-1a0a-4766-89f2-4795f32fc274.png" alt="" /><figcaption>FTP bruteforcing</figcaption>
-                              </figure>
-                              <p>and I obtained the <code>rivalries</code> password.</p>
-                              <p>Obtained the password, I tried to connect to FTP using <code>hacking</code> as username and <code>rivalries</code> as password.</p>
-                              <figure>
-                              <img src="../assets/images/3ddfdab6-e336-42b2-af4e-dc35b5704fac.png" alt="" /><figcaption>FTP server content</figcaption>
-                              </figure>
-                              <h6 id="certificate"><code>Certificate</code></h6>
-                              <figure>
-                              <img src="../assets/images/e9c55a81-c1a8-474f-8230-08cd9c352d8d.jpg" alt="" /><figcaption>Certificate</figcaption>
-                              </figure>
-                  </section>
-      </div>
-    </div>
-    <svg id="page-stripes" class="full-size" width="100%" height="100%" version="1.1" xmlns="http://www.w3.org/2000/svg"
-      xmlns:xlink="http://www.w3.org/1999/xlink"></svg>
-    <div id="intro" class="full-size">
-      <div id="logo-container" class="full-size">
-        <svg id="logo" width="80" height="80" viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg"
-          preserveAspectRatio="xMidYMid meet">
+        <svg id="page-stripes" class="full-size" width="100%" height="100%" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"></svg>
+        <div id="intro" class="full-size">
+            <div id="logo-container" class="full-size">
+                <svg id="logo" width="80" height="80" viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
           <g>
             <title>background</title>
             <rect fill="#ffffff" id="canvas_background" height="162" width="162" y="-1" x="-1" />
@@ -179,13 +158,160 @@
             </g>
           </g>
         </svg>
-      </div>
-      <svg id="stripes" class="full-size" width="100%" height="100%" version="1.1" xmlns="http://www.w3.org/2000/svg"
-        xmlns:xlink="http://www.w3.org/1999/xlink"></svg>
-    </div>
-        <script src="../js/dynamics.js"></script>
-        <script src="../js/tinycolor.js"></script>
-        <script src="../js/mv.es5.js"></script>
-        </body>
+            </div>
+            <svg id="stripes" class="full-size" width="100%" height="100%" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"></svg>
+        </div>
+                <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+                <script src="../js/dynamics.js"></script>
+                <script src="../js/tinycolor.js"></script>
+                <script src="../js/mv.es5.js"></script>
+                  <script>
+                        $("#gallery1").append('<div class="l-about__feature" data-id="4-1" data-sn="img1"data-src="../assets/images/b0807a69-0594-46a1-a72a-b0e818f78128.png"style="top: 0px;"><div class="l-about__feature-image"><img class="l-about__feature-img"src="../assets/images/b0807a69-0594-46a1-a72a-b0e818f78128.png"srcset="../assets/images/b0807a69-0594-46a1-a72a-b0e818f78128.png 1x, ../assets/images/b0807a69-0594-46a1-a72a-b0e818f78128.png 2x" width="364" height="156"><img class="l-about__feature-zoom"src="https://www.cyberpunk.net/build/images/home3/icon-zoom-in-9a0014f0.svg"></div><div class="l-about__feature-text"><p>data3.jpg EXIF Tags</p></div><div class="l-about__feature-bottom" data-sn="img1"></div></div>')
+            $("#img1").click(function() {
+                window.open("../assets/images/b0807a69-0594-46a1-a72a-b0e818f78128.png")
+            });
+                        $("#gallery2").append('<div class="l-about__feature" data-id="4-1" data-sn="img2"data-src="../assets/images/41093010-8799-4c75-a4e4-d8e521e4781f.png"style="top: 0px;"><div class="l-about__feature-image"><img class="l-about__feature-img"src="../assets/images/41093010-8799-4c75-a4e4-d8e521e4781f.png"srcset="../assets/images/41093010-8799-4c75-a4e4-d8e521e4781f.png 1x, ../assets/images/41093010-8799-4c75-a4e4-d8e521e4781f.png 2x" width="364" height="156"><img class="l-about__feature-zoom"src="https://www.cyberpunk.net/build/images/home3/icon-zoom-in-9a0014f0.svg"></div><div class="l-about__feature-text"><p>data3.jpg ELA Analysis</p></div><div class="l-about__feature-bottom" data-sn="img2"></div></div>')
+            $("#img2").click(function() {
+                window.open("../assets/images/41093010-8799-4c75-a4e4-d8e521e4781f.png")
+            });
+                        $("#gallery2").append('<div class="l-about__feature" data-id="4-1" data-sn="img3"data-src="../assets/images/cecaa838-c06f-49e0-8d3e-98d7b767475e.png"style="top: 0px;"><div class="l-about__feature-image"><img class="l-about__feature-img"src="../assets/images/cecaa838-c06f-49e0-8d3e-98d7b767475e.png"srcset="../assets/images/cecaa838-c06f-49e0-8d3e-98d7b767475e.png 1x, ../assets/images/cecaa838-c06f-49e0-8d3e-98d7b767475e.png 2x" width="364" height="156"><img class="l-about__feature-zoom"src="https://www.cyberpunk.net/build/images/home3/icon-zoom-in-9a0014f0.svg"></div><div class="l-about__feature-text"><p>data3.jpg Modified Section</p></div><div class="l-about__feature-bottom" data-sn="img3"></div></div>')
+            $("#img3").click(function() {
+                window.open("../assets/images/cecaa838-c06f-49e0-8d3e-98d7b767475e.png")
+            });
+                        $("#gallery3").append('<div class="l-about__feature" data-id="4-1" data-sn="img4"data-src="../assets/images/bc43236b-b873-40e2-bc01-7db54546e0f6.png"style="top: 0px;"><div class="l-about__feature-image"><img class="l-about__feature-img"src="../assets/images/bc43236b-b873-40e2-bc01-7db54546e0f6.png"srcset="../assets/images/bc43236b-b873-40e2-bc01-7db54546e0f6.png 1x, ../assets/images/bc43236b-b873-40e2-bc01-7db54546e0f6.png 2x" width="364" height="156"><img class="l-about__feature-zoom"src="https://www.cyberpunk.net/build/images/home3/icon-zoom-in-9a0014f0.svg"></div><div class="l-about__feature-text"><p>data6.jpg on Google Search Engine</p></div><div class="l-about__feature-bottom" data-sn="img4"></div></div>')
+            $("#img4").click(function() {
+                window.open("../assets/images/bc43236b-b873-40e2-bc01-7db54546e0f6.png")
+            });
+                        $("#gallery3").append('<div class="l-about__feature" data-id="4-1" data-sn="img5"data-src="../assets/images/676c8ad9-8643-4114-b394-eb12e1f2dc04.png"style="top: 0px;"><div class="l-about__feature-image"><img class="l-about__feature-img"src="../assets/images/676c8ad9-8643-4114-b394-eb12e1f2dc04.png"srcset="../assets/images/676c8ad9-8643-4114-b394-eb12e1f2dc04.png 1x, ../assets/images/676c8ad9-8643-4114-b394-eb12e1f2dc04.png 2x" width="364" height="156"><img class="l-about__feature-zoom"src="https://www.cyberpunk.net/build/images/home3/icon-zoom-in-9a0014f0.svg"></div><div class="l-about__feature-text"><p>data6.jpg detail comparing</p></div><div class="l-about__feature-bottom" data-sn="img5"></div></div>')
+            $("#img5").click(function() {
+                window.open("../assets/images/676c8ad9-8643-4114-b394-eb12e1f2dc04.png")
+            });
+                        $("#gallery4").append('<div class="l-about__feature" data-id="4-1" data-sn="img6"data-src="../assets/images/2ec4dca2-f73b-4c96-94af-c0e86725b042.png"style="top: 0px;"><div class="l-about__feature-image"><img class="l-about__feature-img"src="../assets/images/2ec4dca2-f73b-4c96-94af-c0e86725b042.png"srcset="../assets/images/2ec4dca2-f73b-4c96-94af-c0e86725b042.png 1x, ../assets/images/2ec4dca2-f73b-4c96-94af-c0e86725b042.png 2x" width="364" height="156"><img class="l-about__feature-zoom"src="https://www.cyberpunk.net/build/images/home3/icon-zoom-in-9a0014f0.svg"></div><div class="l-about__feature-text"><p>spg file content</p></div><div class="l-about__feature-bottom" data-sn="img6"></div></div>')
+            $("#img6").click(function() {
+                window.open("../assets/images/2ec4dca2-f73b-4c96-94af-c0e86725b042.png")
+            });
+                        $("#gallery5").append('<div class="l-about__feature" data-id="4-1" data-sn="img7"data-src="../assets/images/45aada90-b615-46c1-9138-493ef862ec74.png"style="top: 0px;"><div class="l-about__feature-image"><img class="l-about__feature-img"src="../assets/images/45aada90-b615-46c1-9138-493ef862ec74.png"srcset="../assets/images/45aada90-b615-46c1-9138-493ef862ec74.png 1x, ../assets/images/45aada90-b615-46c1-9138-493ef862ec74.png 2x" width="364" height="156"><img class="l-about__feature-zoom"src="https://www.cyberpunk.net/build/images/home3/icon-zoom-in-9a0014f0.svg"></div><div class="l-about__feature-text"><p>File Extracting from data6.jpg</p></div><div class="l-about__feature-bottom" data-sn="img7"></div></div>')
+            $("#img7").click(function() {
+                window.open("../assets/images/45aada90-b615-46c1-9138-493ef862ec74.png")
+            });
+                        $("#gallery5").append('<div class="l-about__feature" data-id="4-1" data-sn="img8"data-src="../assets/images/fc7c4b13-210d-4165-a466-d90d1e818434.png"style="top: 0px;"><div class="l-about__feature-image"><img class="l-about__feature-img"src="../assets/images/fc7c4b13-210d-4165-a466-d90d1e818434.png"srcset="../assets/images/fc7c4b13-210d-4165-a466-d90d1e818434.png 1x, ../assets/images/fc7c4b13-210d-4165-a466-d90d1e818434.png 2x" width="364" height="156"><img class="l-about__feature-zoom"src="https://www.cyberpunk.net/build/images/home3/icon-zoom-in-9a0014f0.svg"></div><div class="l-about__feature-text"><p>File Extracting from data6.jpg</p></div><div class="l-about__feature-bottom" data-sn="img8"></div></div>')
+            $("#img8").click(function() {
+                window.open("../assets/images/fc7c4b13-210d-4165-a466-d90d1e818434.png")
+            });
+                        $("#gallery6").append('<div class="l-about__feature" data-id="4-1" data-sn="img9"data-src="../assets/images/22ae52ac-f611-4730-b369-bd5ae9dc7955.png"style="top: 0px;"><div class="l-about__feature-image"><img class="l-about__feature-img"src="../assets/images/22ae52ac-f611-4730-b369-bd5ae9dc7955.png"srcset="../assets/images/22ae52ac-f611-4730-b369-bd5ae9dc7955.png 1x, ../assets/images/22ae52ac-f611-4730-b369-bd5ae9dc7955.png 2x" width="364" height="156"><img class="l-about__feature-zoom"src="https://www.cyberpunk.net/build/images/home3/icon-zoom-in-9a0014f0.svg"></div><div class="l-about__feature-text"><p>Excel Password Request</p></div><div class="l-about__feature-bottom" data-sn="img9"></div></div>')
+            $("#img9").click(function() {
+                window.open("../assets/images/22ae52ac-f611-4730-b369-bd5ae9dc7955.png")
+            });
+                        $("#gallery7").append('<div class="l-about__feature" data-id="4-1" data-sn="img10"data-src="../assets/images/13046e08-6275-487b-8ca1-f89eed1f799e.png"style="top: 0px;"><div class="l-about__feature-image"><img class="l-about__feature-img"src="../assets/images/13046e08-6275-487b-8ca1-f89eed1f799e.png"srcset="../assets/images/13046e08-6275-487b-8ca1-f89eed1f799e.png 1x, ../assets/images/13046e08-6275-487b-8ca1-f89eed1f799e.png 2x" width="364" height="156"><img class="l-about__feature-zoom"src="https://www.cyberpunk.net/build/images/home3/icon-zoom-in-9a0014f0.svg"></div><div class="l-about__feature-text"><p>The SpreadSheet Password</p></div><div class="l-about__feature-bottom" data-sn="img10"></div></div>')
+            $("#img10").click(function() {
+                window.open("../assets/images/13046e08-6275-487b-8ca1-f89eed1f799e.png")
+            });
+                        $("#gallery8").append('<div class="l-about__feature" data-id="4-1" data-sn="img11"data-src="../assets/images/21339315-b9ca-41d8-9e5e-c6becc7e26e4.png"style="top: 0px;"><div class="l-about__feature-image"><img class="l-about__feature-img"src="../assets/images/21339315-b9ca-41d8-9e5e-c6becc7e26e4.png"srcset="../assets/images/21339315-b9ca-41d8-9e5e-c6becc7e26e4.png 1x, ../assets/images/21339315-b9ca-41d8-9e5e-c6becc7e26e4.png 2x" width="364" height="156"><img class="l-about__feature-zoom"src="https://www.cyberpunk.net/build/images/home3/icon-zoom-in-9a0014f0.svg"></div><div class="l-about__feature-text"><p>The SpreadSheet Content</p></div><div class="l-about__feature-bottom" data-sn="img11"></div></div>')
+            $("#img11").click(function() {
+                window.open("../assets/images/21339315-b9ca-41d8-9e5e-c6becc7e26e4.png")
+            });
+                        $("#gallery9").append('<div class="l-about__feature" data-id="4-1" data-sn="img12"data-src="../assets/images/b9bae848-aa99-4094-8af4-17e7af2d5800.png"style="top: 0px;"><div class="l-about__feature-image"><img class="l-about__feature-img"src="../assets/images/b9bae848-aa99-4094-8af4-17e7af2d5800.png"srcset="../assets/images/b9bae848-aa99-4094-8af4-17e7af2d5800.png 1x, ../assets/images/b9bae848-aa99-4094-8af4-17e7af2d5800.png 2x" width="364" height="156"><img class="l-about__feature-zoom"src="https://www.cyberpunk.net/build/images/home3/icon-zoom-in-9a0014f0.svg"></div><div class="l-about__feature-text"><p>data2.pcapng Statistics</p></div><div class="l-about__feature-bottom" data-sn="img12"></div></div>')
+            $("#img12").click(function() {
+                window.open("../assets/images/b9bae848-aa99-4094-8af4-17e7af2d5800.png")
+            });
+                        $("#gallery9").append('<div class="l-about__feature" data-id="4-1" data-sn="img13"data-src="../assets/images/3751bf36-08c3-4f11-b23f-9bf60412401b.png"style="top: 0px;"><div class="l-about__feature-image"><img class="l-about__feature-img"src="../assets/images/3751bf36-08c3-4f11-b23f-9bf60412401b.png"srcset="../assets/images/3751bf36-08c3-4f11-b23f-9bf60412401b.png 1x, ../assets/images/3751bf36-08c3-4f11-b23f-9bf60412401b.png 2x" width="364" height="156"><img class="l-about__feature-zoom"src="https://www.cyberpunk.net/build/images/home3/icon-zoom-in-9a0014f0.svg"></div><div class="l-about__feature-text"><p>data5.pcapng Statistics</p></div><div class="l-about__feature-bottom" data-sn="img13"></div></div>')
+            $("#img13").click(function() {
+                window.open("../assets/images/3751bf36-08c3-4f11-b23f-9bf60412401b.png")
+            });
+                        $("#gallery10").append('<div class="l-about__feature" data-id="4-1" data-sn="img14"data-src="../assets/images/03a2e5b6-90e9-4fae-898b-27a3a87c7d04.png"style="top: 0px;"><div class="l-about__feature-image"><img class="l-about__feature-img"src="../assets/images/03a2e5b6-90e9-4fae-898b-27a3a87c7d04.png"srcset="../assets/images/03a2e5b6-90e9-4fae-898b-27a3a87c7d04.png 1x, ../assets/images/03a2e5b6-90e9-4fae-898b-27a3a87c7d04.png 2x" width="364" height="156"><img class="l-about__feature-zoom"src="https://www.cyberpunk.net/build/images/home3/icon-zoom-in-9a0014f0.svg"></div><div class="l-about__feature-text"><p>nmap service enumeration</p></div><div class="l-about__feature-bottom" data-sn="img14"></div></div>')
+            $("#img14").click(function() {
+                window.open("../assets/images/03a2e5b6-90e9-4fae-898b-27a3a87c7d04.png")
+            });
+                        $("#gallery11").append('<div class="l-about__feature" data-id="4-1" data-sn="img15"data-src="../assets/images/f3e06a9f-1373-464a-b755-83c5ffcd88c7.png"style="top: 0px;"><div class="l-about__feature-image"><img class="l-about__feature-img"src="../assets/images/f3e06a9f-1373-464a-b755-83c5ffcd88c7.png"srcset="../assets/images/f3e06a9f-1373-464a-b755-83c5ffcd88c7.png 1x, ../assets/images/f3e06a9f-1373-464a-b755-83c5ffcd88c7.png 2x" width="364" height="156"><img class="l-about__feature-zoom"src="https://www.cyberpunk.net/build/images/home3/icon-zoom-in-9a0014f0.svg"></div><div class="l-about__feature-text"><p>RDP Connection</p></div><div class="l-about__feature-bottom" data-sn="img15"></div></div>')
+            $("#img15").click(function() {
+                window.open("../assets/images/f3e06a9f-1373-464a-b755-83c5ffcd88c7.png")
+            });
+                        $("#gallery12").append('<div class="l-about__feature" data-id="4-1" data-sn="img16"data-src="../assets/images/6d09d08e-f49c-4751-92c8-bc05b8cb501f.png"style="top: 0px;"><div class="l-about__feature-image"><img class="l-about__feature-img"src="../assets/images/6d09d08e-f49c-4751-92c8-bc05b8cb501f.png"srcset="../assets/images/6d09d08e-f49c-4751-92c8-bc05b8cb501f.png 1x, ../assets/images/6d09d08e-f49c-4751-92c8-bc05b8cb501f.png 2x" width="364" height="156"><img class="l-about__feature-zoom"src="https://www.cyberpunk.net/build/images/home3/icon-zoom-in-9a0014f0.svg"></div><div class="l-about__feature-text"><p>RDP Logon</p></div><div class="l-about__feature-bottom" data-sn="img16"></div></div>')
+            $("#img16").click(function() {
+                window.open("../assets/images/6d09d08e-f49c-4751-92c8-bc05b8cb501f.png")
+            });
+                        $("#gallery13").append('<div class="l-about__feature" data-id="4-1" data-sn="img17"data-src="../assets/images/41274362-2ae8-4b1c-a00f-980601507741.png"style="top: 0px;"><div class="l-about__feature-image"><img class="l-about__feature-img"src="../assets/images/41274362-2ae8-4b1c-a00f-980601507741.png"srcset="../assets/images/41274362-2ae8-4b1c-a00f-980601507741.png 1x, ../assets/images/41274362-2ae8-4b1c-a00f-980601507741.png 2x" width="364" height="156"><img class="l-about__feature-zoom"src="https://www.cyberpunk.net/build/images/home3/icon-zoom-in-9a0014f0.svg"></div><div class="l-about__feature-text"><p>dato4.txt File Content</p></div><div class="l-about__feature-bottom" data-sn="img17"></div></div>')
+            $("#img17").click(function() {
+                window.open("../assets/images/41274362-2ae8-4b1c-a00f-980601507741.png")
+            });
+                        $("#gallery14").append('<div class="l-about__feature" data-id="4-1" data-sn="img18"data-src="../assets/images/c4d9ecda-1a0a-4766-89f2-4795f32fc274.png"style="top: 0px;"><div class="l-about__feature-image"><img class="l-about__feature-img"src="../assets/images/c4d9ecda-1a0a-4766-89f2-4795f32fc274.png"srcset="../assets/images/c4d9ecda-1a0a-4766-89f2-4795f32fc274.png 1x, ../assets/images/c4d9ecda-1a0a-4766-89f2-4795f32fc274.png 2x" width="364" height="156"><img class="l-about__feature-zoom"src="https://www.cyberpunk.net/build/images/home3/icon-zoom-in-9a0014f0.svg"></div><div class="l-about__feature-text"><p>FTP bruteforcing</p></div><div class="l-about__feature-bottom" data-sn="img18"></div></div>')
+            $("#img18").click(function() {
+                window.open("../assets/images/c4d9ecda-1a0a-4766-89f2-4795f32fc274.png")
+            });
+                        $("#gallery15").append('<div class="l-about__feature" data-id="4-1" data-sn="img19"data-src="../assets/images/3ddfdab6-e336-42b2-af4e-dc35b5704fac.png"style="top: 0px;"><div class="l-about__feature-image"><img class="l-about__feature-img"src="../assets/images/3ddfdab6-e336-42b2-af4e-dc35b5704fac.png"srcset="../assets/images/3ddfdab6-e336-42b2-af4e-dc35b5704fac.png 1x, ../assets/images/3ddfdab6-e336-42b2-af4e-dc35b5704fac.png 2x" width="364" height="156"><img class="l-about__feature-zoom"src="https://www.cyberpunk.net/build/images/home3/icon-zoom-in-9a0014f0.svg"></div><div class="l-about__feature-text"><p>FTP server content</p></div><div class="l-about__feature-bottom" data-sn="img19"></div></div>')
+            $("#img19").click(function() {
+                window.open("../assets/images/3ddfdab6-e336-42b2-af4e-dc35b5704fac.png")
+            });
+                        $("#gallery16").append('<div class="l-about__feature" data-id="4-1" data-sn="img20"data-src="../assets/images/e9c55a81-c1a8-474f-8230-08cd9c352d8d.jpg"style="top: 0px;"><div class="l-about__feature-image"><img class="l-about__feature-img"src="../assets/images/e9c55a81-c1a8-474f-8230-08cd9c352d8d.jpg"srcset="../assets/images/e9c55a81-c1a8-474f-8230-08cd9c352d8d.jpg 1x, ../assets/images/e9c55a81-c1a8-474f-8230-08cd9c352d8d.jpg 2x" width="364" height="156"><img class="l-about__feature-zoom"src="https://www.cyberpunk.net/build/images/home3/icon-zoom-in-9a0014f0.svg"></div><div class="l-about__feature-text"><p>Certificate</p></div><div class="l-about__feature-bottom" data-sn="img20"></div></div>')
+            $("#img20").click(function() {
+                window.open("../assets/images/e9c55a81-c1a8-474f-8230-08cd9c352d8d.jpg")
+            });
+                    </script>
+        <svg class="svg-defs">
+          <defs>
+              <clipPath id="about-clip" clipPathUnits="objectBoundingBox" transform="scale(0.0006756 0.0012919)">
+                  <path fill-rule="evenodd" fill="rgb(0, 0, 0)"
+                      d="M38.050,93.090 L24.835,650.966 C24.835,650.966 25.368,661.623 13.385,670.238 C13.385,670.238 3.018,676.972 2.052,684.626 C2.052,684.626 -9.895,743.320 45.773,746.733 L159.273,750.643 C159.273,750.643 166.406,747.846 169.154,745.992 C169.154,745.992 182.012,737.223 186.476,736.630 L313.461,738.417 L717.582,745.548 L1267.000,754.898 C1267.000,754.898 1269.525,755.132 1271.854,756.235 L1297.200,769.049 C1297.200,769.049 1299.838,771.903 1309.350,771.780 L1421.687,773.220 C1421.687,773.220 1451.877,769.398 1460.252,743.598 L1462.196,713.108 C1462.196,713.108 1460.813,708.888 1455.103,703.169 C1455.103,703.169 1440.980,691.667 1440.975,680.848 L1444.589,528.256 L1454.306,118.090 C1454.306,118.090 1454.263,108.840 1460.756,103.585 C1460.756,103.585 1474.930,90.834 1475.723,90.504 C1476.516,90.174 1479.488,82.567 1479.790,73.500 C1479.790,73.500 1476.594,42.715 1462.404,34.003 C1462.404,34.003 1451.238,22.921 1424.764,24.562 L1317.368,20.796 L1292.636,33.646 C1292.636,33.646 1289.210,34.612 1285.282,34.693 L1054.535,30.448 L210.833,17.791 C210.833,17.791 202.171,18.807 195.079,12.532 L180.603,4.861 C180.603,4.861 177.979,1.483 164.792,2.043 L54.897,0.661 C54.897,0.661 31.213,2.368 18.801,29.120 C18.801,29.120 14.817,46.300 15.608,60.802 C15.608,60.802 15.210,66.550 23.864,73.211 C23.864,73.211 37.301,80.509 38.050,93.090 Z">
+                  </path>
+              </clipPath>
+              <clipPath id="section-clip" clipPathUnits="objectBoundingBox" transform="scale(0.0007974 0.0013477)">
+                  <path fill-rule="evenodd" fill="rgb(0, 0, 0)"
+                      d="M23.645,136.995 L41.838,653.954 C41.838,653.954 42.912,663.786 32.294,672.411 C32.294,672.411 23.068,679.208 22.591,686.344 C22.591,686.344 14.736,741.309 66.436,741.431 L171.677,738.860 C171.677,738.860 178.125,735.882 180.567,734.017 C180.567,734.017 191.988,725.201 196.086,724.410 L201.921,723.645 L565.793,708.226 L1074.714,686.919 C1074.714,686.919 1077.063,685.866 1079.279,686.759 L1103.432,697.235 C1103.432,697.235 1106.028,699.732 1114.823,699.099 L1218.854,694.305 C1218.854,694.305 1246.582,689.122 1252.926,664.791 L1253.062,636.471 C1253.062,636.471 1251.552,632.641 1245.956,627.661 C1245.956,627.661 1232.260,617.787 1231.665,607.777 L1226.689,466.376 L1213.313,86.294 C1213.313,86.294 1212.769,77.737 1218.491,72.520 C1218.491,72.520 1230.912,59.948 1231.628,59.599 C1232.344,59.250 1234.679,52.049 1234.464,43.643 C1234.464,43.643 1229.827,15.329 1216.222,8.041 C1216.222,8.041 1205.284,-1.605 1180.876,1.357 L1081.291,3.729 L1059.105,16.969 C1059.105,16.969 1055.988,18.049 1052.357,18.339 L838.600,26.994 L179.425,57.894 C179.425,57.894 171.466,59.306 164.560,53.887 L150.747,47.577 C150.747,47.577 148.134,44.595 135.961,45.832 L34.193,50.546 C34.193,50.546 12.371,53.418 2.344,78.850 C2.344,78.850 -0.406,94.965 1.117,108.340 C1.117,108.340 1.062,113.682 9.433,119.374 C9.433,119.374 22.266,125.394 23.645,136.995 Z">
+                  </path>
+              </clipPath>
+              <clipPath id="small-image-clip" clipPathUnits="objectBoundingBox" transform="scale(0.0027472 0.0064102)">
+                  <path fill-rule="evenodd" fill="rgb(0, 0, 0)"
+                      d="M347.014,0.001 L363.999,16.987 L363.999,155.999 L-0.000,155.999 L-0.000,-0.001 L347.014,-0.001 L347.014,0.001 Z">
+                  </path>
+              </clipPath>
+              <clipPath id="video-trailer-clip" clipPathUnits="objectBoundingBox">
+                  <polygon
+                      points="0.9888 0.04 0.9675 0 0.2534 0 0.2085 0.056 0 0.056 0 0.676 0.2309 1 0.6054 1 0.6502 0.944 1 0.944 1 0.576 0.9888 0.546 0.9888 0.04">
+                  </polygon>
+              </clipPath>
+          </defs>
+          <symbol preserveAspectRatio="xMidYMax meet" viewBox="0 0 56 36" id="icon-close">
+              <rect width="36" height="36" transform="matrix(-1 0 0 1 46 0)" fill="black"></rect>
+              <path
+                  d="M22.628 25L21 23.3719L26.346 18.026L21.0174 12.6973L22.6973 11.0173L28.026 16.3459L33.3719 11L35 12.628L29.654 17.974L34.9481 23.268L33.268 24.948L27.974 19.654L22.628 25Z"
+                  fill="#02D8F3"></path>
+              <rect width="36" height="1" transform="matrix(-1 0 0 1 46 0)" fill="#02D8F3"></rect>
+              <rect width="36" height="1" transform="matrix(-1 0 0 1 46 35)" fill="#02D8F3"></rect>
+              <rect width="10" height="36" transform="matrix(-1 0 0 1 10 0)" fill="black"></rect>
+              <rect width="10" height="1" transform="matrix(-1 0 0 1 10 0)" fill="#02D8F3"></rect>
+              <rect width="10" height="1" transform="matrix(-1 0 0 1 10 35)" fill="#02D8F3"></rect>
+              <rect width="1" height="36" transform="matrix(-1 0 0 1 1 0)" fill="#02D8F3"></rect>
+              <path d="M46 26H56L46 36V26Z" fill="black"></path>
+              <rect width="10" height="26" transform="matrix(-1 0 0 1 56 0)" fill="black"></rect>
+              <rect width="10" height="1" transform="matrix(-1 0 0 1 56 0)" fill="#02D8F3"></rect>
+              <rect width="1" height="26" transform="matrix(-1 0 0 1 56 0)" fill="#02D8F3"></rect>
+              <path d="M46 36L45 35L55 25L56 26L46 36Z" fill="#02D8F3"></path>
+          </symbol>
+          <symbol preserveAspectRatio="xMidYMax meet" viewBox="0 0 56 36" id="icon-download">
+              <rect width="36" height="36" transform="translate(10)" fill="black"></rect>
+              <g clip-path="url(#clip0)">
+                  <path fill-rule="evenodd" clip-rule="evenodd" fill="currentColor"
+                      d="M27.6359 25.111L20.4829 17.694L20.4829 14.382L26.4599 20.694L26.4599 9.74899L28.7879 9.74899L28.7879 20.622L34.7399 14.406L34.7399 17.694L27.6359 25.111Z">
+                  </path>
+              </g>
+              <rect x="10" width="36" height="1" fill="currentColor"></rect>
+              <rect x="10" y="35" width="36" height="1" fill="currentColor"></rect>
+              <rect x="46" width="10" height="36" fill="black"></rect>
+              <rect x="46" width="10" height="1" fill="currentColor"></rect>
+              <rect x="46" y="35" width="10" height="1" fill="currentColor"></rect>
+              <rect x="55" width="1" height="36" fill="currentColor"></rect>
+              <path d="M10 26H0L10 36V26Z" fill="black"></path>
+              <rect width="10" height="26" fill="black"></rect>
+              <rect width="10" height="1" fill="currentColor"></rect>
+              <rect width="1" height="26" fill="currentColor"></rect>
+              <path d="M10 36L11 35L1 25L0 26L10 36Z" fill="currentColor"></path>
+              <defs>
+                  <clipPath id="clip0">
+                      <rect width="17" height="15" fill="white" transform="matrix(-4.37114e-08 1 1 4.37114e-08 20 9)">
+                      </rect>
+                  </clipPath>
+              </defs>
+          </symbol>
+      </svg> </body>
 
 </html>

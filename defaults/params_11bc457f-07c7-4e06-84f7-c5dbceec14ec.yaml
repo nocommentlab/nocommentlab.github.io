@@ -10,7 +10,9 @@
           - "../css/index.css"
           - "../css/article.css"
           - "../css/hr.css"
+          - "../css/images.css"
         js:
+          - "https://code.jquery.com/jquery-2.1.1.min.js"
           - "../js/dynamics.js"
           - "../js/tinycolor.js"
           - "../js/mv.es5.js"
@@ -20,3 +22,85 @@
           shortdescription: Cyber Security & Software Development
           twitter: '#'
           email: a.blescia@nocommentlab.it
+      support-images: true
+      images:
+        - id: img1
+          path: ../assets/images/b0807a69-0594-46a1-a72a-b0e818f78128.png
+          description: data3.jpg EXIF Tags
+          gallery: gallery1
+        - id: img2
+          path: ../assets/images/41093010-8799-4c75-a4e4-d8e521e4781f.png
+          description: data3.jpg ELA Analysis
+          gallery: gallery2
+        - id: img3
+          path: ../assets/images/cecaa838-c06f-49e0-8d3e-98d7b767475e.png
+          description: data3.jpg Modified Section
+          gallery: gallery2
+        - id: img4
+          path: ../assets/images/bc43236b-b873-40e2-bc01-7db54546e0f6.png
+          description: data6.jpg on Google Search Engine
+          gallery: gallery3
+        - id: img5
+          path: ../assets/images/676c8ad9-8643-4114-b394-eb12e1f2dc04.png
+          description: data6.jpg detail comparing
+          gallery: gallery3
+        - id: img6
+          path: ../assets/images/2ec4dca2-f73b-4c96-94af-c0e86725b042.png
+          description: spg file content
+          gallery: gallery4
+        - id: img7
+          path: ../assets/images/45aada90-b615-46c1-9138-493ef862ec74.png
+          description: File Extracting from data6.jpg
+          gallery: gallery5
+        - id: img8
+          path: ../assets/images/fc7c4b13-210d-4165-a466-d90d1e818434.png
+          description: File Extracting from data6.jpg
+          gallery: gallery5
+        - id: img9
+          path: ../assets/images/22ae52ac-f611-4730-b369-bd5ae9dc7955.png
+          description: Excel Password Request
+          gallery: gallery6
+        - id: img10
+          path: ../assets/images/13046e08-6275-487b-8ca1-f89eed1f799e.png
+          description: The SpreadSheet Password
+          gallery: gallery7
+        - id: img11
+          path: ../assets/images/21339315-b9ca-41d8-9e5e-c6becc7e26e4.png
+          description: The SpreadSheet Content
+          gallery: gallery8
+        - id: img12
+          path: ../assets/images/b9bae848-aa99-4094-8af4-17e7af2d5800.png
+          description: data2.pcapng Statistics
+          gallery: gallery9
+        - id: img13
+          path: ../assets/images/3751bf36-08c3-4f11-b23f-9bf60412401b.png
+          description: data5.pcapng Statistics
+          gallery: gallery9
+        - id: img14
+          path: ../assets/images/03a2e5b6-90e9-4fae-898b-27a3a87c7d04.png
+          description: nmap service enumeration
+          gallery: gallery10
+        - id: img15
+          path: ../assets/images/f3e06a9f-1373-464a-b755-83c5ffcd88c7.png
+          description: RDP Connection
+          gallery: gallery11
+        - id: img16
+          path: ../assets/images/6d09d08e-f49c-4751-92c8-bc05b8cb501f.png
+          description: RDP Logon
+          gallery: gallery12
+        - id: img17
+          path: ../assets/images/41274362-2ae8-4b1c-a00f-980601507741.png
+          description: dato4.txt File Content
+          gallery: gallery13
+        - id: img18
+          path: ../assets/images/c4d9ecda-1a0a-4766-89f2-4795f32fc274.png
+          description: FTP bruteforcing
+          gallery: gallery14
+        - id: img19
+          path: ../assets/images/3ddfdab6-e336-42b2-af4e-dc35b5704fac.png
+          description: FTP server content
+          gallery: gallery15
+        - id: img20
+          path: ../assets/images/e9c55a81-c1a8-474f-8230-08cd9c352d8d.jpg
+          description: Certificate
+          gallery: gallery16
