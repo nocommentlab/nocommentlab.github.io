@@ -6,7 +6,7 @@
         position: relative;
         width: 368px;
         max-width: 368px;
-        /*min-height: 264px;*/
+        min-height: 264px;
         color: #0e0e0e;
         background: url(../assets/panel-text-small-image-bg-791a3e9d.svg) no-repeat 100% 0;
         /*! background-size:100% auto; */

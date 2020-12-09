@@ -4,7 +4,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta charset="utf-8" />
-    <link rel="icon" type="image/png" href="/images/favicon.png">     <link rel="stylesheet" href="../css/index.css" />     <link rel="stylesheet" href="../css/article.css" />     <link rel="stylesheet" href="../css/hr.css" />     <link rel="stylesheet" href="../css/map.css" />     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" />     <title>!// Lab:  – Covid19 Malware Reverse</title>
+    <link rel="icon" type="image/png" href="/images/favicon.png">     <link rel="stylesheet" href="../css/index.css" />     <link rel="stylesheet" href="../css/article.css" />     <link rel="stylesheet" href="../css/hr.css" />     <link rel="stylesheet" href="../css/map.css" />     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" />     <link rel="stylesheet" href="../css/images.css" />     <title>!// Lab:  – Covid19 Malware Reverse</title>
 </head>
 
 <body>
@@ -55,103 +55,97 @@
 <p><strong>As a very Italian(🇮🇹) responsible person, I’m in self quarantine at the moment</strong>; my country is really struggling with Covid-19 and our President told us to stay at home.</p>
 <p>After my last <a href="https://medium.com/@antonioblescia/coronavirussafetymeasures-pdf-exe-d14e977bf415">article</a> about the reverse engineering of the other Covid19 fake pdf, I decided to reverse another attack that uses a doc to spread a famous malware called <strong>Trickbot</strong></p>
 <p>By Googling I found a lot of articles that talk about an email received from a fake <code>Dott.sa Penelope Marchetti</code> that writes from OMS:</p>
-<figure>
-<img src="../assets/images/35fbe4f7-40a7-49ea-a26e-5cca66eaf691.png" alt="The fake email" /><figcaption aria-hidden="true"><em>The fake email</em></figcaption>
-</figure>
+<div id="gallery1" class="l-about__features l-about__opacity">
+
+</div>
 <p>Honestly, the email is written with a wonderful Italian language, this means that the attackers are very interested in targeting Italy by abusing its emergency.</p>
 <h6 id="technical-description"><code>Technical Description</code></h6>
 <p>As next step I need to retrieve the doc sample that is attached to the email; after some search I found it on any.run by using a Google Dork: <code>"f16744643424.doc" site:any.run</code>.</p>
-<figure>
-<img src="../assets/images/38006753-4778-4bf6-82b8-a8cf798d28eb.png" alt="Sample hashes" /><figcaption aria-hidden="true">Sample hashes</figcaption>
-</figure>
+<div id="gallery2" class="l-about__features l-about__opacity">
+
+</div>
 <p>Once downloaded the sample I analyzed it with <a href="https://reaqta.com/">Reaqta</a></p>
-<figure>
-<img src="../assets/images/88e09662-a392-423b-b6e6-a4945bca4500.png" alt="ReaQta infection chain view" /><figcaption aria-hidden="true">ReaQta infection chain view</figcaption>
-</figure>
+<div id="gallery3" class="l-about__features l-about__opacity">
+
+</div>
 <p>As it is possible to see, the document, first creates the folder <code>C:\MyImages</code> and puts in it two files, <code>presskey.cmd</code> and <code>presskey.jse</code>, after runs a cmd.exe session that runs a cscript process as its child. To spawn the process the VBA code doesn’t drop any code from the Internet, then, the payloads are stored inside the Macros.</p>
 <p>To show the macro’s source code, I reopened the doc file, then I clicked on <code>View-&gt;View Macro</code></p>
-<figure>
-<img src="../assets/images/7027ae50-8201-47a8-bcbe-0bca5c8ad808.png" alt="Macro Document List" /><figcaption aria-hidden="true">Macro Document List</figcaption>
-</figure>
+<div id="gallery4" class="l-about__features l-about__opacity">
+
+</div>
 <p>With the macro list, I tried to open the <code>AutoOpen</code> macro to see its source code, but…..</p>
-<figure>
-<img src="../assets/images/b70e1e7a-47e5-4a34-a9fa-46b4a086c981.png" alt="Macro Password" /><figcaption aria-hidden="true">Macro Password</figcaption>
-</figure>
+<div id="gallery5" class="l-about__features l-about__opacity">
+
+</div>
 <p>Word requested me a password! To bypass the protection I changed the DPB parameters declared inside the <code>VBAProject.bin</code> file and unlock the macro protection.</p>
-<figure>
-<img src="../assets/images/6b067614-ffc4-4053-87c0-6fd3585dcba2.png" alt="Macro Locking Protection" /><figcaption aria-hidden="true">Macro Locking Protection</figcaption>
-</figure>
+<div id="gallery6" class="l-about__features l-about__opacity">
+
+</div>
 <p>As I said before, the source code of the two files inside the <code>MyImages</code> folder was declared inside the Macro, in fact, I saw it inside the <code>maximepixsc</code> macro function</p>
-<figure>
-<img src="../assets/images/c2685b78-8dd4-4eef-b21f-38bd78d9fdc1.png" alt="Macro Binary Stream to files" /><figcaption aria-hidden="true">Macro Binary Stream to files</figcaption>
-</figure>
+<div id="gallery7" class="l-about__features l-about__opacity">
+
+</div>
 <p>Once obtained the macro source code I passed to analyze the two files inside the <code>MyImages</code> folder. The first file, <code>presskey.cmd</code> is used only to run <code>cscript.exe</code> by passing the <code>presskey.jse</code> file as argument. This file is very obfuscated and its structure rembembers me a classic Trickbot dropper.</p>
-<figure>
-<img src="../assets/images/4a1f0bb2-f4ef-42d6-b09c-f7cdd63fb601.png" alt="Classic Trickbot Dropper Obfuscation Indicator" /><figcaption aria-hidden="true">Classic Trickbot Dropper Obfuscation Indicator</figcaption>
-</figure>
+<div id="gallery8" class="l-about__features l-about__opacity">
+
+</div>
 <p>The script has the most common anti-analysis tricks: obfuscation, anonymous functions, dynamic sleeps, and so on.</p>
 <p>When I saw the session on any.run I didn’t see any communication with external servers. This is a common sandbox evasion implementation to make impossible a dynamic analysis on free malware hunting platforms.</p>
 <p>For this reason I decided to debug the code on my physical machine with Visual Studio 2019. To debug a <strong>js Windows Host Script</strong> it is necessary to configure the VS with the external debug tool(I will write a brief article to achieve this goal).</p>
 <p>After the Visual Studio configuration step, I renamed the extension file from <code>*.jse</code> to <code>*.js</code> and I lunched the <code>cscript.exe //X keypress.js</code> command.</p>
 <p>With the debug attached to cscript instance, I declared different global variables to follow the code execution step by step. The attacker delays the infection step by using a while condition with a dynamic threshold value.</p>
-<figure>
-<img src="../assets/images/f88ca7c8-ac13-4b92-9bfe-053406b63e18.png" alt="Dynamic Delay implemented with while loop costruct" /><figcaption aria-hidden="true">Dynamic Delay implemented with while loop costruct</figcaption>
-</figure>
+<div id="gallery9" class="l-about__features l-about__opacity">
+
+</div>
 <p>To accelerate the infection process, I modified the variable <code>sbhKVhome66</code> value to make true the if condition and I saw that the script made a different environment check, like the installed Hard Drives</p>
-<figure>
-<img src="../assets/images/9dec2ef2-87b5-40e7-9995-a506d7c4feff.png" alt="Hard Drives Enumeration" /><figcaption aria-hidden="true">Hard Drives Enumeration</figcaption>
-</figure>
+<div id="gallery10" class="l-about__features l-about__opacity">
+
+</div>
 <p>After the checks, the script contacted the backend to download the Trickbot malware</p>
-<figure>
-<img src="../assets/images/fe423858-43ef-4223-970b-a14d99f0079e.png" alt="Trickbot downloading" /><figcaption aria-hidden="true">Trickbot downloading</figcaption>
-</figure>
-<figure>
-<img src="../assets/images/91031ccc-1eab-4776-b015-6b2ed46dbe6c.png" alt="ProcMon Network Analysis" /><figcaption aria-hidden="true">ProcMon Network Analysis</figcaption>
-</figure>
-<figure>
-<img src="../assets/images/fc464042-36f4-46af-9aab-42ced43add70.png" alt="Whois IP" /><figcaption aria-hidden="true">Whois IP</figcaption>
-</figure>
+<div id="gallery11" class="l-about__features l-about__opacity">
+
+</div>
 <h6 id="update"><code>Update</code></h6>
 <p>After some days of observation I saw an unusual chain infection. Typically an infected document drops <code>Emotet</code> to creates the persistence and, after, <code>Emotet</code> drops <code>Trickbot</code> to steal sensitive data.</p>
 <p>In this infection, the situation is inverted, <code>Trickbot</code> drops <code>Emotet</code>. The attackers, probably, have as first goal steal sensitive information and after sell the access on the dark web.</p>
 <p>Tipically, this type of infection chain leads to a ransomware infection like <code>Ryuk</code></p>
-<figure>
-<img src="../assets/images/fffe39cf-b830-4282-bd14-4cb908fa93a1.jpg" alt="Ryuk, the protagonist of Death Note" /><figcaption aria-hidden="true">Ryuk, the protagonist of Death Note</figcaption>
-</figure>
+<div id="gallery12" class="l-about__features l-about__opacity">
+
+</div>
 <p>Once started the <code>Emotet</code> infection, I ran <code>Wireshark</code> to capture the http request sent to <code>Emotet</code> C2. Every request is sent using clear <code>HTTP</code> without the <code>TLS</code> support, but, the request body is encrypted.</p>
-<figure>
-<img src="../assets/images/1975608f-6bd0-4b43-83f7-2f928bfcfcac.png" alt="Wireshark capture" /><figcaption aria-hidden="true">Wireshark capture</figcaption>
-</figure>
+<div id="gallery13" class="l-about__features l-about__opacity">
+
+</div>
 <p>With the encrypted body, I decided to debug the obfuscated <code>Emotet</code> code by hooking the Win32 Api to see what type of data are sent to the C2.</p>
 <p>The hooking techniques consists of inject a custom <code>dll</code> inside a process. This dll contains a code that intercept all of user-space calls module and print the passed parameter by the process.</p>
 <p>Below what I found by hooking the <code>Emotet</code> process.</p>
-<figure>
-<img src="../assets/images/a384314d-49f7-4597-b99b-bdd82fca226b.png" alt="CryptExportKey Win32Api Call" /><figcaption aria-hidden="true">CryptExportKey Win32Api Call</figcaption>
-</figure>
+<div id="gallery14" class="l-about__features l-about__opacity">
+
+</div>
 <p>Emotet, first, requests to the Windows <code>CSP</code> (Cryptography Service Provider) the key pair</p>
-<figure>
-<img src="../assets/images/2a399541-2a21-4693-9887-dbc8e3d69bf2.png" alt="CryptStringToBinaryA Win32 Api Call" /><figcaption aria-hidden="true">CryptStringToBinaryA Win32 Api Call</figcaption>
-</figure>
+<div id="gallery15" class="l-about__features l-about__opacity">
+
+</div>
 <p>Loads the symmetric key with <code>base64</code> encoding;</p>
-<figure>
-<img src="../assets/images/4bbbc800-4209-45ed-bc97-562e3067e0cf.png" alt="CryptStringToBinaryA Win32 Api Call" /><figcaption aria-hidden="true">CryptStringToBinaryA Win32 Api Call</figcaption>
-</figure>
+<div id="gallery16" class="l-about__features l-about__opacity">
+
+</div>
 <p>After, loads the asymmetric public key used to encrypt the communication with the C2.</p>
-<figure>
-<img src="../assets/images/d27fb789-5d8b-49a5-b538-998c03d5310a.png" alt="Processes enumertion" /><figcaption aria-hidden="true">Processes enumertion</figcaption>
-</figure>
+<div id="gallery17" class="l-about__features l-about__opacity">
+
+</div>
 <p>Enumerates the running processes, probably to detect if the running environment is a Virtual Machine.</p>
-<figure>
-<img src="../assets/images/e679de2-0b9c-4968-acc9-0b2b6a1f09af.png" alt="CryptEncrypt Win32 Api Call" /><figcaption aria-hidden="true">CryptEncrypt Win32 Api Call</figcaption>
-</figure>
+<div id="gallery18" class="l-about__features l-about__opacity">
+
+</div>
 <p>Encrypts the processes list payload with CryptEncrypt Win32 Api</p>
-<figure>
-<img src="../assets/images/03de8bc8-05c2-4b3a-93ca-53249676d47f.png" alt="HTTP Request" /><figcaption aria-hidden="true">HTTP Request</figcaption>
-</figure>
+<div id="gallery19" class="l-about__features l-about__opacity">
+
+</div>
 <p>Sends the encrypted payload to the C2 by encapsulating it inside an HTTP request</p>
-<figure>
-<img src="../assets/images/7b68baaa-57ba-4280-bdf8-a82fab5edf07.png" alt="HTTP Response" /><figcaption aria-hidden="true">HTTP Response</figcaption>
-</figure>
+<div id="gallery20" class="l-about__features l-about__opacity">
+
+</div>
 <p>Finally, receives the response from the <code>Emotet</code> C2.</p>
 <h6 id="conclusion"><code>Conclusion</code></h6>
 <p>The <code>Threat Map</code>, on top of this article, shows the real connections made during the process infection(from the document to Emotet)</p>
@@ -1618,6 +1612,161 @@
                 
             ]
         </script>
-         </body>
+                 <script>
+                        $("#gallery1").append('<div class="l-about__feature" data-id="4-1" data-sn="img1"data-src="../assets/images/35fbe4f7-40a7-49ea-a26e-5cca66eaf691.png"style="top: 0px;"><div class="l-about__feature-image"><img class="l-about__feature-img"src="../assets/images/35fbe4f7-40a7-49ea-a26e-5cca66eaf691.png"srcset="../assets/images/35fbe4f7-40a7-49ea-a26e-5cca66eaf691.png 1x, ../assets/images/35fbe4f7-40a7-49ea-a26e-5cca66eaf691.png 2x" width="364" height="156"><img class="l-about__feature-zoom"src="https://www.cyberpunk.net/build/images/home3/icon-zoom-in-9a0014f0.svg"></div><div class="l-about__feature-text"><p>The fake email</p></div><div class="l-about__feature-bottom" data-sn="img1"></div></div>')
+            $("#img1").click(function() {
+                window.open("../assets/images/35fbe4f7-40a7-49ea-a26e-5cca66eaf691.png")
+            });
+                        $("#gallery2").append('<div class="l-about__feature" data-id="4-1" data-sn="img2"data-src="../assets/images/38006753-4778-4bf6-82b8-a8cf798d28eb.png"style="top: 0px;"><div class="l-about__feature-image"><img class="l-about__feature-img"src="../assets/images/38006753-4778-4bf6-82b8-a8cf798d28eb.png"srcset="../assets/images/38006753-4778-4bf6-82b8-a8cf798d28eb.png 1x, ../assets/images/38006753-4778-4bf6-82b8-a8cf798d28eb.png 2x" width="364" height="156"><img class="l-about__feature-zoom"src="https://www.cyberpunk.net/build/images/home3/icon-zoom-in-9a0014f0.svg"></div><div class="l-about__feature-text"><p>Sample hashes</p></div><div class="l-about__feature-bottom" data-sn="img2"></div></div>')
+            $("#img2").click(function() {
+                window.open("../assets/images/38006753-4778-4bf6-82b8-a8cf798d28eb.png")
+            });
+                        $("#gallery3").append('<div class="l-about__feature" data-id="4-1" data-sn="img3"data-src="../assets/images/88e09662-a392-423b-b6e6-a4945bca4500.png"style="top: 0px;"><div class="l-about__feature-image"><img class="l-about__feature-img"src="../assets/images/88e09662-a392-423b-b6e6-a4945bca4500.png"srcset="../assets/images/88e09662-a392-423b-b6e6-a4945bca4500.png 1x, ../assets/images/88e09662-a392-423b-b6e6-a4945bca4500.png 2x" width="364" height="156"><img class="l-about__feature-zoom"src="https://www.cyberpunk.net/build/images/home3/icon-zoom-in-9a0014f0.svg"></div><div class="l-about__feature-text"><p>ReaQta infection chain view</p></div><div class="l-about__feature-bottom" data-sn="img3"></div></div>')
+            $("#img3").click(function() {
+                window.open("../assets/images/88e09662-a392-423b-b6e6-a4945bca4500.png")
+            });
+                        $("#gallery4").append('<div class="l-about__feature" data-id="4-1" data-sn="img4"data-src="../assets/images/7027ae50-8201-47a8-bcbe-0bca5c8ad808.png"style="top: 0px;"><div class="l-about__feature-image"><img class="l-about__feature-img"src="../assets/images/7027ae50-8201-47a8-bcbe-0bca5c8ad808.png"srcset="../assets/images/7027ae50-8201-47a8-bcbe-0bca5c8ad808.png 1x, ../assets/images/7027ae50-8201-47a8-bcbe-0bca5c8ad808.png 2x" width="364" height="156"><img class="l-about__feature-zoom"src="https://www.cyberpunk.net/build/images/home3/icon-zoom-in-9a0014f0.svg"></div><div class="l-about__feature-text"><p>Macro Document List</p></div><div class="l-about__feature-bottom" data-sn="img4"></div></div>')
+            $("#img4").click(function() {
+                window.open("../assets/images/7027ae50-8201-47a8-bcbe-0bca5c8ad808.png")
+            });
+                        $("#gallery5").append('<div class="l-about__feature" data-id="4-1" data-sn="img5"data-src="../assets/images/b70e1e7a-47e5-4a34-a9fa-46b4a086c981.png"style="top: 0px;"><div class="l-about__feature-image"><img class="l-about__feature-img"src="../assets/images/b70e1e7a-47e5-4a34-a9fa-46b4a086c981.png"srcset="../assets/images/b70e1e7a-47e5-4a34-a9fa-46b4a086c981.png 1x, ../assets/images/b70e1e7a-47e5-4a34-a9fa-46b4a086c981.png 2x" width="364" height="156"><img class="l-about__feature-zoom"src="https://www.cyberpunk.net/build/images/home3/icon-zoom-in-9a0014f0.svg"></div><div class="l-about__feature-text"><p>Macro Password</p></div><div class="l-about__feature-bottom" data-sn="img5"></div></div>')
+            $("#img5").click(function() {
+                window.open("../assets/images/b70e1e7a-47e5-4a34-a9fa-46b4a086c981.png")
+            });
+                        $("#gallery6").append('<div class="l-about__feature" data-id="4-1" data-sn="img6"data-src="../assets/images/6b067614-ffc4-4053-87c0-6fd3585dcba2.png"style="top: 0px;"><div class="l-about__feature-image"><img class="l-about__feature-img"src="../assets/images/6b067614-ffc4-4053-87c0-6fd3585dcba2.png"srcset="../assets/images/6b067614-ffc4-4053-87c0-6fd3585dcba2.png 1x, ../assets/images/6b067614-ffc4-4053-87c0-6fd3585dcba2.png 2x" width="364" height="156"><img class="l-about__feature-zoom"src="https://www.cyberpunk.net/build/images/home3/icon-zoom-in-9a0014f0.svg"></div><div class="l-about__feature-text"><p>Macro Locking Protection</p></div><div class="l-about__feature-bottom" data-sn="img6"></div></div>')
+            $("#img6").click(function() {
+                window.open("../assets/images/6b067614-ffc4-4053-87c0-6fd3585dcba2.png")
+            });
+                        $("#gallery7").append('<div class="l-about__feature" data-id="4-1" data-sn="img7"data-src="../assets/images/c2685b78-8dd4-4eef-b21f-38bd78d9fdc1.png"style="top: 0px;"><div class="l-about__feature-image"><img class="l-about__feature-img"src="../assets/images/c2685b78-8dd4-4eef-b21f-38bd78d9fdc1.png"srcset="../assets/images/c2685b78-8dd4-4eef-b21f-38bd78d9fdc1.png 1x, ../assets/images/c2685b78-8dd4-4eef-b21f-38bd78d9fdc1.png 2x" width="364" height="156"><img class="l-about__feature-zoom"src="https://www.cyberpunk.net/build/images/home3/icon-zoom-in-9a0014f0.svg"></div><div class="l-about__feature-text"><p>Macro Binary Stream to files</p></div><div class="l-about__feature-bottom" data-sn="img7"></div></div>')
+            $("#img7").click(function() {
+                window.open("../assets/images/c2685b78-8dd4-4eef-b21f-38bd78d9fdc1.png")
+            });
+                        $("#gallery8").append('<div class="l-about__feature" data-id="4-1" data-sn="img8"data-src="../assets/images/4a1f0bb2-f4ef-42d6-b09c-f7cdd63fb601.png"style="top: 0px;"><div class="l-about__feature-image"><img class="l-about__feature-img"src="../assets/images/4a1f0bb2-f4ef-42d6-b09c-f7cdd63fb601.png"srcset="../assets/images/4a1f0bb2-f4ef-42d6-b09c-f7cdd63fb601.png 1x, ../assets/images/4a1f0bb2-f4ef-42d6-b09c-f7cdd63fb601.png 2x" width="364" height="156"><img class="l-about__feature-zoom"src="https://www.cyberpunk.net/build/images/home3/icon-zoom-in-9a0014f0.svg"></div><div class="l-about__feature-text"><p>Classic Trickbot Dropper Obfuscation Indicator</p></div><div class="l-about__feature-bottom" data-sn="img8"></div></div>')
+            $("#img8").click(function() {
+                window.open("../assets/images/4a1f0bb2-f4ef-42d6-b09c-f7cdd63fb601.png")
+            });
+                        $("#gallery9").append('<div class="l-about__feature" data-id="4-1" data-sn="img9"data-src="../assets/images/f88ca7c8-ac13-4b92-9bfe-053406b63e18.png"style="top: 0px;"><div class="l-about__feature-image"><img class="l-about__feature-img"src="../assets/images/f88ca7c8-ac13-4b92-9bfe-053406b63e18.png"srcset="../assets/images/f88ca7c8-ac13-4b92-9bfe-053406b63e18.png 1x, ../assets/images/f88ca7c8-ac13-4b92-9bfe-053406b63e18.png 2x" width="364" height="156"><img class="l-about__feature-zoom"src="https://www.cyberpunk.net/build/images/home3/icon-zoom-in-9a0014f0.svg"></div><div class="l-about__feature-text"><p>Dynamic Delay implemented with while loop costruct</p></div><div class="l-about__feature-bottom" data-sn="img9"></div></div>')
+            $("#img9").click(function() {
+                window.open("../assets/images/f88ca7c8-ac13-4b92-9bfe-053406b63e18.png")
+            });
+                        $("#gallery10").append('<div class="l-about__feature" data-id="4-1" data-sn="img10"data-src="../assets/images/9dec2ef2-87b5-40e7-9995-a506d7c4feff.png"style="top: 0px;"><div class="l-about__feature-image"><img class="l-about__feature-img"src="../assets/images/9dec2ef2-87b5-40e7-9995-a506d7c4feff.png"srcset="../assets/images/9dec2ef2-87b5-40e7-9995-a506d7c4feff.png 1x, ../assets/images/9dec2ef2-87b5-40e7-9995-a506d7c4feff.png 2x" width="364" height="156"><img class="l-about__feature-zoom"src="https://www.cyberpunk.net/build/images/home3/icon-zoom-in-9a0014f0.svg"></div><div class="l-about__feature-text"><p>Hard Drives Enumeration</p></div><div class="l-about__feature-bottom" data-sn="img10"></div></div>')
+            $("#img10").click(function() {
+                window.open("../assets/images/9dec2ef2-87b5-40e7-9995-a506d7c4feff.png")
+            });
+                        $("#gallery11").append('<div class="l-about__feature" data-id="4-1" data-sn="img11"data-src="../assets/images/fe423858-43ef-4223-970b-a14d99f0079e.png"style="top: 0px;"><div class="l-about__feature-image"><img class="l-about__feature-img"src="../assets/images/fe423858-43ef-4223-970b-a14d99f0079e.png"srcset="../assets/images/fe423858-43ef-4223-970b-a14d99f0079e.png 1x, ../assets/images/fe423858-43ef-4223-970b-a14d99f0079e.png 2x" width="364" height="156"><img class="l-about__feature-zoom"src="https://www.cyberpunk.net/build/images/home3/icon-zoom-in-9a0014f0.svg"></div><div class="l-about__feature-text"><p>Trickbot downloading</p></div><div class="l-about__feature-bottom" data-sn="img11"></div></div>')
+            $("#img11").click(function() {
+                window.open("../assets/images/fe423858-43ef-4223-970b-a14d99f0079e.png")
+            });
+                        $("#gallery11").append('<div class="l-about__feature" data-id="4-1" data-sn="img12"data-src="../assets/images/91031ccc-1eab-4776-b015-6b2ed46dbe6c.png"style="top: 0px;"><div class="l-about__feature-image"><img class="l-about__feature-img"src="../assets/images/91031ccc-1eab-4776-b015-6b2ed46dbe6c.png"srcset="../assets/images/91031ccc-1eab-4776-b015-6b2ed46dbe6c.png 1x, ../assets/images/91031ccc-1eab-4776-b015-6b2ed46dbe6c.png 2x" width="364" height="156"><img class="l-about__feature-zoom"src="https://www.cyberpunk.net/build/images/home3/icon-zoom-in-9a0014f0.svg"></div><div class="l-about__feature-text"><p>ProcMon Network Analysis</p></div><div class="l-about__feature-bottom" data-sn="img12"></div></div>')
+            $("#img12").click(function() {
+                window.open("../assets/images/91031ccc-1eab-4776-b015-6b2ed46dbe6c.png")
+            });
+                        $("#gallery11").append('<div class="l-about__feature" data-id="4-1" data-sn="img13"data-src="../assets/images/fc464042-36f4-46af-9aab-42ced43add70.png"style="top: 0px;"><div class="l-about__feature-image"><img class="l-about__feature-img"src="../assets/images/fc464042-36f4-46af-9aab-42ced43add70.png"srcset="../assets/images/fc464042-36f4-46af-9aab-42ced43add70.png 1x, ../assets/images/fc464042-36f4-46af-9aab-42ced43add70.png 2x" width="364" height="156"><img class="l-about__feature-zoom"src="https://www.cyberpunk.net/build/images/home3/icon-zoom-in-9a0014f0.svg"></div><div class="l-about__feature-text"><p>Whois IP</p></div><div class="l-about__feature-bottom" data-sn="img13"></div></div>')
+            $("#img13").click(function() {
+                window.open("../assets/images/fc464042-36f4-46af-9aab-42ced43add70.png")
+            });
+                        $("#gallery12").append('<div class="l-about__feature" data-id="4-1" data-sn="img14"data-src="../assets/images/fffe39cf-b830-4282-bd14-4cb908fa93a1.jpg"style="top: 0px;"><div class="l-about__feature-image"><img class="l-about__feature-img"src="../assets/images/fffe39cf-b830-4282-bd14-4cb908fa93a1.jpg"srcset="../assets/images/fffe39cf-b830-4282-bd14-4cb908fa93a1.jpg 1x, ../assets/images/fffe39cf-b830-4282-bd14-4cb908fa93a1.jpg 2x" width="364" height="156"><img class="l-about__feature-zoom"src="https://www.cyberpunk.net/build/images/home3/icon-zoom-in-9a0014f0.svg"></div><div class="l-about__feature-text"><p>Ryuk, the protagonist of Death Note</p></div><div class="l-about__feature-bottom" data-sn="img14"></div></div>')
+            $("#img14").click(function() {
+                window.open("../assets/images/fffe39cf-b830-4282-bd14-4cb908fa93a1.jpg")
+            });
+                        $("#gallery13").append('<div class="l-about__feature" data-id="4-1" data-sn="img15"data-src="../assets/images/1975608f-6bd0-4b43-83f7-2f928bfcfcac.png"style="top: 0px;"><div class="l-about__feature-image"><img class="l-about__feature-img"src="../assets/images/1975608f-6bd0-4b43-83f7-2f928bfcfcac.png"srcset="../assets/images/1975608f-6bd0-4b43-83f7-2f928bfcfcac.png 1x, ../assets/images/1975608f-6bd0-4b43-83f7-2f928bfcfcac.png 2x" width="364" height="156"><img class="l-about__feature-zoom"src="https://www.cyberpunk.net/build/images/home3/icon-zoom-in-9a0014f0.svg"></div><div class="l-about__feature-text"><p>Wireshark capture</p></div><div class="l-about__feature-bottom" data-sn="img15"></div></div>')
+            $("#img15").click(function() {
+                window.open("../assets/images/1975608f-6bd0-4b43-83f7-2f928bfcfcac.png")
+            });
+                        $("#gallery14").append('<div class="l-about__feature" data-id="4-1" data-sn="img16"data-src="../assets/images/a384314d-49f7-4597-b99b-bdd82fca226b.png"style="top: 0px;"><div class="l-about__feature-image"><img class="l-about__feature-img"src="../assets/images/a384314d-49f7-4597-b99b-bdd82fca226b.png"srcset="../assets/images/a384314d-49f7-4597-b99b-bdd82fca226b.png 1x, ../assets/images/a384314d-49f7-4597-b99b-bdd82fca226b.png 2x" width="364" height="156"><img class="l-about__feature-zoom"src="https://www.cyberpunk.net/build/images/home3/icon-zoom-in-9a0014f0.svg"></div><div class="l-about__feature-text"><p>CryptExportKey Win32Api Call</p></div><div class="l-about__feature-bottom" data-sn="img16"></div></div>')
+            $("#img16").click(function() {
+                window.open("../assets/images/a384314d-49f7-4597-b99b-bdd82fca226b.png")
+            });
+                        $("#gallery15").append('<div class="l-about__feature" data-id="4-1" data-sn="img17"data-src="../assets/images/2a399541-2a21-4693-9887-dbc8e3d69bf2.png"style="top: 0px;"><div class="l-about__feature-image"><img class="l-about__feature-img"src="../assets/images/2a399541-2a21-4693-9887-dbc8e3d69bf2.png"srcset="../assets/images/2a399541-2a21-4693-9887-dbc8e3d69bf2.png 1x, ../assets/images/2a399541-2a21-4693-9887-dbc8e3d69bf2.png 2x" width="364" height="156"><img class="l-about__feature-zoom"src="https://www.cyberpunk.net/build/images/home3/icon-zoom-in-9a0014f0.svg"></div><div class="l-about__feature-text"><p>CryptStringToBinaryA Win32 Api Call</p></div><div class="l-about__feature-bottom" data-sn="img17"></div></div>')
+            $("#img17").click(function() {
+                window.open("../assets/images/2a399541-2a21-4693-9887-dbc8e3d69bf2.png")
+            });
+                        $("#gallery16").append('<div class="l-about__feature" data-id="4-1" data-sn="img18"data-src="../assets/images/4bbbc800-4209-45ed-bc97-562e3067e0cf.png"style="top: 0px;"><div class="l-about__feature-image"><img class="l-about__feature-img"src="../assets/images/4bbbc800-4209-45ed-bc97-562e3067e0cf.png"srcset="../assets/images/4bbbc800-4209-45ed-bc97-562e3067e0cf.png 1x, ../assets/images/4bbbc800-4209-45ed-bc97-562e3067e0cf.png 2x" width="364" height="156"><img class="l-about__feature-zoom"src="https://www.cyberpunk.net/build/images/home3/icon-zoom-in-9a0014f0.svg"></div><div class="l-about__feature-text"><p>CryptStringToBinaryA Win32 Api Call</p></div><div class="l-about__feature-bottom" data-sn="img18"></div></div>')
+            $("#img18").click(function() {
+                window.open("../assets/images/4bbbc800-4209-45ed-bc97-562e3067e0cf.png")
+            });
+                        $("#gallery17").append('<div class="l-about__feature" data-id="4-1" data-sn="img19"data-src="../assets/images/d27fb789-5d8b-49a5-b538-998c03d5310a.png"style="top: 0px;"><div class="l-about__feature-image"><img class="l-about__feature-img"src="../assets/images/d27fb789-5d8b-49a5-b538-998c03d5310a.png"srcset="../assets/images/d27fb789-5d8b-49a5-b538-998c03d5310a.png 1x, ../assets/images/d27fb789-5d8b-49a5-b538-998c03d5310a.png 2x" width="364" height="156"><img class="l-about__feature-zoom"src="https://www.cyberpunk.net/build/images/home3/icon-zoom-in-9a0014f0.svg"></div><div class="l-about__feature-text"><p>Processes enumertion</p></div><div class="l-about__feature-bottom" data-sn="img19"></div></div>')
+            $("#img19").click(function() {
+                window.open("../assets/images/d27fb789-5d8b-49a5-b538-998c03d5310a.png")
+            });
+                        $("#gallery18").append('<div class="l-about__feature" data-id="4-1" data-sn="img20"data-src="../assets/images/e679de2-0b9c-4968-acc9-0b2b6a1f09af.png"style="top: 0px;"><div class="l-about__feature-image"><img class="l-about__feature-img"src="../assets/images/e679de2-0b9c-4968-acc9-0b2b6a1f09af.png"srcset="../assets/images/e679de2-0b9c-4968-acc9-0b2b6a1f09af.png 1x, ../assets/images/e679de2-0b9c-4968-acc9-0b2b6a1f09af.png 2x" width="364" height="156"><img class="l-about__feature-zoom"src="https://www.cyberpunk.net/build/images/home3/icon-zoom-in-9a0014f0.svg"></div><div class="l-about__feature-text"><p>CryptEncrypt Win32 Api Call</p></div><div class="l-about__feature-bottom" data-sn="img20"></div></div>')
+            $("#img20").click(function() {
+                window.open("../assets/images/e679de2-0b9c-4968-acc9-0b2b6a1f09af.png")
+            });
+                        $("#gallery19").append('<div class="l-about__feature" data-id="4-1" data-sn="img21"data-src="../assets/images/03de8bc8-05c2-4b3a-93ca-53249676d47f.png"style="top: 0px;"><div class="l-about__feature-image"><img class="l-about__feature-img"src="../assets/images/03de8bc8-05c2-4b3a-93ca-53249676d47f.png"srcset="../assets/images/03de8bc8-05c2-4b3a-93ca-53249676d47f.png 1x, ../assets/images/03de8bc8-05c2-4b3a-93ca-53249676d47f.png 2x" width="364" height="156"><img class="l-about__feature-zoom"src="https://www.cyberpunk.net/build/images/home3/icon-zoom-in-9a0014f0.svg"></div><div class="l-about__feature-text"><p>HTTP Request</p></div><div class="l-about__feature-bottom" data-sn="img21"></div></div>')
+            $("#img21").click(function() {
+                window.open("../assets/images/03de8bc8-05c2-4b3a-93ca-53249676d47f.png")
+            });
+                        $("#gallery20").append('<div class="l-about__feature" data-id="4-1" data-sn="img22"data-src="../assets/images/7b68baaa-57ba-4280-bdf8-a82fab5edf07.png"style="top: 0px;"><div class="l-about__feature-image"><img class="l-about__feature-img"src="../assets/images/7b68baaa-57ba-4280-bdf8-a82fab5edf07.png"srcset="../assets/images/7b68baaa-57ba-4280-bdf8-a82fab5edf07.png 1x, ../assets/images/7b68baaa-57ba-4280-bdf8-a82fab5edf07.png 2x" width="364" height="156"><img class="l-about__feature-zoom"src="https://www.cyberpunk.net/build/images/home3/icon-zoom-in-9a0014f0.svg"></div><div class="l-about__feature-text"><p>HTTP Response</p></div><div class="l-about__feature-bottom" data-sn="img22"></div></div>')
+            $("#img22").click(function() {
+                window.open("../assets/images/7b68baaa-57ba-4280-bdf8-a82fab5edf07.png")
+            });
+                    </script>
+        <svg class="svg-defs">
+          <defs>
+              <clipPath id="about-clip" clipPathUnits="objectBoundingBox" transform="scale(0.0006756 0.0012919)">
+                  <path fill-rule="evenodd" fill="rgb(0, 0, 0)"
+                      d="M38.050,93.090 L24.835,650.966 C24.835,650.966 25.368,661.623 13.385,670.238 C13.385,670.238 3.018,676.972 2.052,684.626 C2.052,684.626 -9.895,743.320 45.773,746.733 L159.273,750.643 C159.273,750.643 166.406,747.846 169.154,745.992 C169.154,745.992 182.012,737.223 186.476,736.630 L313.461,738.417 L717.582,745.548 L1267.000,754.898 C1267.000,754.898 1269.525,755.132 1271.854,756.235 L1297.200,769.049 C1297.200,769.049 1299.838,771.903 1309.350,771.780 L1421.687,773.220 C1421.687,773.220 1451.877,769.398 1460.252,743.598 L1462.196,713.108 C1462.196,713.108 1460.813,708.888 1455.103,703.169 C1455.103,703.169 1440.980,691.667 1440.975,680.848 L1444.589,528.256 L1454.306,118.090 C1454.306,118.090 1454.263,108.840 1460.756,103.585 C1460.756,103.585 1474.930,90.834 1475.723,90.504 C1476.516,90.174 1479.488,82.567 1479.790,73.500 C1479.790,73.500 1476.594,42.715 1462.404,34.003 C1462.404,34.003 1451.238,22.921 1424.764,24.562 L1317.368,20.796 L1292.636,33.646 C1292.636,33.646 1289.210,34.612 1285.282,34.693 L1054.535,30.448 L210.833,17.791 C210.833,17.791 202.171,18.807 195.079,12.532 L180.603,4.861 C180.603,4.861 177.979,1.483 164.792,2.043 L54.897,0.661 C54.897,0.661 31.213,2.368 18.801,29.120 C18.801,29.120 14.817,46.300 15.608,60.802 C15.608,60.802 15.210,66.550 23.864,73.211 C23.864,73.211 37.301,80.509 38.050,93.090 Z">
+                  </path>
+              </clipPath>
+              <clipPath id="section-clip" clipPathUnits="objectBoundingBox" transform="scale(0.0007974 0.0013477)">
+                  <path fill-rule="evenodd" fill="rgb(0, 0, 0)"
+                      d="M23.645,136.995 L41.838,653.954 C41.838,653.954 42.912,663.786 32.294,672.411 C32.294,672.411 23.068,679.208 22.591,686.344 C22.591,686.344 14.736,741.309 66.436,741.431 L171.677,738.860 C171.677,738.860 178.125,735.882 180.567,734.017 C180.567,734.017 191.988,725.201 196.086,724.410 L201.921,723.645 L565.793,708.226 L1074.714,686.919 C1074.714,686.919 1077.063,685.866 1079.279,686.759 L1103.432,697.235 C1103.432,697.235 1106.028,699.732 1114.823,699.099 L1218.854,694.305 C1218.854,694.305 1246.582,689.122 1252.926,664.791 L1253.062,636.471 C1253.062,636.471 1251.552,632.641 1245.956,627.661 C1245.956,627.661 1232.260,617.787 1231.665,607.777 L1226.689,466.376 L1213.313,86.294 C1213.313,86.294 1212.769,77.737 1218.491,72.520 C1218.491,72.520 1230.912,59.948 1231.628,59.599 C1232.344,59.250 1234.679,52.049 1234.464,43.643 C1234.464,43.643 1229.827,15.329 1216.222,8.041 C1216.222,8.041 1205.284,-1.605 1180.876,1.357 L1081.291,3.729 L1059.105,16.969 C1059.105,16.969 1055.988,18.049 1052.357,18.339 L838.600,26.994 L179.425,57.894 C179.425,57.894 171.466,59.306 164.560,53.887 L150.747,47.577 C150.747,47.577 148.134,44.595 135.961,45.832 L34.193,50.546 C34.193,50.546 12.371,53.418 2.344,78.850 C2.344,78.850 -0.406,94.965 1.117,108.340 C1.117,108.340 1.062,113.682 9.433,119.374 C9.433,119.374 22.266,125.394 23.645,136.995 Z">
+                  </path>
+              </clipPath>
+              <clipPath id="small-image-clip" clipPathUnits="objectBoundingBox" transform="scale(0.0027472 0.0064102)">
+                  <path fill-rule="evenodd" fill="rgb(0, 0, 0)"
+                      d="M347.014,0.001 L363.999,16.987 L363.999,155.999 L-0.000,155.999 L-0.000,-0.001 L347.014,-0.001 L347.014,0.001 Z">
+                  </path>
+              </clipPath>
+              <clipPath id="video-trailer-clip" clipPathUnits="objectBoundingBox">
+                  <polygon
+                      points="0.9888 0.04 0.9675 0 0.2534 0 0.2085 0.056 0 0.056 0 0.676 0.2309 1 0.6054 1 0.6502 0.944 1 0.944 1 0.576 0.9888 0.546 0.9888 0.04">
+                  </polygon>
+              </clipPath>
+          </defs>
+          <symbol preserveAspectRatio="xMidYMax meet" viewBox="0 0 56 36" id="icon-close">
+              <rect width="36" height="36" transform="matrix(-1 0 0 1 46 0)" fill="black"></rect>
+              <path
+                  d="M22.628 25L21 23.3719L26.346 18.026L21.0174 12.6973L22.6973 11.0173L28.026 16.3459L33.3719 11L35 12.628L29.654 17.974L34.9481 23.268L33.268 24.948L27.974 19.654L22.628 25Z"
+                  fill="#02D8F3"></path>
+              <rect width="36" height="1" transform="matrix(-1 0 0 1 46 0)" fill="#02D8F3"></rect>
+              <rect width="36" height="1" transform="matrix(-1 0 0 1 46 35)" fill="#02D8F3"></rect>
+              <rect width="10" height="36" transform="matrix(-1 0 0 1 10 0)" fill="black"></rect>
+              <rect width="10" height="1" transform="matrix(-1 0 0 1 10 0)" fill="#02D8F3"></rect>
+              <rect width="10" height="1" transform="matrix(-1 0 0 1 10 35)" fill="#02D8F3"></rect>
+              <rect width="1" height="36" transform="matrix(-1 0 0 1 1 0)" fill="#02D8F3"></rect>
+              <path d="M46 26H56L46 36V26Z" fill="black"></path>
+              <rect width="10" height="26" transform="matrix(-1 0 0 1 56 0)" fill="black"></rect>
+              <rect width="10" height="1" transform="matrix(-1 0 0 1 56 0)" fill="#02D8F3"></rect>
+              <rect width="1" height="26" transform="matrix(-1 0 0 1 56 0)" fill="#02D8F3"></rect>
+              <path d="M46 36L45 35L55 25L56 26L46 36Z" fill="#02D8F3"></path>
+          </symbol>
+          <symbol preserveAspectRatio="xMidYMax meet" viewBox="0 0 56 36" id="icon-download">
+              <rect width="36" height="36" transform="translate(10)" fill="black"></rect>
+              <g clip-path="url(#clip0)">
+                  <path fill-rule="evenodd" clip-rule="evenodd" fill="currentColor"
+                      d="M27.6359 25.111L20.4829 17.694L20.4829 14.382L26.4599 20.694L26.4599 9.74899L28.7879 9.74899L28.7879 20.622L34.7399 14.406L34.7399 17.694L27.6359 25.111Z">
+                  </path>
+              </g>
+              <rect x="10" width="36" height="1" fill="currentColor"></rect>
+              <rect x="10" y="35" width="36" height="1" fill="currentColor"></rect>
+              <rect x="46" width="10" height="36" fill="black"></rect>
+              <rect x="46" width="10" height="1" fill="currentColor"></rect>
+              <rect x="46" y="35" width="10" height="1" fill="currentColor"></rect>
+              <rect x="55" width="1" height="36" fill="currentColor"></rect>
+              <path d="M10 26H0L10 36V26Z" fill="black"></path>
+              <rect width="10" height="26" fill="black"></rect>
+              <rect width="10" height="1" fill="currentColor"></rect>
+              <rect width="1" height="26" fill="currentColor"></rect>
+              <path d="M10 36L11 35L1 25L0 26L10 36Z" fill="currentColor"></path>
+              <defs>
+                  <clipPath id="clip0">
+                      <rect width="17" height="15" fill="white" transform="matrix(-4.37114e-08 1 1 4.37114e-08 20 9)">
+                      </rect>
+                  </clipPath>
+              </defs>
+          </symbol>
+      </svg> </body>
 
 </html>
