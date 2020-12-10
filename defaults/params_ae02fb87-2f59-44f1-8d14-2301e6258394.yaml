@@ -10,6 +10,7 @@
           - "../css/index.css"
           - "../css/article.css"
           - "../css/images.css"
+          - "../css/infobox.css"
         js:
           - "https://code.jquery.com/jquery-2.1.1.min.js"
           - "../js/dynamics.js"
@@ -21,13 +22,13 @@
           shortdescription: Cyber Security & Software Development
           twitter: '#'
           email: a.blescia@nocommentlab.it
-      support-images: true
-      images:
-        - id: img1
-          path: https://picsum.photos/1024/768
-          description: descrizione di prova
-          gallery: gallery1
-        - id: img2
-          path: https://picsum.photos/1024/768
-          description: descrizione di prova2
-          gallery: gallery1
+        support-images: true
+        images:
+          - id: img1
+            path: https://picsum.photos/1024/768
+            description: descrizione di prova
+            gallery: gallery1
+          - id: img2
+            path: https://picsum.photos/1024/768
+            description: descrizione di prova2
+            gallery: gallery1

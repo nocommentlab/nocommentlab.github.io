@@ -1,5 +1,10 @@
     .l-about__features {
         display: inline-block;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
     }
     
     .l-about__feature {
@@ -105,6 +110,7 @@
             -webkit-box-pack: space-evenly;
             justify-content: space-evenly;
             /*margin: 24vw 24px 0;*/
+            width: 100%
         }
     }
     
@@ -112,7 +118,7 @@
         .l-about__feature {
             width: 100%;
             min-height: 0;
-            margin: 0 0 30px;
+            margin: 0 0 10px;
         }
     }
     

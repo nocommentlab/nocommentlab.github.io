@@ -1,0 +1,88 @@
+.l-about__box {
+    position: relative;
+    /*top: 31.11111vh;*/
+    left: 0;
+    color: #0e0e0e;
+    background-color: #fcee0a;
+    width: 544px;
+    max-width: 544px;
+    padding: 30px 40px 27px;
+    margin-bottom: 30px;
+    z-index: 3
+}
+
+.l-about__box:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -29px;
+    background: url(../assets/razor-bottom-yellow-d44fb6b7.svg) repeat-x 100% 0;
+    height: 30px
+}
+
+.l-about__box h2 {
+    font-family: BlenderProBold, sans-serif;
+    font-size: 56px;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 1.0714;
+    padding-bottom: 14px;
+    position: relative;
+    margin: 0 0 18px;
+    letter-spacing: -2px;
+    color: black;
+}
+
+.l-about__box h2:after {
+    content: "";
+    background: url(../assets/separator-text-76372ca3.svg);
+    height: 4px;
+    width: 464px;
+    max-width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0
+}
+
+.l-about__box p {
+    font-family: BlenderProBook, sans-serif;
+    font-size: 16px;
+    line-height: 1.25;
+    margin: 0
+}
+
+.l-about__box--section {
+    /*top: 22.22222vh*/
+}
+
+@media screen and (max-width:767px) {
+    .l-about__box {
+        margin: 0 24px 60px;
+        max-width: none
+    }
+    .l-about__box p {
+        font-size: 14px
+    }
+}
+
+@media screen and (max-width:1024px) {
+    .l-about__box {
+        position: relative;
+        margin: 0 0 40px 0;
+        width: auto;
+        padding: 24px;
+        top: 0;
+        /*max-width: 46.875vw*/
+        /*width: 100%;*/
+    }
+}
+
+.l-about__box h2 {
+    font-size: 40px;
+    line-height: .9
+}
+
+section.l-about__box.l-about__box--section.l-about__opacity {
+    float: none
+}
