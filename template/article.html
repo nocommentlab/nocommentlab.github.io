@@ -32,7 +32,7 @@
               </g>
             </svg>
                     </div>
-                    <h1>$if(page.contents.contacts.name)$$page.contents.contacts.name$$endif$</h1>
+                    <h1 class="nclText">$if(page.contents.contacts.name)$$page.contents.contacts.name$$endif$</h1>
                     <p class="shortdescription">$if(page.contents.contacts.shortdescription)$$page.contents.contacts.shortdescription$$endif$</p>
                     <div id="contact">
                         <a href="mailto:$if(page.contents.contacts.email)$$page.contents.contacts.email$$endif$" id="email"><svg
@@ -97,13 +97,14 @@
                 $endfor$
             ]
         </script>
-        $endif$ $if(page.support-images)$
+        $endif$ $if(page.contents.support-images)$
         <script>
-            $for(page.images) $
-            $$("#$page.images.gallery$").append('<div class="l-about__feature" data-id="4-1" data-sn="$page.images.id$"data-src="$page.images.path$"style="top: 0px;"><div class="l-about__feature-image"><img class="l-about__feature-img"src="$page.images.path$"srcset="$page.images.path$ 1x, $page.images.path$ 2x" width="364" height="156"><img class="l-about__feature-zoom"src="https://www.cyberpunk.net/build/images/home3/icon-zoom-in-9a0014f0.svg"></div><div class="l-about__feature-text"><p>$page.images.description$</p></div><div class="l-about__feature-bottom" data-sn="$page.images.id$"></div></div>')
-            $$("#$page.images.id$").click(function() {
-                window.open("$page.images.path$")
-            });
+            $for(page.contents.images) $
+            $$("#$page.contents.images.gallery$").append('<div class="l-about__feature" data-id="4-1" data-sn="$page.contents.images.id$"data-src="$page.contents.images.path$"style="top: 0px;"><div class="l-about__feature-image"><img class="l-about__feature-img"src="$page.contents.images.path$"srcset="$page.contents.images.path$ 1x, $page.contents.images.path$ 2x" width="364" height="156"><img class="l-about__feature-zoom"src="https://www.cyberpunk.net/build/images/home3/icon-zoom-in-9a0014f0.svg"></div><div class="l-about__feature-text"><p>$page.contents.images.description$</p></div><div class="l-about__feature-bottom" data-sn="$page.contents.images.id$"></div></div>')
+            $$("div[data-sn='$page.contents.images.id$'] .l-about__feature-image").click(function() {
+                window.open("$page.contents.images.path$")
+            })
+
             $endfor$
         </script>
         <svg class="svg-defs">

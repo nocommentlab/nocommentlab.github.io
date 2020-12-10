@@ -1,13 +1,13 @@
 @font-face {
     font-family: BlenderProBook;
-    src: url(../assets/font/BlenderPro-Book.woff2) format("woff2"), url(../assets/font/BlenderPro-Book.woff2) format("woff");
+    src: url(https://www.nocommentlab.it/assets/font/BlenderPro-Book.woff2) format("woff2"), url(https://www.nocommentlab.it/assets/font/BlenderPro-Book.woff2) format("woff");
     font-weight: 400;
     font-style: normal
 }
 
 @font-face {
     font-family: BlenderProBold;
-    src: url(../assets/font/BlenderPro-Bold.woff2) format("woff2"), url(../assets/font/BlenderPro-Bold.woff2) format("woff");
+    src: url(https://www.nocommentlab.it/assets/font/BlenderPro-Bold.woff2) format("woff2"), url(https://www.nocommentlab.it/assets/font/BlenderPro-Bold.woff2) format("woff");
     font-weight: 700;
     font-style: normal
 }

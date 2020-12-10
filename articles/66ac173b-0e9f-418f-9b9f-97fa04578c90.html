@@ -30,7 +30,7 @@
               </g>
             </svg>
                     </div>
-                    <h1>NoCommentLab</h1>
+                    <h1 class="nclText">NoCommentLab</h1>
                     <p class="shortdescription">Cyber Security &amp; Software Development</p>
                     <div id="contact">
                         <a href="mailto:a.blescia@nocommentlab.it" id="email"><svg
@@ -84,13 +84,15 @@
                 <script src="../js/mv.es5.js"></script>
                   <script>
                         $("#gallery1").append('<div class="l-about__feature" data-id="4-1" data-sn="img1"data-src="../assets/images/4b32ccfd-93d5-4256-a247-c99e6503c481.png"style="top: 0px;"><div class="l-about__feature-image"><img class="l-about__feature-img"src="../assets/images/4b32ccfd-93d5-4256-a247-c99e6503c481.png"srcset="../assets/images/4b32ccfd-93d5-4256-a247-c99e6503c481.png 1x, ../assets/images/4b32ccfd-93d5-4256-a247-c99e6503c481.png 2x" width="364" height="156"><img class="l-about__feature-zoom"src="https://www.cyberpunk.net/build/images/home3/icon-zoom-in-9a0014f0.svg"></div><div class="l-about__feature-text"><p>The source code of this article</p></div><div class="l-about__feature-bottom" data-sn="img1"></div></div>')
-            $("#img1").click(function() {
+            $("div[data-sn='img1'] .l-about__feature-image").click(function() {
                 window.open("../assets/images/4b32ccfd-93d5-4256-a247-c99e6503c481.png")
-            });
+            })
+
                         $("#gallery1").append('<div class="l-about__feature" data-id="4-1" data-sn="img2"data-src="../assets/images/9d3913a9-ffa9-4e24-b310-0740f29786ea.png"style="top: 0px;"><div class="l-about__feature-image"><img class="l-about__feature-img"src="../assets/images/9d3913a9-ffa9-4e24-b310-0740f29786ea.png"srcset="../assets/images/9d3913a9-ffa9-4e24-b310-0740f29786ea.png 1x, ../assets/images/9d3913a9-ffa9-4e24-b310-0740f29786ea.png 2x" width="364" height="156"><img class="l-about__feature-zoom"src="https://www.cyberpunk.net/build/images/home3/icon-zoom-in-9a0014f0.svg"></div><div class="l-about__feature-text"><p>The configuration file of this article</p></div><div class="l-about__feature-bottom" data-sn="img2"></div></div>')
-            $("#img2").click(function() {
+            $("div[data-sn='img2'] .l-about__feature-image").click(function() {
                 window.open("../assets/images/9d3913a9-ffa9-4e24-b310-0740f29786ea.png")
-            });
+            })
+
                     </script>
         <svg class="svg-defs">
           <defs>
