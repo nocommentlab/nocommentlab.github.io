@@ -143,6 +143,7 @@ header {
     scrollbar-width: none;
     -ms-overflow-style: none;
     /* IE 11 */
+    word-wrap:break-word;
 }
 
 #content::-webkit-scrollbar {
