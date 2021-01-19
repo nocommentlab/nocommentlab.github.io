@@ -1,0 +1,71 @@
+﻿---
+  metadata:
+    title: Reverse Engineering to Phishing (Agenzia delle Entrate)
+    author:
+    - Antonio Blescia
+    title-prefix: "!// Lab: "
+    social-image: ../assets/images/05359a13-d4a4-4dff-9263-2a79c14e69ca.jpg
+    page:
+      resources:
+        css:
+          - "../css/index.css"
+          - "../css/article.css"
+          - "../css/hr.css"
+          - "../css/images.css"
+        js:
+          - "https://code.jquery.com/jquery-2.1.1.min.js"
+          - "../js/dynamics.js"
+          - "../js/tinycolor.js"
+          - "../js/mv.es5.js"
+      contents:
+        contacts:
+          name: NoCommentLab
+          shortdescription: Cyber Security & Software Development
+          twitter: '#'
+          email: a.blescia@nocommentlab.it
+        support-images: true
+        images:
+          - id: img1
+            path: ../assets/images/37106ecb-9acf-42de-9f6d-62afbdca1461.PNG
+            description: contenuto plugin.xml
+            gallery: gallery1
+          - id: img2
+            path: ../assets/images/4528f37a-9725-46a0-b275-a1a8220aa881.PNG
+            description: contenuto del database
+            gallery: gallery2
+          - id: img3
+            path: ../assets/images/7677e5af-556f-4145-af66-3bb1f5609d11.PNG
+            description: dump credenziali db
+            gallery: gallery3
+          - id: img4
+            path: ../assets/images/f770274e-b23f-4edf-83c6-971e9d0dfdf0.PNG
+            description: configurazione remote debugger
+            gallery: gallery4
+          - id: img5
+            path: ../assets/images/a4b46d09-0319-418c-8a5d-9eff25bd98e9.PNG
+            description: import del certificato
+            gallery: gallery5
+          - id: img6
+            path: ../assets/images/531e6dae-579c-409f-8e07-98c7c91259aa.PNG
+            description: dump della password
+            gallery: gallery6
+          - id: img7
+            path: ../assets/images/c1c1334c-3cfd-40fe-b762-67efe408aa09.PNG
+            description: cert store di windows
+            gallery: gallery7
+          - id: img8
+            path: ../assets/images/66aa6a5e-59d3-44a8-8e70-490df97beb6c.PNG
+            description: PE file non firmato
+            gallery: gallery8
+          - id: img10
+            path: ../assets/images/670c89a2-e9ef-445a-87c2-aa65df5c1dee.PNG
+            description: PE file firmato
+            gallery: gallery8
+          - id: img11
+            path: ../assets/images/67e81b7f-2f0d-4b42-9e94-8252e5a0a924.PNG
+            description: detection con ReaQta
+            gallery: gallery9
+          - id: img12
+            path: ../assets/images/ca45090b-338d-419e-a259-c02274f319e2.PNG
+            description: PDF firmato firmato
+            gallery: gallery10
