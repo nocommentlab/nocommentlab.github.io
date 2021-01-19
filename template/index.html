@@ -78,54 +78,6 @@
                 </section>
             </div>
         </div>
-        <h1>$if(page.contents.contacts.name)$$page.contents.contacts.name$$endif$</h1>
-        <p>$if(page.contents.contacts.shortdescription)$$page.contents.contacts.shortdescription$$endif$</p>
-        <div id="contact">
-            <a href="mailto:$if(page.contents.contacts.email)$$page.contents.contacts.email$$endif$" id="email"><svg viewBox="0 0 42 36" xmlns="http://www.w3.org/2000/svg"><path d="M3.025 5.255A1.99 1.99 0 0 1 4.003 5h33.994c.354 0 .688.093.977.256L21 18.5 3.025 5.255zm-1.002 1.45c-.015.098-.023.2-.023.302V18.28v-5.636 17.35C2 31.1 2.902 32 4.003 32h33.994A2.005 2.005 0 0 0 40 29.993v-17.35 5.638V7.008c0-.103-.008-.204-.023-.303L21 20.687 2.023 6.704z"/></svg></a>
-        </div>
-    </div>
-    </header>
-    <div id="content">
-        <section id="introduction">
-            <h1>Intro</h1>
-            $for(page.contents.introduction)$ $page.contents.introduction$
-            <br> $endfor$
-        </section>
-        <section id="articles">
-            <h1>Articles</h1>
-            <ul>
-                $for(page.contents.articles)$
-                <li><a href="$page.contents.articles.link$">$page.contents.articles.title$</a></li>
-                $endfor$
-            </ul>
-        </section>
-        <section id="aboutme">
-            <h1>About Me</h1>
-            <ul>
-                $for(page.contents.aboutme)$
-                <li><a href="$page.contents.aboutme.link$">$page.contents.aboutme.title$</a></li>
-                $endfor$
-            </ul>
-        </section>
-        <section id="repositories">
-            <h1>Repos</h1>
-            <ul>
-                $for(page.contents.repos)$
-                <li><a href="$page.contents.repos.link$">$page.contents.repos.title$</a></li>
-                $endfor$
-            </ul>
-        </section>
-        <section id="partners">
-            <h1>Partners</h1>
-            <div class="row">
-                $for(page.contents.partners)$
-                <div class="column">
-                    <img src="$page.contents.partners$" width="128px" />
-                </div>
-                $endfor$
-            </div>
-        </section>
-    </div>
     </div>
     </div>
     <svg id="page-stripes" class="full-size" width="100%" height="100%" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"></svg>
