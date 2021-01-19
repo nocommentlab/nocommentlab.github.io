@@ -14,7 +14,7 @@ metadata:
         - "./js/mv.es5.js"
     contents:
       contacts:
-        name: NoCommentLab 🎅
+        name: NoCommentLab
         shortdescription: Cyber Security & Software Development
         twitter: '#'
         email: a.blescia@nocommentlab.it
@@ -23,8 +23,10 @@ metadata:
         - This is my diary website and here you can read all my technical studies as well as my best works on cyber security and software development. 
         - Do you love these topics too? So give a glance at my articles, they are written with ❤️. And if you have any questions...just contact me!
       articles:
+        - link: ./articles/cfd6d10b-9633-46ef-a3eb-bcc5e304cd02.html
+          title: Reverse Engineering to Phishing ( Agenzia delle Entrate )
         - link: ./articles/11bc457f-07c7-4e06-84f7-c5dbceec14ec.html
-          title: Ethical Hackers Contest #1
+          title: Ethical Hackers Contest
         - link: ./articles/1ccbbf19-5584-4a05-8280-fdc64ae19d9a.html
           title: Covid19 Malware Reverse
         - link: ./articles/66ac173b-0e9f-418f-9b9f-97fa04578c90.html
